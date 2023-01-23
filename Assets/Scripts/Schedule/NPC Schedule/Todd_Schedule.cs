@@ -33,11 +33,15 @@ public class Todd_Schedule : Schedule
             queue.Enqueue(Location.innPath);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innDoorInside);
-            queue.Enqueue(Location.innCenter1);
+            queue.Enqueue(Location.innDoorPath);
+            queue.Enqueue(Location.innTable3Chair2Path);
+            queue.Enqueue(Location.innTable3Chair2);
         }
 
         //Go home
         if(hour == 10 && minute == 0 && meridiem == "pm"){
+            queue.Enqueue(Location.innTable3Chair2Path);
+            queue.Enqueue(Location.innDoorPath);
             queue.Enqueue(Location.innDoorInside);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innPath);

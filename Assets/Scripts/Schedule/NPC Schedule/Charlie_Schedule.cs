@@ -6,13 +6,21 @@ public class Charlie_Schedule : Schedule
 {
 
     public override void childStart(){
-        start = Location.innCenter1;
+        start = Location.innCharlieBed;
     }
 
     public override void UpdateSchedule(int hour, int minute, string meridiem){
 
         //Check barrels
-        if(hour == 9 && minute == 0 && meridiem == "am"){
+        if(hour == 8 && minute == 0 && meridiem == "am"){
+            queue.Enqueue(Location.innCharlieBedPath1);
+            queue.Enqueue(Location.innCharlieBedPath2);
+            queue.Enqueue(Location.innCharlieBedPath3);
+            queue.Enqueue(Location.innHallHigh);
+            queue.Enqueue(Location.innHallLow);
+            queue.Enqueue(Location.innBarHallHigh);
+            queue.Enqueue(Location.innBarHallLow);
+            queue.Enqueue(Location.innDoorPath);
             queue.Enqueue(Location.innDoorInside);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innPath);
@@ -31,7 +39,20 @@ public class Charlie_Schedule : Schedule
             queue.Enqueue(Location.innPath);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innDoorInside);
-            queue.Enqueue(Location.innCenter1);
-        }          
+            queue.Enqueue(Location.innDoorPath);
+            queue.Enqueue(Location.innBarHallLow);
+            queue.Enqueue(Location.innBarHallHigh);
+            queue.Enqueue(Location.innBar);
+        }
+
+
+        if(hour == 1 && minute == 0 && meridiem == "am"){
+            queue.Enqueue(Location.innHallLow);
+            queue.Enqueue(Location.innHallHigh);
+            queue.Enqueue(Location.innCharlieBedPath3);
+            queue.Enqueue(Location.innCharlieBedPath2);
+            queue.Enqueue(Location.innCharlieBedPath1);
+            queue.Enqueue(Location.innCharlieBed);
+        }      
     }
 }

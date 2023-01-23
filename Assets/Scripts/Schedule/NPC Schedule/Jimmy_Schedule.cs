@@ -28,12 +28,14 @@ public class Jimmy_Schedule : Schedule
             queue.Enqueue(Location.churchPath1);
             queue.Enqueue(Location.churchDoorOutside);
             queue.Enqueue(Location.churchDoorInside);
-            queue.Enqueue(Location.churchRoom);
+            queue.Enqueue(Location.churchAisle1);
+            queue.Enqueue(Location.churchAisle1Spot2);
 
 
         }
         //Go to field
         if(hour == 3 && minute == 5 && meridiem == "pm"){
+            queue.Enqueue(Location.churchAisle1);
             queue.Enqueue(Location.churchDoorInside);
             queue.Enqueue(Location.churchDoorOutside);
             queue.Enqueue(Location.churchPath1);

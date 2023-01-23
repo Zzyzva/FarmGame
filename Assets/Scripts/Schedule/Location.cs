@@ -238,10 +238,28 @@ public class Location{
     public static Location churchYard1 = new Location(new Vector3(16, 43, 0), "Town");
     public static Location churchYard2 = new Location(new Vector3(17, 43, 0), "Town");
     public static Location churchDoorOutside = new Location(new Vector3(8, 43, 0), "Town");
-    public static Location churchDoorInside = new Location(new Vector3(5,0,0), "Church");
-    public static Location churchBack = new Location(new Vector3(5,8,0), "Church");
-    public static Location churchRight = new Location(new Vector3(7,8,0), "Church");
-    public static Location churchRoom = new Location(new Vector3(-2,8,0), "Church");
+
+    public static Location churchDoorInside = new Location(new Vector3(9.5f,0,0), "Church");
+    public static Location churchSophiaBed = new Location(new Vector3(23.5f,1.5f,0), "Church");
+    public static Location churchSophiaBedPath1 = new Location(new Vector3(23.5f,6,0), "Church");
+    public static Location churchSophiaBedPath2 = new Location(new Vector3(20.5f,6,0), "Church");
+    public static Location churchTrulianBed = new Location(new Vector3(23.5f,9,0), "Church");
+    public static Location churchTrulianBedPath = new Location(new Vector3(23.5f,14.5f,0), "Church");
+    public static Location churchHallHigh = new Location(new Vector3(20.5f,14.5f,0), "Church");
+    public static Location churchHallLow = new Location(new Vector3(20.5f,1.5f,0), "Church");
+    public static Location churchAltar = new Location(new Vector3(9.5f,14,0), "Church");
+    public static Location churchAltarPath1 = new Location(new Vector3(12.5f,14,0), "Church");
+    public static Location churchAltarPath2 = new Location(new Vector3(12.5f,10.5f,0), "Church");
+    public static Location churchAltarPath3 = new Location(new Vector3(9.5f,10.5f,0), "Church");
+    public static Location churchDoorPath = new Location(new Vector3(9.5f,1.5f,0), "Church");
+
+    public static Location churchAisle1 = new Location(new Vector3(9.5f,9,0), "Church");
+    public static Location churchAisle1Spot1 = new Location(new Vector3(3,9,0), "Church");
+    public static Location churchAisle1Spot2 = new Location(new Vector3(5,9,0), "Church");
+    public static Location churchAisle1Spot3 = new Location(new Vector3(7,9,0), "Church");
+    public static Location churchAisle1Spot4 = new Location(new Vector3(12,9,0), "Church");
+    public static Location churchAisle1Spot5 = new Location(new Vector3(14,9,0), "Church");
+    public static Location churchAisle1Spot6 = new Location(new Vector3(16,9,0), "Church");
 
     //Herbalist Hut
     public static Location herbalistHutPath = new Location(new Vector3(5, 30, 0), "Town");
@@ -321,8 +339,37 @@ public class Location{
     public static Location tenantPath2 = new Location(new Vector3(60, 42, 0), "Town");
 
     //Inn
-    public static Location innCenter1 = new Location(new Vector3(4, 5, 0), "Inn");
-    public static Location innCenter2 = new Location(new Vector3(6, 5, 0), "Inn");
+    public static Location innCharlieBed = new Location(new Vector3(1.5f,16.5f,0), "Inn");
+    public static Location innCharlieBedPath1 = new Location(new Vector3(1.5f,18.5f,0), "Inn");
+    public static Location innCharlieBedPath2 = new Location(new Vector3(9,18.5f,0), "Inn");
+    public static Location innCharlieBedPath3 = new Location(new Vector3(9,19.5f,0), "Inn");
+    public static Location innHazelBed = new Location(new Vector3(15.5f,16.5f,0), "Inn");
+    public static Location innHazelBedPath = new Location(new Vector3(15.5f,19.5f,0), "Inn");
+    public static Location innHazelShelf = new Location(new Vector3(20.5f,18.5f,0), "Inn");
+    public static Location innHazelShelfPath = new Location(new Vector3(15.5f,18.5f,0), "Inn");
+    public static Location innHallHigh = new Location(new Vector3(12.5f,19.5f,0), "Inn");
+    public static Location innHallLow = new Location(new Vector3(12.5f,12.5f,0), "Inn");
+    public static Location innBarHallHigh = new Location(new Vector3(1.5f,12.5f,0), "Inn");
+    public static Location innBarHallMid = new Location(new Vector3(1.5f,5.5f,0), "Inn");
+    public static Location innBarHallLow = new Location(new Vector3(1.5f,2f,0), "Inn");
+    public static Location innBar = new Location(new Vector3(8,12.5f,0), "Inn");
+    public static Location innTable1 = new Location(new Vector3(5,8.5f,0), "Inn");
+    public static Location innTable2 = new Location(new Vector3(10.5f,8.5f,0), "Inn");
+    public static Location innTable3 = new Location(new Vector3(5,5.5f,0), "Inn");
+    public static Location innTable4 = new Location(new Vector3(10.5f,5.5f,0), "Inn");
+    public static Location innTableHallHigh = new Location(new Vector3(7.75f,8.5f,0), "Inn");
+    public static Location innTableHallLow = new Location(new Vector3(7.75f,5.5f,0), "Inn");
+    public static Location innTable1Chair1Path = new Location(new Vector3(3.75f,5.5f,0), "Inn");
+    public static Location innTable1Chair1 = new Location(new Vector3(3.75f,7,0), "Inn");
+    public static Location innTable2Chair1Path = new Location(new Vector3(9.25f,5.5f,0), "Inn");
+    public static Location innTable2Chair1 = new Location(new Vector3(9.25f,7,0), "Inn");
+    public static Location innTable3Chair1Path = new Location(new Vector3(3.75f,2,0), "Inn");
+    public static Location innTable3Chair1 = new Location(new Vector3(3.75f,4,0), "Inn");
+    public static Location innTable3Chair2Path = new Location(new Vector3(6.25f,2,0), "Inn");
+    public static Location innTable3Chair2 = new Location(new Vector3(6.25f,4,0), "Inn");
+    public static Location innTable4Chair1Path = new Location(new Vector3(9.25f,2,0), "Inn");
+    public static Location innTable4Chair1 = new Location(new Vector3(9.25f,4,0), "Inn");
+    public static Location innDoorPath = new Location(new Vector3(5,2,0), "Inn");
     public static Location innDoorInside = new Location(new Vector3(5,0,0), "Inn");
     public static Location innDoorOutside = new Location(new Vector3(75,33,0), "Town");
     public static Location innPath = new Location(new Vector3(75,30,0), "Town");

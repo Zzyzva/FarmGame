@@ -35,11 +35,15 @@ public class William_Schedule : Schedule
             queue.Enqueue(Location.innPath);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innDoorInside);
-            queue.Enqueue(Location.innCenter1);
+            queue.Enqueue(Location.innDoorPath);
+            queue.Enqueue(Location.innTable4Chair1Path);
+            queue.Enqueue(Location.innTable4Chair1);
         }
 
         //Return Home
         if(hour == 10 && minute == 30 && meridiem == "pm"){
+            queue.Enqueue(Location.innTable4Chair1Path);
+            queue.Enqueue(Location.innDoorPath);
             queue.Enqueue(Location.innDoorInside);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innPath);

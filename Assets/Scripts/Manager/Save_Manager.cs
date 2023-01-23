@@ -60,7 +60,7 @@ public class Save_Manager : MonoBehaviour
         Inventory_Manager.instance.UpdateSlots();
         Inventory_Manager.instance.UpdateChestSlots();
         Time_Manager.instance.UpdateTimeText();
-        LevelLoader.instance.LoadLevel("Barracks", new Vector2(3,3));
+        LevelLoader.instance.LoadLevel("Church", new Vector2(3,3));
     }
 
     public void StartNewGame(){

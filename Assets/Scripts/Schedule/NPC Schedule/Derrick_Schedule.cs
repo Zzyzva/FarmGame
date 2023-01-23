@@ -46,12 +46,16 @@ public class Derrick_Schedule : Schedule
             queue.Enqueue(Location.innPath);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innDoorInside);
-            queue.Enqueue(Location.innCenter1);
+            queue.Enqueue(Location.innDoorPath);
+            queue.Enqueue(Location.innTable3Chair1Path);
+            queue.Enqueue(Location.innTable3Chair1);
 
         }
 
         //Go home
         if(hour == 9 && minute == 15 && meridiem == "pm"){
+            queue.Enqueue(Location.innTable3Chair1Path);
+            queue.Enqueue(Location.innDoorPath);
             queue.Enqueue(Location.innDoorInside);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innPath);

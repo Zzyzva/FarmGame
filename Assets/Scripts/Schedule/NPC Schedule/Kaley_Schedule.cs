@@ -29,12 +29,14 @@ public class Kaley_Schedule : Schedule
             queue.Enqueue(Location.churchPath1);
             queue.Enqueue(Location.churchDoorOutside);
             queue.Enqueue(Location.churchDoorInside);
-            queue.Enqueue(Location.churchRoom);
+            queue.Enqueue(Location.churchAisle1);
+            queue.Enqueue(Location.churchAisle1Spot3);
 
 
         }
         //Go to field
         if(hour == 3 && minute == 20 && meridiem == "pm"){
+            queue.Enqueue(Location.churchAisle1);
             queue.Enqueue(Location.churchDoorInside);
             queue.Enqueue(Location.churchDoorOutside);
             queue.Enqueue(Location.churchPath1);

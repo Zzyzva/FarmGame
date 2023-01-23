@@ -35,12 +35,15 @@ public class Vintius_Schedule : Schedule
             queue.Enqueue(Location.innPath);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innDoorInside);
-            queue.Enqueue(Location.innCenter1);
-            
+            queue.Enqueue(Location.innDoorPath);
+            queue.Enqueue(Location.innTable3Chair1Path);
+            queue.Enqueue(Location.innTable3Chair1);
         }
 
         //Check storage
         if(hour == 1 && minute == 35 && meridiem == "pm"){
+            queue.Enqueue(Location.innTable3Chair1Path);
+            queue.Enqueue(Location.innDoorPath);
             queue.Enqueue(Location.innDoorInside);
             queue.Enqueue(Location.innDoorOutside);
             queue.Enqueue(Location.innPath);
