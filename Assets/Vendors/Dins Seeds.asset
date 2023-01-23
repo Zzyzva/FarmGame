@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e360e8d3a0a87f47a11bfc9cea1f88c, type: 3}
+  m_Name: Dins Seeds
+  m_EditorClassIdentifier: 
+  inventory:
+  - item: {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+    price: 20
+    reqItems: []
+    special: 0
+  - item: {fileID: 11400000, guid: 94b5ec34747b0fa47af9ed464b225d40, type: 2}
+    price: 40
+    reqItems: []
+    special: 0
+  - item: {fileID: 11400000, guid: 1fb3666388d1d5e44865cd0dcc6aca34, type: 2}
+    price: 150
+    reqItems: []
+    special: 0
+  - item: {fileID: 11400000, guid: b73c580a9f51f6b4cb6120a12fbec561, type: 2}
+    price: 100
+    reqItems: []
+    special: 0
+  - item: {fileID: 11400000, guid: 30f52baac311cb841ae7178e081d138a, type: 2}
+    price: 60
+    reqItems: []
+    special: 0
+  - item: {fileID: 11400000, guid: d8e9d840f4273034b907407631c8c71a, type: 2}
+    price: 300
+    reqItems: []
+    special: 0
+  standName: Din's Sedds

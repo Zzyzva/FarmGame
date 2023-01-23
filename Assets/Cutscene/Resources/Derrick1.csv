@@ -1,0 +1,39 @@
+Derrick1|Town|700|1200|Derrick|2
+Set|Camera||85|33|
+Spawn|Player||74|30|
+Move|Player|1|80|30|2
+Spawn|Derrick||86|33|
+Move|Derrick|0|86|30|2
+Move|Player|1|83|30|2
+Dialogue|Derrick|You there!|||
+Dialogue|Derrick|Come with me, I'd like to talk to you.|||
+Move|Derrick|0|86|33|2
+Move|Player|1|86|30|2
+Emote|Player|1|DotDotDot||
+Move|Player|1|86|33|2
+Scene|Barracks||||
+Set|Camera||5|5|
+Spawn|Derrick||5|6|
+Spawn|Player||5|1|
+Move|Player|1|5|3|2
+Emote|Derrick|0|DotDotDot||
+Emote|Player|1|DotDotDot||
+Choice|Derrick|You know I can't trust you, right?|What?|Why?|
+Dialogue|Derrick|It's my job.|||
+Dialogue|Derrick|We don't get outsiders. No one wants to come to this poor little village.|||
+Dialogue|Derrick|And one day you stumble in claiming you have no memories?|||
+Dialogue|Derrick|It's strange, kid.|||
+Emote|Derrick|1|DotDotDot||
+Dialogue|Derrick|Now I'm not saying I don't believe you. You seem like an upstanding lad.|||
+Dialogue|Derrick|Right now, at least.|||
+Dialogue|Derrick|But what were you doing around our village before you lost your memory? How did you get here? It makes an old man like me suspicious.|||
+Dialogue|Derrick|I want to trust you kid. But if any of your memories come back, you tell me, all right?|||
+Dialogue|Derrick|It's my job to protect these people. They're good people.|||
+Dialogue|Derrick|And with times how they are...|||
+Emote|Derrick|1|DotDotDot||
+Dialogue|Derrick|You know, what you can go, I've had too much of your time.|||
+Dialogue|Derrick|Just know I'm wathcing you.|||
+Move|Player|1|5|-1|2
+Despawn|Player||||
+Emote|Derrick|1|DotDotDot||
+Dialogue|Derrick|I hope you can prove me wrong.|||

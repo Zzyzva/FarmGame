@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c37f2fe92169a4ba0a095e91bbe0b5, type: 3}
+  m_Name: Old Hoe
+  m_EditorClassIdentifier: 
+  favor: 2
+  category: 0
+  name: Old Hoe
+  icon: {fileID: 21300000, guid: 1cf7329dc93193544a10036b474e35d7, type: 3}
+  stackSize: 1
+  count: 0
+  slot: {fileID: 0}
+  value: 0
+  canSell: 0
+  swing: {fileID: 4497620478706371625, guid: 31627828a85f6f740a7b561feeca9d93, type: 3}
+  energyCost: 6
+  swingTime: 1
+  hitMethod: HoeHit
+  farmingSkill: 1
+  fishingSkill: 0
+  forestrySkill: 0
+  miningSkill: 0
+  strength: 0

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4947f5b5ca34837418affd5b6715e93a, type: 3}
+  m_Name: Chub
+  m_EditorClassIdentifier: 
+  favor: 2
+  category: 2
+  name: Chub
+  icon: {fileID: 21300000, guid: d5a7208013f81d94fa809c8fbb0ecbf0, type: 3}
+  stackSize: 99
+  count: 0
+  slot: {fileID: 0}
+  value: 50
+  canSell: 1
+  speed: 4
+  probability: 60
+  time: 0
+  type: 1
+  difficulty: 4
+  xp: 10
+  numCaught: 0
+  waterTypes: 01000000

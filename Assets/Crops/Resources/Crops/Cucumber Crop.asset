@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c2a733900bf1547bbac3d377325841, type: 3}
+  m_Name: Cucumber Crop
+  m_EditorClassIdentifier: 
+  cropName: Cucumber
+  seeds: {fileID: 21300000, guid: 3c8cc5383ea82104ca7ed28a9e25a8c3, type: 3}
+  growth:
+  - sprite: {fileID: 21300000, guid: a1a02932e7ba3024ba250597f645eedb, type: 3}
+    day: 1
+  - sprite: {fileID: 21300000, guid: 7ddd323e1f95832448f05e51c74cde3b, type: 3}
+    day: 3
+  - sprite: {fileID: 21300000, guid: aa87a47233ccf8d498540e4dfd4df92d, type: 3}
+    day: 5
+  - sprite: {fileID: 21300000, guid: 21d2f44209a8a2a4eacc9ea904fa5ad8, type: 3}
+    day: 10
+  item: {fileID: 11400000, guid: e75c832d2232b0a4cb656f390f2124bc, type: 2}
+  numDrops: 1
+  repeatGrowthDays: 5
+  xp: 10

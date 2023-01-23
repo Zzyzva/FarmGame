@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3d31b2f803fcf4e94ae633ad51dd6e, type: 3}
+  m_Name: Old Watering Can
+  m_EditorClassIdentifier: 
+  favor: 2
+  category: 0
+  name: Old Watering Can
+  icon: {fileID: 21300000, guid: f847825cf563ea844a903a9559a2df9b, type: 3}
+  stackSize: 1
+  count: 0
+  slot: {fileID: 0}
+  value: 0
+  canSell: 0
+  swing: {fileID: 4497620478706371625, guid: 31627828a85f6f740a7b561feeca9d93, type: 3}
+  energyCost: 2
+  swingTime: 1
+  hitMethod: WaterHit
+  farmingSkill: 1
+  fishingSkill: 0
+  forestrySkill: 0
+  miningSkill: 0
+  strength: 10
+  noWater: {fileID: 7416530182856241459, guid: b2bd7b0da72828c4ca5a099017b7f6e7, type: 3}

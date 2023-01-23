@@ -1,0 +1,35 @@
+Din1|Town|700|1200|Din|2
+Set|Camera||12|33|
+Spawn|Din||10|33.5|
+Wait|1.5||||
+Move|Din|1|10|34.5|2
+Wait|1.5||||
+Move|Din|1|11|34.5|2
+Wait|1.5||||
+Move|Din|1|11|33.5|2
+Wait|1.5||||
+Dialogue|Din|Ah!|||
+Dialogue|Din|To think it'd be growing right here!|||
+Spawn|Player||24|30|
+Move|Player|1|11|30|2
+Dialogue|Din|Drest smiles on me today! Yes yes!|||
+Emote|Din|1|DotDotDot||
+Dialogue|Din|Oh my! PLAYER, you startled me! I didn't see you there!|||
+Dialogue|Din|Haha! Look at this, see! This is Drenvine. I can use this, when prepared in the right way of course, to help push back sickness!|||
+Dialogue|Din|You see... Sophia told me she had a sore throat, so I knew that she might be getting sick, so I knew I just had to find her some Drenvine to help her feel better!|||
+Dialogue|Din|So I got looking and looking all over the forest for some, but I just couldn't find any, no no.|||
+Dialogue|Din|But on my way back here, right at home I thought I saw some out off the corner of my eye, yes yes!|||
+Dialogue|Din|So when I got to looking right around my very own house, you won't believe what I found! That's right! Right here, our very own Drenvine!|||
+Emote|Player|1|DotDotDot||
+Emote|Din|1|DotDotDot||
+Choice|Din|Have I confused you? Do you need me to explain it again?|No.|Certainly not|
+Dialogue|Din|Yes yes! I'm glad you understand!|||
+Dialogue|Din|Drest works in mysterious ways... He really is quite the trickster...|||
+Emote|Player|1|DotDotDot||
+Dialogue|Din|Ah... I suppose you wouldn't know who Drest is. Few do nowadays...|||
+Dialogue|Din|That's the church's influence for you. Trying to erase the old gods. I won't forget them. No no...|||
+Dialogue|Din|Nevermind me... I've probably taken up too much of your time already...|||
+Dialogue|Din|Well, enjoy your day now! Come on over if you need any medicines!|||
+Move|Player|1|24|30|2
+Emote|Din|1|DotDotDot||
+Dialogue|Din|Curse the church and their selfish gods... I won't forget...|||

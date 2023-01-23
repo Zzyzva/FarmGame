@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fc45170b3374b4e8581ee9b7974164, type: 3}
+  m_Name: Bow
+  m_EditorClassIdentifier: 
+  favor: 2
+  category: 0
+  name: Bow
+  icon: {fileID: 21300000, guid: 7d74ae3f6e689f54aad7075b280a8997, type: 3}
+  stackSize: 1
+  count: 1
+  slot: {fileID: 0}
+  value: 0
+  canSell: 0
+  bowCharge: {fileID: 3917285922387660260, guid: a5106dc226467ef4d980fb929aff18eb,
+    type: 3}
+  arrow: {fileID: 6151555324182989574, guid: d84e8e604bdfe7945af8cd857e21db06, type: 3}
+  speed: 35
