@@ -252,12 +252,11 @@ public class Time_Manager : MonoBehaviour
         //Hide UI
         HUD.alpha = 0f;
         Player_Manager.player.gameObject.SetActive(false);
-
-
     }
 
     //Updates the time and NPC locations for a new day
     public void WakeUp(){
+        Menu_Manager.instance.CloseNewDay();
         //Change time
         if(!(hours < 3 && meridiem == "am")){
             ChangeDay();

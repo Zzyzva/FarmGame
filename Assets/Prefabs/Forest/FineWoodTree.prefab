@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3096195397423177092}
   - component: {fileID: 1650835357892113975}
   m_Layer: 0
-  m_Name: Tree
+  m_Name: FineWoodTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -257671369
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 49ba72ae0222c82408ae4c866d41012a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0db5de8baf88b394e8ba5a897c715afd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17}
+  m_Offset: {x: -0.032736897, y: 0.16999999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 4}
+    oldSize: {x: 2, y: 3}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94872713, y: 0.343597}
+  m_Size: {x: 0.7523056, y: 0.343597}
   m_EdgeRadius: 0
 --- !u!114 &3096195397423177094
 MonoBehaviour:
@@ -127,11 +127,11 @@ MonoBehaviour:
   interactDistance: 5
   forestPosX: 0
   forestPosY: 0
-  totalChops: 10
+  totalChops: 15
   chops: 0
-  wood: {fileID: 11400000, guid: 861924e01e549b240972cb5ccb8fd672, type: 2}
-  minDrop: 10
-  maxDrop: 15
+  wood: {fileID: 11400000, guid: fbfb2522ad26f5043aacfe6bb25d9255, type: 2}
+  minDrop: 4
+  maxDrop: 7
 --- !u!50 &3096195397423177092
 Rigidbody2D:
   serializedVersion: 4
@@ -166,16 +166,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5012783}
+  m_Offset: {x: -0.031395167, y: 0.5012783}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 4}
+    oldSize: {x: 2, y: 3}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35025308, y: 0.31896675}
+  m_Size: {x: 0.3079902, y: 0.31896675}
   m_EdgeRadius: 0

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Forest_Manager : MonoBehaviour
 {
     public static Forest_Manager instance;
 
     public bool hasGenerated = false;
     public string[,] map;
+
+    public ForestType forestType;
+
 
     private void Awake() {
         if(instance == null){

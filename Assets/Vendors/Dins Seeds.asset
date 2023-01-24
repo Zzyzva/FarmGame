@@ -17,24 +17,30 @@ MonoBehaviour:
     price: 20
     reqItems: []
     special: 0
+    reqRank: 0
   - item: {fileID: 11400000, guid: 94b5ec34747b0fa47af9ed464b225d40, type: 2}
     price: 40
     reqItems: []
     special: 0
+    reqRank: 0
   - item: {fileID: 11400000, guid: 1fb3666388d1d5e44865cd0dcc6aca34, type: 2}
     price: 150
     reqItems: []
     special: 0
+    reqRank: 0
   - item: {fileID: 11400000, guid: b73c580a9f51f6b4cb6120a12fbec561, type: 2}
     price: 100
     reqItems: []
     special: 0
+    reqRank: 1
   - item: {fileID: 11400000, guid: 30f52baac311cb841ae7178e081d138a, type: 2}
     price: 60
     reqItems: []
     special: 0
+    reqRank: 1
   - item: {fileID: 11400000, guid: d8e9d840f4273034b907407631c8c71a, type: 2}
     price: 300
     reqItems: []
     special: 0
-  standName: Din's Sedds
+    reqRank: 2
+  standName: Din's Seeds

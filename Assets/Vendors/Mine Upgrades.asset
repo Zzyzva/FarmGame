@@ -19,10 +19,12 @@ MonoBehaviour:
     - item: {fileID: 11400000, guid: 861924e01e549b240972cb5ccb8fd672, type: 2}
       count: 100
     special: 1
+    reqRank: 19
   - item: {fileID: 0}
     price: 2000
     reqItems:
     - item: {fileID: 11400000, guid: dbf4ec0d3adcce44ab40cc04629a2ec0, type: 2}
       count: 10
     special: 2
+    reqRank: 19
   standName: Mine Upgrades

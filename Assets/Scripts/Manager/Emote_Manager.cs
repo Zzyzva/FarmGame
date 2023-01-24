@@ -23,4 +23,12 @@ public class Emote_Manager : MonoBehaviour
         GameObject emote = Instantiate(emotes.Find((x) => x.name == name), position, Quaternion.identity);
         emote.GetComponent<EmoteScript>().waiting = waiting == 1 ? true : false;
     }
+
+    //Not for cutscene use
+    public void SpawnEmoteOnPlayer(string name){
+        Vector3 pos = Player_Manager.player.transform.position;
+        pos.y += 1;
+        GameObject emote = Instantiate(emotes.Find((x) => x.name == name), pos, Quaternion.identity);
+        emote.GetComponent<EmoteScript>().followPlayer = true;
+    }
 }

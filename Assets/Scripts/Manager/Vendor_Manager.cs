@@ -39,7 +39,7 @@ public class Vendor_Manager : MonoBehaviour
         }
     }
 
-    public void BuyItem(VendorInventory.VendorItem item){
+    public void BuyItem(VendorItem item){
         if(Inventory_Manager.instance.gold >= item.price){
             if(item.reqItems.Count != 0){
                 //Check for all items
@@ -81,13 +81,41 @@ public class Vendor_Manager : MonoBehaviour
         return null;
     }
 
-    public bool CanBuySpecial(int special){
-        if(special == 1){
+    public bool CanBuyItem(VendorItem item){
+        if(
+        (item.reqRank == ReqRank.noviceFarming && !Skills_Manager.instance.farmingNovice) ||
+        (item.reqRank == ReqRank.intermediateFarming && !Skills_Manager.instance.farmingIntermediate) ||
+        (item.reqRank == ReqRank.advancedFarming && !Skills_Manager.instance.farmingAdvanced) ||
+        (item.reqRank == ReqRank.expertFarming && !Skills_Manager.instance.farmingExpert) ||
+        (item.reqRank == ReqRank.masterFarming && !Skills_Manager.instance.farmingMaster) ||
+        (item.reqRank == ReqRank.legendaryFarming && !Skills_Manager.instance.farmingLegendary) ||
+        (item.reqRank == ReqRank.noviceFishing && !Skills_Manager.instance.fishingNovice) ||
+        (item.reqRank == ReqRank.intermediateFishing && !Skills_Manager.instance.fishingIntermediate) ||
+        (item.reqRank == ReqRank.advancedFishing && !Skills_Manager.instance.fishingAdvanced) ||
+        (item.reqRank == ReqRank.expertFishing && !Skills_Manager.instance.fishingExpert) ||
+        (item.reqRank == ReqRank.masterFishing && !Skills_Manager.instance.fishingMaster) ||
+        (item.reqRank == ReqRank.legendaryFishing && !Skills_Manager.instance.fishingLegendary) ||
+        (item.reqRank == ReqRank.noviceForestry && !Skills_Manager.instance.forestryNovice) ||
+        (item.reqRank == ReqRank.intermediateForestry && !Skills_Manager.instance.forestryIntermediate) ||
+        (item.reqRank == ReqRank.advancedForestry && !Skills_Manager.instance.forestryAdvanced) ||
+        (item.reqRank == ReqRank.expertForestry && !Skills_Manager.instance.forestryExpert) ||
+        (item.reqRank == ReqRank.masterForestry && !Skills_Manager.instance.forestryMaster) ||
+        (item.reqRank == ReqRank.legendaryForestry && !Skills_Manager.instance.forestryLegendary) ||
+        (item.reqRank == ReqRank.noviceMining && !Skills_Manager.instance.miningNovice) ||
+        (item.reqRank == ReqRank.intermediateMining && !Skills_Manager.instance.miningIntermediate) ||
+        (item.reqRank == ReqRank.advancedMining && !Skills_Manager.instance.miningAdvanced) ||
+        (item.reqRank == ReqRank.expertMining && !Skills_Manager.instance.miningExpert) ||
+        (item.reqRank == ReqRank.masterMining && !Skills_Manager.instance.miningMaster) ||
+        (item.reqRank == ReqRank.legendaryMining && !Skills_Manager.instance.miningLegendary)
+        ){
+            return false;
+        }
+        if(item.special == 1){
             if(Mines_Manager.instance.lightFloors == 0){
                 return true;
             }
             return false;
-        } else if(special == 2){
+        } else if(item.special == 2){
             if(Mines_Manager.instance.startingFloors == 0){
                 return true;
             }

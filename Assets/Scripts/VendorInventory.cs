@@ -10,19 +10,26 @@ public struct ReqItem{
     public int count;
 }
 
-[CreateAssetMenu(menuName = "Vendor")]
-public class VendorInventory : ScriptableObject
-{
-    
+public enum ReqRank {
+    none,
+    noviceFarming, intermediateFarming, advancedFarming, expertFarming, masterFarming, legendaryFarming,
+    noviceFishing, intermediateFishing, advancedFishing, expertFishing, masterFishing, legendaryFishing,
+    noviceForestry, intermediateForestry, advancedForestry, expertForestry, masterForestry, legendaryForestry,
+    noviceMining, intermediateMining, advancedMining, expertMining, masterMining, legendaryMining,
+};
 
-
-    [Serializable]
+[Serializable]
     public struct VendorItem {
         public Item item;
         public int price;
         public List<ReqItem> reqItems; //No more than four to fit in UI
         public int special;
+        public ReqRank reqRank;
     }
+
+[CreateAssetMenu(menuName = "Vendor")]
+public class VendorInventory : ScriptableObject
+{
     public VendorItem[] inventory;
     public String standName;
 }

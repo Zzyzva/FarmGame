@@ -5,7 +5,14 @@ using UnityEngine;
 public class NextDayButton : MonoBehaviour
 {
     public void ButtonPress(){
-        Time_Manager.instance.WakeUp();
+        if(Skills_Manager.instance.rankUps.Count != 0){
+            SkillRankUp rankUp = Skills_Manager.instance.rankUps[0];
+            Skills_Manager.instance.rankUps.RemoveAt(0);
+            Menu_Manager.instance.DisplayRankUp(rankUp);
+        } else{
+            Time_Manager.instance.WakeUp();
+        }
+        
     }
 
 }

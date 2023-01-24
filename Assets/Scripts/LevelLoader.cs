@@ -30,6 +30,15 @@ public class LevelLoader : MonoBehaviour
             Time_Manager.instance.sun.enabled = true; 
         }
 
+        if(sceneName == "New Day"){
+            if(Skills_Manager.instance.CheckSkillRanks()){
+                SkillRankUp rankUp = Skills_Manager.instance.rankUps[0];
+                Skills_Manager.instance.rankUps.RemoveAt(0);
+                Menu_Manager.instance.DisplayRankUp(rankUp);
+            }
+            Menu_Manager.instance.OpenNewDay();
+        }
+
         
         
         if(instance){

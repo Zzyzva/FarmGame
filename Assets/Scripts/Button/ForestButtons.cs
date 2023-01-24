@@ -7,6 +7,12 @@ public class ForestButtons : MonoBehaviour
 
 
     public void OnForestOutskirtsClick(){
+        Forest_Manager.instance.forestType = ForestType.outskirts;
+        AnyButtonClick();
+    }
+
+    public void OnInnerForestClick(){
+        Forest_Manager.instance.forestType = ForestType.inner;
         AnyButtonClick();
     }
 

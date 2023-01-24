@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f51181d4ecdc2f419dc082fca2eefef, type: 3}
-  m_Name: Wood
+  m_Name: Fine Wood
   m_EditorClassIdentifier: 
   favor: 1
   category: 3
-  name: Wood
-  icon: {fileID: 21300000, guid: eb6d4b1dcb1cf104480e55b77110f4eb, type: 3}
+  name: Fine Wood
+  icon: {fileID: 21300000, guid: f159403420431df4abf34271579eea89, type: 3}
   stackSize: 99
   count: 0
   slot: {fileID: 0}
-  value: 2
+  value: 4
   canSell: 1

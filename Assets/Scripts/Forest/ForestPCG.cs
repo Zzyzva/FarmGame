@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum ForestType {outskirts, inner};
+
+
 public class ForestPCG : MonoBehaviour
 {
 
     string[,] map;
 
     public GameObject tree;
+    public GameObject fineTree;
     public GameObject berryBush;
     public GameObject rabbit;
     public GameObject lake;
@@ -17,21 +22,21 @@ public class ForestPCG : MonoBehaviour
 
 
 
-    int minTrees = 10;
-    int maxTrees = 10;
+    int minTrees;
+    int maxTrees;
 
-    int minBush = 4;
-    int maxBush = 8;
+    int minFineTrees;
+    int maxFineTrees;
 
-    int minRabbits = 2;
-    int maxRabbits = 6;
+    int minBush;
+    int maxBush;
 
-    int rabbitWarrenChance = 10;
+    int minRabbits;
+    int maxRabbits;
 
-    int minWarrenRabbits = 8;
-    int maxWarrenRabbits = 12;
+    int mapSize;
 
-    int mapSize = 50;
+    bool hasLake;
 
 
 
@@ -46,6 +51,30 @@ public class ForestPCG : MonoBehaviour
         
     }
     string[,] GenerateMap(){
+
+        if(Forest_Manager.instance.forestType == ForestType.outskirts){
+            minTrees = 10;
+            maxTrees = 15;
+            minBush = 4;
+            maxBush = 8;
+            minRabbits = 0;
+            maxRabbits = 2;
+            mapSize = 40;
+            hasLake = false;
+            minFineTrees = 0;
+            maxFineTrees = 0;
+        } else if(Forest_Manager.instance.forestType == ForestType.inner){
+            minTrees = 15;
+            maxTrees = 20;
+            minBush = 4;
+            maxBush = 8;
+            minRabbits = 3;
+            maxRabbits = 6;
+            mapSize = 60;
+            hasLake = true;
+            minFineTrees = 2;
+            maxFineTrees = 4;
+        }
         map = new string[mapSize, mapSize];
 
 
@@ -70,21 +99,23 @@ public class ForestPCG : MonoBehaviour
 
 
         //Generate lake
-        while(emergency < 1000){
-            emergency++;
-            x = Random.Range(10, mapSize - 10);
-            y = Random.Range(10, mapSize - 10);
-            if(map[x,y] == null){
-                map[x,y] = "water";
-                SetAdjacentToString(x, y, "water");
-                SetAdjacentToString(x + 1, y + 1, "water");
-                SetAdjacentToString(x + 1, y - 1, "water");
-                SetAdjacentToString(x - 1, y + 1, "water");
-                SetAdjacentToString(x - 1, y - 1, "water");
-                break;
+        if(hasLake){
+            while(emergency < 1000){
+                emergency++;
+                x = Random.Range(10, mapSize - 10);
+                y = Random.Range(10, mapSize - 10);
+                if(map[x,y] == null){
+                    map[x,y] = "water";
+                    SetAdjacentToString(x, y, "water");
+                    SetAdjacentToString(x + 1, y + 1, "water");
+                    SetAdjacentToString(x + 1, y - 1, "water");
+                    SetAdjacentToString(x - 1, y + 1, "water");
+                    SetAdjacentToString(x - 1, y - 1, "water");
+                    break;
+                }
             }
         }
-
+        
 
         //Generate Berries
         int numBushes = Random.Range(minBush, maxBush + 1);
@@ -97,7 +128,6 @@ public class ForestPCG : MonoBehaviour
         for(int i = 0; i < numBushes; i++){
             while(emergency < 1000){
                 emergency++;
-                
                 //Move the 'brush' over small amount to make patch of berries
                 direction += Random.Range(1,4);
                 direction %= 4;
@@ -125,6 +155,22 @@ public class ForestPCG : MonoBehaviour
         }
 
 
+        //Generate fine trees
+        int numFineTrees = Random.Range(minFineTrees, maxFineTrees + 1);
+        for(int i = 0; i < numFineTrees; i++){
+            while(emergency < 1000){
+                emergency++;
+                x = Random.Range(4, mapSize - 4);
+                y = Random.Range(4, mapSize - 4);
+                if(CheckAdjacentNull(x,y)){
+                    map[x,y] = "fineTree";
+                    SetAdjacentToString(x, y, "N");
+                    break;
+                }
+            }     
+        }
+
+
         //Generate trees
         int numTrees = Random.Range(minTrees, maxTrees + 1);
         for(int i = 0; i < numTrees; i++){
@@ -143,13 +189,9 @@ public class ForestPCG : MonoBehaviour
         
 
         //Generate Rabbits
-        int warrenRand = Random.Range(0, 100);
         int numRabbits;
-        if(warrenRand < rabbitWarrenChance){
-            numRabbits = Random.Range(minWarrenRabbits, maxWarrenRabbits + 1);
-        } else {
-            numRabbits = Random.Range(minRabbits, maxRabbits + 1);
-        }
+        numRabbits = Random.Range(minRabbits, maxRabbits + 1);
+
         for(int i = 0; i < numRabbits; i++){
             while(emergency < 1000){
                 emergency++;
@@ -165,17 +207,21 @@ public class ForestPCG : MonoBehaviour
         return map;
     }
 
+    
+
     public void BuildMap(){
-        Player_Manager.player.transform.position = new Vector3(mapSize - 2, mapSize / 2, 0);
-        pathOutInstance.transform.position = new Vector3(mapSize + .5f, mapSize / 2, 0);
+        Player_Manager.player.transform.position = new Vector3(map.GetLength(0) - 2, map.GetLength(0) / 2, 0);
+        pathOutInstance.transform.position = new Vector3(map.GetLength(0) + .5f, map.GetLength(0) / 2, 0);
         //Load Objects
-        for(int x = 0; x < mapSize; x++){
-            for(int y = 0; y < mapSize; y++){
+        for(int x = 0; x < map.GetLength(0); x++){
+            for(int y = 0; y < map.GetLength(1); y++){
                 int z = 0;
                 string pos = map[x,y];
                 GameObject temp = null;
                 if(pos == "tree"){
                     temp = Instantiate(tree);
+                }else if(pos == "fineTree"){
+                    temp = Instantiate(fineTree);
                 } else if(pos == "bush"){
                     temp = Instantiate(berryBush);
                 } else if(pos == "picked bush"){
@@ -183,7 +229,7 @@ public class ForestPCG : MonoBehaviour
                     temp.GetComponent<BerryBush>().SetPicked();
                 } else if(pos == "rabbit"){
                     temp = Instantiate(rabbit);
-                    temp.GetComponent<Rabbit>().SetBounds(mapSize - 2, mapSize - 2);
+                    temp.GetComponent<Rabbit>().SetBounds(map.GetLength(0)- 2, map.GetLength(0) - 2);
                 } else if( pos == "dead rabbit"){
                     temp = Instantiate(rabbit);
                     temp.GetComponent<Rabbit>().dead = true;
@@ -206,8 +252,8 @@ public class ForestPCG : MonoBehaviour
         }
 
         //Set Camera
-        Camera.main.GetComponent<CameraScript>().maxX = mapSize - 1;
-        Camera.main.GetComponent<CameraScript>().maxY = mapSize - 1;
+        Camera.main.GetComponent<CameraScript>().maxX = map.GetLength(0) - 1;
+        Camera.main.GetComponent<CameraScript>().maxY = map.GetLength(0) - 1;
     }
 
 

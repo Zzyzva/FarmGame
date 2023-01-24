@@ -38,7 +38,9 @@ public class Menu_Manager : MonoBehaviour
 
     public CanvasGroup storageMenu;
 
+    //Forest
     public CanvasGroup forestMenu;
+    public GameObject innerForestButton;
 
     public CanvasGroup minesMenu;
     public Transform minesButtons;
@@ -54,6 +56,12 @@ public class Menu_Manager : MonoBehaviour
     public CanvasGroup loadMenu;
     public GameObject loadMenuContent;
     public GameObject loadUIPrefab;
+
+    //New Day
+    public CanvasGroup newDay;
+    public CanvasGroup rankUpDisplay;
+    public TextMeshProUGUI rankUpTitle;
+    public TextMeshProUGUI rankUpText;
 
 
 
@@ -281,6 +289,10 @@ public class Menu_Manager : MonoBehaviour
         forestMenu.alpha = 1;
         forestMenu.interactable = true;
         forestMenu.blocksRaycasts = true;
+        innerForestButton.SetActive(false);
+        if(Skills_Manager.instance.forestryNovice){
+            innerForestButton.SetActive(true);
+        }
     }
 
     public void CloseForestMenu(){
@@ -355,8 +367,8 @@ public class Menu_Manager : MonoBehaviour
         vendorTitle.text = "Stall Closed";
         if(inv){
             vendorTitle.text = inv.standName;
-            foreach(VendorInventory.VendorItem item in inv.inventory){
-                if(!Vendor_Manager.instance.CanBuySpecial(item.special)){
+            foreach(VendorItem item in inv.inventory){
+                if(!Vendor_Manager.instance.CanBuyItem(item)){
                     continue;
                 }
                 GameObject UI = Instantiate(vendorUIPrefab);
@@ -395,5 +407,32 @@ public class Menu_Manager : MonoBehaviour
         vendorMenu.alpha = 0;
         vendorMenu.interactable = false;
         vendorMenu.blocksRaycasts = false;
+    }
+
+    public void OpenNewDay(){
+        newDay.alpha = 1;
+        newDay.blocksRaycasts = true;
+        newDay.interactable = true;
+    }
+
+    public void CloseNewDay(){
+        newDay.alpha = 0;
+        newDay.blocksRaycasts = false;
+        newDay.interactable = false;
+        CloseRankUp();
+    }
+
+    public void DisplayRankUp(SkillRankUp skill){
+        rankUpDisplay.alpha = 1;
+        rankUpDisplay.interactable = true;
+        rankUpDisplay.blocksRaycasts = true;
+        rankUpTitle.text = skill.title;
+        rankUpText.text = skill.rewards;
+    }
+
+    public void CloseRankUp(){
+        rankUpDisplay.alpha = 0;
+        rankUpDisplay.interactable = false;
+        rankUpDisplay.blocksRaycasts = false;
     }
 }

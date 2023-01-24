@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BuyItemButton : MonoBehaviour
 {
-    public VendorInventory.VendorItem item;
+    public VendorItem item;
 
 
     public void ButtonPress(){
