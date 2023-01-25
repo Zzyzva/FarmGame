@@ -44,8 +44,8 @@ public class Emily_Schedule : Schedule
 
 
         //Go to market
-        if(hour == 5 && minute == 0 && meridiem == "pm"){
-            queue.Enqueue(Location.vintiusFarmPath3);
+        if(hour == 5 && minute == 30 && meridiem == "pm"){
+            queue.Enqueue(Location.vintiusFarmPath1);
             queue.Enqueue(Location.vintiusPath2);
             queue.Enqueue(Location.northFarmTownEnter);
             queue.Enqueue(Location.northRoadEnter);

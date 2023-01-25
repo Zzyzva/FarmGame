@@ -118,6 +118,8 @@ public class Location{
     public static Location northFarmTownEnter = new Location(new Vector3(38, -1, 0), "North Farm");
     public static Location northFarmCorner = new Location(new Vector3(38, 35, 0), "North Farm");
     public static Location northFarmEastFarmEnter = new Location(new Vector3(76, 35, 0), "North Farm");
+    public static Location northFarmFishingSpotPath = new Location(new Vector3(38, 2, 0), "North Farm");
+    public static Location northFarmFishingSpot = new Location(new Vector3(70.5f, 2, 0), "North Farm");
 
 
     //Mountain
@@ -369,6 +371,8 @@ public class Location{
     public static Location innTable3Chair2 = new Location(new Vector3(6.25f,4,0), "Inn");
     public static Location innTable4Chair1Path = new Location(new Vector3(9.25f,2,0), "Inn");
     public static Location innTable4Chair1 = new Location(new Vector3(9.25f,4,0), "Inn");
+    public static Location innTable4Chair2Path = new Location(new Vector3(11.75f,2,0), "Inn");
+    public static Location innTable4Chair2 = new Location(new Vector3(11.75f,4,0), "Inn");
     public static Location innDoorPath = new Location(new Vector3(5,2,0), "Inn");
     public static Location innDoorInside = new Location(new Vector3(5,0,0), "Inn");
     public static Location innDoorOutside = new Location(new Vector3(75,33,0), "Town");
@@ -379,14 +383,17 @@ public class Location{
     public static Location woodsmanDoorPath = new Location(new Vector3(5,3.5f,0), "Woodsman Hut");
     public static Location woodsmanHallLow = new Location(new Vector3(8,3.5f,0), "Woodsman Hut");
     public static Location woodsmanHallHigh = new Location(new Vector3(8,6.5f,0), "Woodsman Hut");
-    public static Location woodsmanWilliamBedPath1 = new Location(new Vector3(14,8.5f,0), "Woodsman Hut");
-    public static Location woodsmanWilliamBedPath2 = new Location(new Vector3(14,6.5f,0), "Woodsman Hut");
+    public static Location woodsmanWilliamBedPath1 = new Location(new Vector3(12,8.5f,0), "Woodsman Hut");
+    public static Location woodsmanWilliamBedPath2 = new Location(new Vector3(12,6.5f,0), "Woodsman Hut");
     public static Location woodsmanWilliamBed = new Location(new Vector3(16.5f,8.5f,0), "Woodsman Hut");
+    public static Location woodsmanOliviaBed = new Location(new Vector3(14.5f,8.5f,0), "Woodsman Hut");
     public static Location woodsmanLanaBed = new Location(new Vector3(16.5f,3.5f,0), "Woodsman Hut");
     public static Location woodsmanChair1 = new Location(new Vector3(3.25f,6,0), "Woodsman Hut");
     public static Location woodsmanChair2 = new Location(new Vector3(6.75f,6,0), "Woodsman Hut");
+    public static Location woodsmanChair3 = new Location(new Vector3(3.25f,5,0), "Woodsman Hut");
     public static Location woodsmanChair1Path = new Location(new Vector3(3.25f,6.5f,0), "Woodsman Hut");
     public static Location woodsmanChair2Path = new Location(new Vector3(6.75f,6.5f,0), "Woodsman Hut");
+    public static Location woodsmanChair3Path = new Location(new Vector3(3.25f,3.5f,0), "Woodsman Hut");
     public static Location woodsmanDoorInside = new Location(new Vector3(5,0,0), "Woodsman Hut");
     public static Location woodsmanDoorOutside = new Location(new Vector3(30, 17, 0), "Town");
     public static Location woodsmanPath1 = new Location(new Vector3(30, 13, 0), "Town");

@@ -50,7 +50,8 @@ public class FishingPole : Item
         } else {
             Player_Manager.CanMove(true);
             float energy = energyCost - .06f * Skills_Manager.instance.fishingLevel;
-            Fishing_Manager.instance.AttemptCatch(energy, waterType);
+            Inventory_Manager.instance.energy -= energy;
+            Fishing_Manager.instance.AttemptCatch(waterType);
             cast = false;
             Destroy(bobberObject);
         }

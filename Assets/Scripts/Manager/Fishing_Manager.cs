@@ -21,12 +21,13 @@ public class Fishing_Manager : MonoBehaviour
     public GameObject minigame;
     GameObject minigameObject;
 
+    public Item seaweed;
+
     public float minigameGoal = 150;
-    public float minigameDownTick = 2.5f;
+    public float minigameDownTick;
+    public float minigameDownTickHover;
     float minigameScore = 20;
     Transform fishingBar;
-
-    float energyCost = 0;
 
 
 
@@ -69,16 +70,29 @@ public class Fishing_Manager : MonoBehaviour
         }
     }
 
-    //Called when the player hooks a fish
-    public void AttemptCatch(float energyCost, Water.Type waterType){
+    //Called when the player first hooks a fish
+    public void AttemptCatch(Water.Type waterType){
+        fishTime = 0;
+        fishing = false;
+        
+        if(hookSymbolObject){
+            Destroy(hookSymbolObject);
+        }
         if(canCatch){
+            canCatch = false;
+            //Chance for trash
+            int trashChance = Random.Range(0, 5);
+            if(trashChance == 0){
+                Inventory_Manager.instance.AddItem(seaweed, 1);
+                return;
+            }
             Time_Manager.instance.canPause = false;
-            this.energyCost = energyCost;
             minigameActive = true;
             minigameObject = Instantiate(minigame);
             minigameObject.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, 10));
             fishingBar = minigameObject.transform.GetChild(0).GetChild(1);
 
+            
 
             //Pick fish
             int total = 0;
@@ -116,19 +130,13 @@ public class Fishing_Manager : MonoBehaviour
         } else{
             Player_Manager.player.GetComponent<Player_Movement>().canMove = true;
         }
-        fishTime = 0;
-        fishing = false;
-        canCatch = false;
-        if(hookSymbolObject){
-            Destroy(hookSymbolObject);
-        }
+        
         
     }
 
     //Called when the player successfully catches a fish
     public void EndMinigame(bool success){
         Time_Manager.instance.canPause = true;
-        Inventory_Manager.instance.energy -= energyCost;
         minigameActive = false;
         minigameScore = 20;
         if(success){
@@ -157,7 +165,11 @@ public class Fishing_Manager : MonoBehaviour
 
     void Update(){
         if(minigameActive){
-            minigameScore -= minigameDownTick * Time.deltaTime;
+            if(minigameObject.GetComponentInChildren<MinigameFish>().hover){
+                minigameScore -= minigameDownTickHover * Time.deltaTime;
+            } else{
+                minigameScore -= minigameDownTick * Time.deltaTime;
+            }
             if(minigameScore < 0){
                 EndMinigame(false);
             }
