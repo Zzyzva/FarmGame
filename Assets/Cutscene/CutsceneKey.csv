@@ -1,5 +1,5 @@
 Name|Location|Start time|End Time|Character 1|Character 1 Hearts
-Spawn|Prop|x|y||
+Spawn|Prop||x|y|
 Dialogue|Speaking Prop|Script|||
 Move|Prop|wait|x|y|
 Set|Prop||x|y|

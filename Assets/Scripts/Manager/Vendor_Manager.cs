@@ -14,6 +14,7 @@ public class Vendor_Manager : MonoBehaviour
     public VendorInventory dinsSeeds;
     public VendorInventory toddsTools;
     public VendorInventory mineUpgrades;
+    public VendorInventory oliviaFishing;
 
     public VendorInventory openInventory;
     
@@ -29,10 +30,14 @@ public class Vendor_Manager : MonoBehaviour
         }
     }
 
-    public void UpdateVendors(int hours, int minutes, string meridiem){
-        if(hours == 7 && minutes == 30 && meridiem == "am"){
+    public void UpdateVendors(int hours, int minutes, string meridiem, string day){
+        if(hours == 8 && minutes == 30 && meridiem == "am" && (day == "Mon" || day == "Tue" || day == "Wed" || day == "Thu" || day == "Fri")){
             leftStallInventory = dinsSeeds;
             rightStallInventory = toddsTools;
+
+        } else if(hours == 8 && minutes == 30 && meridiem == "am" && (day == "Sat" || day == "Sun")){
+            leftStallInventory = dinsSeeds;
+            rightStallInventory = oliviaFishing;
         } else if( hours == 5 && minutes == 0 && meridiem == "pm"){
             leftStallInventory = null;
             rightStallInventory = null;

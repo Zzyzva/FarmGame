@@ -11,7 +11,7 @@ public class Sophia_Schedule : Schedule
         
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Altar
         if(hour == 8 && minute == 0 && meridiem == "am"){

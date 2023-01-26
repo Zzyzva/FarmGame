@@ -45,6 +45,7 @@ public class Cutscene_Manager : MonoBehaviour
 
     public void Start(){
         LoadProps();
+        LoadCutsceneTriggers();
     }
 
     public void StartGame(){
@@ -92,21 +93,22 @@ public class Cutscene_Manager : MonoBehaviour
         //Exits iteration of loop if any trigger fails
         //If trigger does not exist, skip
         //Priority? currently just first read
+
         foreach(Cutscene cutscene in cutscenes){
             if(cutscene.hasBeenSeen){
                 continue;
             }
-            if(cutscene.locationTrigger != null && scene != cutscene.locationTrigger){
+            if(cutscene.locationTrigger != "" && scene != cutscene.locationTrigger){
                 continue;
             }
             int currentTime = Time_Manager.instance.GetTime();
-            if(cutscene.timeTriggerStart != null && currentTime < int.Parse(cutscene.timeTriggerStart)){
+            if(cutscene.timeTriggerStart != "" && currentTime < int.Parse(cutscene.timeTriggerStart)){
                 continue;
             }
-            if(cutscene.timeTriggerEnd != null && currentTime > int.Parse(cutscene.timeTriggerEnd)){
+            if(cutscene.timeTriggerEnd != "" && currentTime > int.Parse(cutscene.timeTriggerEnd)){
                 continue;
             }
-            if(cutscene.characterTrigger != null){
+            if(cutscene.characterTrigger != ""){
                 Script npc = NPC_Manager.instance.GetNPCByName(cutscene.characterTrigger);
                 if(npc.relationship < int.Parse(cutscene.characterHeartsTrigger)){
                     continue;
@@ -229,7 +231,7 @@ public class Cutscene_Manager : MonoBehaviour
                 return;
             } else if(commandType == "Emote"){
                 GameObject prop = propsInScene.Find((x) => x.name == objectType);
-                Vector3 position = new Vector3(prop.transform.position.x + .5f, prop.transform.position.y + 1.5f, 0);
+                Vector3 position = new Vector3(prop.transform.position.x, prop.transform.position.y + 1.5f, 0);
                 Emote_Manager.instance.SpawnEmote(commandData[3], position, int.Parse(commandData[2]));
                 if(float.Parse(commandData[2]) == 1){
                     return;

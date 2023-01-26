@@ -9,7 +9,7 @@ public class Trulian_Schedule : Schedule
         start = Location.churchTrulianBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Go to Church
         if(hour == 8 && minute == 0 && meridiem == "am"){
             

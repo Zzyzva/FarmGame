@@ -9,7 +9,7 @@ public class Charlie_Schedule : Schedule
         start = Location.innCharlieBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Check barrels
         if(hour == 8 && minute == 0 && meridiem == "am"){

@@ -1,16 +1,16 @@
-Trulian1|Farm|700|1200|Father Trulian|0
+Trulian1|North Farm|700|1200|Father Trulian|2
 Set|Camera||57|19|
 Spawn|Trulian||63|18.5|
 Dialogue|Trulian|Hmmmm|||
 Spawn|Player||45|22|
-Move|Player|1|56.5|22|2
+Move|Player|1|56.5|22|3
 Dialogue|Trulian|To have been able to see it in its prime...|||
 Emote|Trulian|1|DotDotDot||
 Dialogue|Trulian|How far we have fallen...|||
-Move|Player|1|56.5|18.5|2
+Move|Player|1|56.5|18.5|3
 Dialogue|Trulian|Ah, PLAYER! I didn't see you there.|||
 Dialogue|Trulian|Three blessings to you. Please, come over!|||
-Move|Player|1|61|18.5|2
+Move|Player|1|61|18.5|3
 Dialogue|Trulian|Look at these pillars. Made of stone! And carved so beautifully... No one today could make them...|||
 Dialogue|Trulian|Or perhaps I should say, people today don't have the drive, nor the time to make them. Not with things as they are.|||
 Dialogue|Trulian|What was it like, you think... 150 years ago, when the Empire was at its prime?|||

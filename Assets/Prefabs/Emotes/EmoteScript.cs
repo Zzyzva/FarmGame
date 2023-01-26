@@ -6,6 +6,7 @@ public class EmoteScript : MonoBehaviour
 {
     public bool waiting = false;
     public bool followPlayer = false;
+    public string emoteName;
     public void EndAnimation(){
         if(waiting && Cutscene_Manager.instance.cutsceneIsRunning){
             Cutscene_Manager.instance.RunCutscene();

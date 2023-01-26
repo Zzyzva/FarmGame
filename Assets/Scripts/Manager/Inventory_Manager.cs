@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Inventory_Manager : MonoBehaviour
 {
@@ -289,7 +290,6 @@ public class Inventory_Manager : MonoBehaviour
         }
         UpdateSlots();
         return true;
-
     }
 
 
@@ -324,6 +324,19 @@ public class Inventory_Manager : MonoBehaviour
             if(total >= count){
                 return true;
             }
+        }
+        return false;
+    }
+
+    public bool CheckForItemInHotbar(Item item, int count){
+        int total = 0;
+        foreach(HotbarSlot hotSlot in hotbarSlots){
+            if(hotSlot.slot.item != null && hotSlot.slot.item.name == item.name){
+                total += hotSlot.slot.item.count;
+            }
+        }
+        if(total >= count){
+            return true;
         }
         return false;
     }
@@ -629,7 +642,10 @@ public class Inventory_Manager : MonoBehaviour
     public void OnHoverEnter(Item item){
         if(item && !cursorHolding){
             hoverText.SetActive(true);
-            hoverText.GetComponentInChildren<Text>().text = item.name;
+            hoverText.GetComponentInChildren<TextMeshProUGUI>().text = item.name;
+            if(item.description != ""){
+                hoverText.GetComponentInChildren<TextMeshProUGUI>().text += "\n" + item.description;
+            }
         }
         
     }

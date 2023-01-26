@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waiting: 0
+  followPlayer: 0
+  emoteName: NoWater
 --- !u!95 &-2208976355890476641
 Animator:
   serializedVersion: 3

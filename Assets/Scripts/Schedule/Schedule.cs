@@ -91,5 +91,5 @@ public abstract class Schedule : MonoBehaviour
 
 
     public abstract void childStart();
-    public abstract void UpdateSchedule(int hour, int minute, string meridiem);
+    public abstract void UpdateSchedule(int hour, int minute, string meridiem, string day);
 }

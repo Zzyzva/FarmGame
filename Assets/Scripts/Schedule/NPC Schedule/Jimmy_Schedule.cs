@@ -9,7 +9,7 @@ public class Jimmy_Schedule : Schedule
         start = Location.eastFarmHutJimmyBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Go to school
         if(hour == 7 && minute == 30 && meridiem == "am"){
             queue.Enqueue(Location.eastFarmHutJimmyBedPath);

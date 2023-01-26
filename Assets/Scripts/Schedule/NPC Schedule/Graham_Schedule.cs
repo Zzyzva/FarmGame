@@ -9,7 +9,7 @@ public class Graham_Schedule : Schedule
         start = Location.blacksmithGrahamBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Go to forge
         if(hour == 7 && minute == 30 && meridiem == "am"){

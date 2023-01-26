@@ -21,6 +21,12 @@ public class Emote_Manager : MonoBehaviour
 
     public void SpawnEmote(string name, Vector3 position, int waiting){
         GameObject emote = Instantiate(emotes.Find((x) => x.name == name), position, Quaternion.identity);
+        //Slightly shift the DotDotDot emote
+        if(emote.GetComponentInChildren<EmoteScript>().emoteName == "DotDotDot"){
+            Vector3 pos = emote.transform.position;
+            pos.x += .5f;
+            emote.transform.position = pos;
+        }
         emote.GetComponent<EmoteScript>().waiting = waiting == 1 ? true : false;
     }
 

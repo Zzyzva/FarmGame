@@ -9,7 +9,7 @@ public class Kaley_Schedule : Schedule
         start = Location.eastFarmHutKaleyBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Go to school
         if(hour == 7 && minute == 30 && meridiem == "am"){

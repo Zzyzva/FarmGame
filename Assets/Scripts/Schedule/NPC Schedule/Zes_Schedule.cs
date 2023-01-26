@@ -9,7 +9,7 @@ public class Zes_Schedule : Schedule
         start = Location.mountainHutBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Go to chair
         if(hour == 5 && minute == 0 && meridiem == "pm"){
             queue.Enqueue(Location.mountainHutBedPath);

@@ -22,6 +22,7 @@ public class Fishing_Manager : MonoBehaviour
     GameObject minigameObject;
 
     public Item seaweed;
+    public Item bait;
 
     public float minigameGoal = 150;
     public float minigameDownTick;
@@ -54,8 +55,14 @@ public class Fishing_Manager : MonoBehaviour
     public void UpdateFishing()
     {
         if(fishing){
-            //Increment by random amount
-            int rand = Random.Range(0,5);
+            //Increment by random amount, more if player has bait
+            int rand;
+            if(Inventory_Manager.instance.CheckForItemInHotbar(bait, 1)){
+                rand = Random.Range(1,6);
+            } else{
+                rand = Random.Range(0,5);
+            }
+            
             fishTime += rand;
             //If we have reached goal
             if(fishTime >= fishGoal){
@@ -80,8 +87,15 @@ public class Fishing_Manager : MonoBehaviour
         }
         if(canCatch){
             canCatch = false;
-            //Chance for trash
-            int trashChance = Random.Range(0, 5);
+
+            int trashChance;
+            //If bait, remove it and reduce trash chance
+            if(Inventory_Manager.instance.CheckForItemInHotbar(bait, 1)){
+                Inventory_Manager.instance.RemoveItem("Bait", 1);
+                trashChance = Random.Range(0, 10);
+            } else{
+                trashChance = Random.Range(0, 5);
+            }
             if(trashChance == 0){
                 Inventory_Manager.instance.AddItem(seaweed, 1);
                 return;
@@ -130,8 +144,6 @@ public class Fishing_Manager : MonoBehaviour
         } else{
             Player_Manager.player.GetComponent<Player_Movement>().canMove = true;
         }
-        
-        
     }
 
     //Called when the player successfully catches a fish

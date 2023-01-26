@@ -9,7 +9,7 @@ public class William_Schedule : Schedule
         start = Location.woodsmanWilliamBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Head to Forest
         if(hour == 8 && minute == 0 && meridiem == "am"){

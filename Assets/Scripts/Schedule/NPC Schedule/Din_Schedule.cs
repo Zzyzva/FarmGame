@@ -11,7 +11,7 @@ public class Din_Schedule : Schedule
         
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         //Walk to stall
         if(hour == 7 && minute == 40 && meridiem == "am"){

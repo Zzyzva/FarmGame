@@ -9,7 +9,7 @@ public class Keba_Schedule : Schedule
         start = Location.chickenKebaBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
 
         if(hour == 7 && minute == 30 && meridiem == "am"){
             queue.Enqueue(Location.chickenHallLow);

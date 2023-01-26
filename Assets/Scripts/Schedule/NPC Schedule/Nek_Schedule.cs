@@ -9,7 +9,7 @@ public class Nek_Schedule : Schedule
         start = Location.nekHutBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Work the fields
         if(hour == 8 && minute == 0 && meridiem == "am"){
             queue.Enqueue(Location.nekHutBedPath);

@@ -10,7 +10,6 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = .5f;
     public static LevelLoader instance;
     public bool outside;
-    static bool firstLoad = true;
 
 
     private void Start() {
@@ -67,20 +66,18 @@ public class LevelLoader : MonoBehaviour
             Time_Manager.instance.HUD.alpha = 1f;
         }
 
-        if(firstLoad){
-            firstLoad = false;
-        } else{
-            //Cutscene
-            if(Cutscene_Manager.instance.cutsceneIsRunning){
-                Cutscene_Manager.instance.cutsceneContinue = true;
-            }else{
-                Cutscene_Manager.instance.CheckForCutscene(name, newPosition);
-            }
 
-            if(Cutscene_Manager.instance.cutsceneEnding){
-                Cutscene_Manager.instance.cutsceneCanBeCleared = true;
-            }
+        //Cutscene
+        if(Cutscene_Manager.instance.cutsceneIsRunning){
+            Cutscene_Manager.instance.cutsceneContinue = true;
+        }else{
+            Cutscene_Manager.instance.CheckForCutscene(name, newPosition);
         }
+
+        if(Cutscene_Manager.instance.cutsceneEnding){
+            Cutscene_Manager.instance.cutsceneCanBeCleared = true;
+        }
+
         
     }
 }

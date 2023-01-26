@@ -2,16 +2,16 @@ Din1|Town|700|1200|Din|2
 Set|Camera||12|33|
 Spawn|Din||10|33.5|
 Wait|1.5||||
-Move|Din|1|10|34.5|2
+Move|Din|1|10|34.5|3
 Wait|1.5||||
-Move|Din|1|11|34.5|2
+Move|Din|1|11|34.5|3
 Wait|1.5||||
-Move|Din|1|11|33.5|2
+Move|Din|1|11|33.5|3
 Wait|1.5||||
 Dialogue|Din|Ah!|||
 Dialogue|Din|To think it'd be growing right here!|||
 Spawn|Player||24|30|
-Move|Player|1|11|30|2
+Move|Player|1|11|30|3
 Dialogue|Din|Drest smiles on me today! Yes yes!|||
 Emote|Din|1|DotDotDot||
 Dialogue|Din|Oh my! PLAYER, you startled me! I didn't see you there!|||
@@ -30,6 +30,6 @@ Dialogue|Din|Ah... I suppose you wouldn't know who Drest is. Few do nowadays...|
 Dialogue|Din|That's the church's influence for you. Trying to erase the old gods. I won't forget them. No no...|||
 Dialogue|Din|Nevermind me... I've probably taken up too much of your time already...|||
 Dialogue|Din|Well, enjoy your day now! Come on over if you need any medicines!|||
-Move|Player|1|24|30|2
+Move|Player|1|24|30|3
 Emote|Din|1|DotDotDot||
 Dialogue|Din|Curse the church and their selfish gods... I won't forget...|||

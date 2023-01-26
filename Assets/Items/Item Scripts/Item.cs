@@ -30,6 +30,8 @@ public class Item : ScriptableObject
     public int value = 0;
     public bool canSell = true;
 
+    public string description;
+
     public void OnUse(){ 
         //Get mouse position
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

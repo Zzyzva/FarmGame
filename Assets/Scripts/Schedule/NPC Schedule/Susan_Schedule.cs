@@ -9,7 +9,7 @@ public class Susan_Schedule : Schedule
         start = Location.bakerySusanBed;
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Bed - Table
         if(hour == 7 && minute == 30 && meridiem == "am"){
             queue.Enqueue(Location.bakerySusanBedPath1);

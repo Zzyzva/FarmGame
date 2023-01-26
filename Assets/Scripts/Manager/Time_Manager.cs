@@ -92,14 +92,13 @@ public class Time_Manager : MonoBehaviour
 
                 //Alert Schedules of time change
                 foreach(Schedule s in schedules){
-                    s.UpdateSchedule(hours, minutes, meridiem);
+                    s.UpdateSchedule(hours, minutes, meridiem, day);
                 }
 
                 //Only update fishing on each tick
-                //Might want to make a queue of things to update on each tick????
                 Fishing_Manager.instance.UpdateFishing();
                 Mines_Manager.instance.UpdateLight();
-                Vendor_Manager.instance.UpdateVendors(hours, minutes, meridiem);
+                Vendor_Manager.instance.UpdateVendors(hours, minutes, meridiem, day);
 
                 //Change sun brightness
                 if(hours > 3 && hours < 8 && meridiem == "pm" ){

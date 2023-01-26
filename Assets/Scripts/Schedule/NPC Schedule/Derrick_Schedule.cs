@@ -11,7 +11,7 @@ public class Derrick_Schedule : Schedule
         
     }
 
-    public override void UpdateSchedule(int hour, int minute, string meridiem){
+    public override void UpdateSchedule(int hour, int minute, string meridiem, string day){
         //Patrol town
         if(hour == 8 && minute == 0 && meridiem == "am"){
             queue.Enqueue(Location.barracksBedPath1);

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waiting: 0
   followPlayer: 0
+  emoteName: SkillUp
 --- !u!95 &8040798159896313076
 Animator:
   serializedVersion: 3
