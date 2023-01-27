@@ -1,0 +1,54 @@
+MinesIntro|Mountain Path|||||||
+Meet|Zes|||||||
+Respawn|||9.5|5||||
+Set|Camera||9|15||||
+Spawn|Player||4|20.5||||
+Move|Player|1|4|18|2.5|||
+Emote|Player|1|DotDotDot|||||
+Move|Player|0|10|18|2.5|||
+Move|Camera|1|9|5|2.5|||
+Set|Player||9.5|14||||
+Move|Player|1|9.5|5|2.5|||
+Emote|Player|1|Question|||||
+Set|Player||-50|-50||||
+Emote|Player|1|Question|||||
+Scene|Mines|||||||
+Spawn|Player||-50|-50||||
+Spawn|Empty||-50|-50||||
+Set|Camera||-50|-50||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|Empty|It's way too dark, you can't see anything. You should head back up.||||||
+Scene|Mountain Path|||||||
+Spawn|Player||9.5|5||||
+Spawn|Zes||18|6.5||||
+Set|Camera||12|5||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|Zes|What's all that racket! Going up and down the mines like a lumbering buffoon.||||||
+Move|Zes|1|18|5|2.5|||
+Dialogue|Zes|Huh... A new guy. At least I think, I don't go down often enough to know, heh.||||||
+Dialogue|Zes|Well you won't be going down there. Too scared I bet. There's a darkness down there, and not a natural one. The caves keep shifting in the dark, it's never the same.||||||
+Dialogue|Zes|Some say a horrible beast waits at the bottom, pushing its cursed darkness ever outward, making the caves harder and harder to explore and always seeming to push you out.||||||
+Dialogue|Zes|Whatever beast would do that, probably doesn't want to be disturbed, and shouldn't be disturbed. Heh, can relate to that myself.||||||
+Dialogue|Zes|Heh, I can sense you shaking in your boots. Old magic shouldn't be trifled with you know! These caves are older than the Great Ventrillian Empire, think that's part of why they built this town in the first place. They tried to face the beast below.||||||
+Emote|Player|0|DotDotDot|||||
+Emote|Zes|1|DotDotDot|||||
+Dialogue|Zes|You're still here.||||||
+Dialogue|Zes|Typically they run by now, and I don't have to deal with them anymore.||||||
+Dialogue|Zes|Huh.||||||
+Emote|Player|0|DotDotDot|||||
+Emote|Zes|1|DotDotDot|||||
+Dialogue|Zes|Still here?||||||
+Dialogue|Zes|Do you really want to go in those caves?||||||
+Dialogue|Zes|Really?||||||
+Dialogue|Zes|Fine.||||||
+Dialogue|Zes|Half of what I said was made up anyway...||||||
+Dialogue|Zes|But there is something unnatural about that darkness, normal torches won't do.||||||
+Dialogue|Zes|Here, take this, its what the old Ventrillians used to use when they explored.||||||
+Dialogue|Zes|It's a moon stone. It gives of enough light to push back that darkness, it's got a limited charge though, and it'll only charge back up over night.||||||
+Dialogue|Zes|Do NOT let that stone run out of charge while you're still down there. I'll have to come rescue you and I don't want that.||||||
+Dialogue|Zes|Go in, do your business, and get out.||||||
+Emote|Zes|1|DotDotDot|||||
+Dialogue|Zes|If you do manage to get good enough down there, I might be able to put up some more permanent lighting, but we'll see if we'll actually need it.||||||
+Dialogue|Zes|Anyways, Father Trulian would want me to tell you to be careful.||||||
+Dialogue|Zes|But I never liked the old geezer or his three gods! HAH!||||||
+Dialogue|Zes|Hurry up and go down there then, and leave me alone.||||||

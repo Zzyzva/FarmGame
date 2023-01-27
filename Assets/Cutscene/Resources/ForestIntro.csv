@@ -1,0 +1,19 @@
+ForestIntro|Forest Path|||||||
+Spawn|Player||19|5||||
+Spawn|William||-1|5||||
+Set|Camera||9|5||||
+Item|Bow|||||||
+Move|Player|1|14|5|2.5|||
+Move|Player|0|10|5|2.5|||
+Move|William|1|3|5|2.5|||
+Dialogue|William|Oh hey, it's you again. I assume everything went fine with Father Trulian?||||||
+Dialogue|William|But why uh... are you going BACK into the forest?||||||
+Dialogue|William|You like trees? Animals? Foraging for snacks? The forest has got it all so I see why you'd be interested.||||||
+Dialogue|William|You should uh... bring a weapon of sorts. Here, take this bow, I have several. You can use it to hunt animals.||||||
+Dialogue|William|You have to time your shots pretty well, don't draw far back enough and you won't get any distance, hold it for too long and you'll get tired. It's not easy.||||||
+Dialogue|William|If you stay on the outskirts of the forest you shouldn't have to defend yourself from anything, but if you go deeper, well... maybe you will.||||||
+Dialogue|William|For now, stay in the outskirts until your more skilled, only explore deeper once you're comfortable.||||||
+Dialogue|William|You should also only explore the forest once per day, explore too much and you might get lost and I'd have to come find you, uh, again.||||||
+Dialogue|William|But I hope you explore the forest often! I like it a lot, there is lots of good stuff to find.||||||
+Dialogue|William|I'll uh, see you later, time to get back to wood-chopping.||||||
+Move|William|1|-1|5|2.5|||

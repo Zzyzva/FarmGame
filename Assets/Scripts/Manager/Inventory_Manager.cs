@@ -341,6 +341,16 @@ public class Inventory_Manager : MonoBehaviour
         return false;
     }
 
+    public Item GetItemByName(string name){
+        foreach(Object obj in Inventory_Manager.instance.items){
+            Item item = (Item) obj;
+            if(item.name == name){
+                return item;
+            }
+        }
+        return null;
+    }
+
 
     public void SellItem(Item item){
         toSell.Add(item);  

@@ -79,6 +79,9 @@ public class Cutscene_Manager : MonoBehaviour
                 cutscene.timeTriggerEnd = data[0].Split(new char[] { '|'})[3];
                 cutscene.characterTrigger = data[0].Split(new char[] { '|'})[4];
                 cutscene.characterHeartsTrigger = data[0].Split(new char[] { '|'})[5];
+                cutscene.date = data[0].Split(new char[] { '|'})[6];
+                cutscene.month = data[0].Split(new char[] { '|'})[7];
+                cutscene.year = data[0].Split(new char[] { '|'})[8];
 
                 cutscenes.Add(cutscene);
             }
@@ -113,6 +116,9 @@ public class Cutscene_Manager : MonoBehaviour
                 if(npc.relationship < int.Parse(cutscene.characterHeartsTrigger)){
                     continue;
                 }
+            }
+            if(cutscene.date != "" && Time_Manager.instance.date < int.Parse(cutscene.date)){
+                continue;
             }
 
             gameScene = scene;
@@ -164,7 +170,7 @@ public class Cutscene_Manager : MonoBehaviour
         if(cutsceneEnding || !cutsceneIsRunning){
             return;
         }
-        //Setup scene specifc props
+        //Setup scene specific props
         while(currentSceneCommand < data.Length){
             string command = data[currentSceneCommand];       
             currentSceneCommand++;
@@ -180,7 +186,7 @@ public class Cutscene_Manager : MonoBehaviour
                 float y = float.Parse(commandData[4]);
                 Vector3 position = new Vector3(x,y,0);
                 GameObject prop = Instantiate(props.Find((x) => x.name == objectType), position, Quaternion.identity);
-                prop.GetComponent<Prop_Movement>().SetTargetLocation(x,y, 0, 0);
+                prop.GetComponent<Prop_Movement>().AddTargetLocation(x,y, 0, 0);
                 prop.name = objectType;
                 propsInScene.Add(prop);
             } else if(commandType == "Despawn"){
@@ -194,7 +200,7 @@ public class Cutscene_Manager : MonoBehaviour
                     Camera.main.GetComponent<CameraScript>().SetTargetLocation(x,y,float.Parse(commandData[5]), int.Parse(commandData[2]));
                 } else{
                     GameObject prop = propsInScene.Find((x) => x.name == objectType);
-                    prop.GetComponent<Prop_Movement>().SetTargetLocation(x,y,float.Parse(commandData[5]), int.Parse(commandData[2]));
+                    prop.GetComponent<Prop_Movement>().AddTargetLocation(x,y,float.Parse(commandData[5]), int.Parse(commandData[2]));
                 }
                 if(float.Parse(commandData[2]) == 1){
                     return;
@@ -208,7 +214,7 @@ public class Cutscene_Manager : MonoBehaviour
                 } else{
                     GameObject prop = propsInScene.Find((x) => x.name == objectType);
                     prop.transform.position = new Vector3(x,y, 0);
-                    prop.GetComponent<Prop_Movement>().SetTargetLocation(x,y, 0, 0);
+                    prop.GetComponent<Prop_Movement>().AddTargetLocation(x,y, 0, 0);
                 }
             } else if(commandType == "Dialogue"){
                 GameObject prop = propsInScene.Find((x) => x.name == objectType);
@@ -240,6 +246,15 @@ public class Cutscene_Manager : MonoBehaviour
                 float waitTime = float.Parse(commandData[1]);
                 StartCoroutine(CutsceneWait(waitTime));
                 return;
+            } else if(commandType == "Meet"){
+                NPC_Manager.instance.GetNPCByName(objectType).metPlayer = true;
+            } else if(commandType == "Item"){
+                Inventory_Manager.instance.AddItem(Inventory_Manager.instance.GetItemByName(objectType), 1);
+            }
+            else if(commandType == "Respawn"){
+                float x = float.Parse(commandData[3]);
+                float y = float.Parse(commandData[4]);
+                playerPosition = new Vector2(x,y);
             }
                 
             else{

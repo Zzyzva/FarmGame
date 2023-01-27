@@ -11,6 +11,9 @@ public class Cutscene
     public string characterTrigger;
     public string characterHeartsTrigger;
     public bool hasBeenSeen = false;
+    public string date;
+    public string month;
+    public string year;
 
     public string csv;
 

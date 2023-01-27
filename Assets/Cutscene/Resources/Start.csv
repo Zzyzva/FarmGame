@@ -1,83 +1,86 @@
-Start|Player House||||
-Set|Camera||50|50|
-Spawn|Unknown||0|0|
-Dialogue|Unknown|Long ago, the Ventrillian empire was the strongest empire the world had ever seen.|||
-Dialogue|Unknown|It covered all of the known world, and it's capital city, Ventrillia, had over a million people.|||
-Dialogue|Unknown|But over time, the empire spread too far, controlled too much, and collapsed under its own weight.|||
-Dialogue|Unknown|Today, the capital city of Ventrillia is all that is left of the great empire. The city clings to its legacy, claiming to still control the land it once did, but it's a fraction of the size it once was, and simply can't govern those far off lands.|||
-Dialogue|Unknown|Those far off lands are where I'm sending you. The remote village of Sembria, located far from the capital, was considered on outskirt of Ventrillia even it its prime, sees almost no contact from the empire today.|||
-Dialogue|Unknown|The village is small, and will need more help than it realizes.|||
-Dialogue|Unknown|The villagers of Sembria will be tested over the next few years, and since I cannot help them myself, I send you.|||
-Dialogue|Unknown|Find out what they need, help them grow, and help them survive. Do not interfere in their choices, but allow them to make them to the best of their ability.|||
-Dialogue|Unknown|I have faith in you, do not let them down.|||
-Scene|Forest Path||||
-Spawn|Player||-2|5|
-Set|Camera||9|5|
-Move|Player|1|5|5|2
-Emote|Player|1|DotDotDot||
-Emote|Player|1|Question||
-Spawn|William||19|5|
-Move|William|1|12|5|2
-Emote|William|0|DotDotDot||
-Emote|Player|1|DotDotDot||
-Dialogue|William|Um, what are you doing here.|||
-Dialogue|William|How did you even get here? The nearest town is days away and you don't have anything on you!|||
-Dialogue|William|Yeah this is beyond me, mind if I bring you to our priest? I'm sure he'll figure something out.|||
-Dialogue|William|Think he'll be in the tavern meeting with Vintius...|||
-Dialogue|William|Here, follow me.|||
-Move|William|0|19|5|2.5
-Move|Player|1|19|5|2.5
-Scene|Inn||||
-Set|Camera||9|5|
-Spawn|Trulian||6.25|4|
-Spawn|Vintius||3.75|4|
-Spawn|William||5|-1.5|
-Spawn|Player||5|-3|2
-Move|Player|0|5|1.5|2
-Move|William|1|5|1.5|2
-Move|William|1|7|1.5|2
-Dialogue|William|Morning Father Trulian... Uh Vintius... I found this guy in the forest. Says he doesn't remember anything.|||
-Dialogue|William|I gotta go get to work, good luck, may the three bless you.|||
-Move|William|1|5|1.5|2
-Move|William|1|5|-1.5|2
-Emote|Trulian|0|DotDotDot||
-Emote|Vintius|0|DotDotDot||
-Emote|Player|1|DotDotDot||
-Dialogue|Vintius|There's no way we can trust him.|||
-Dialogue|Trulian|We can't be sure of that.|||
-Dialogue|Vintius|A random person? Stumbling into our village with no food? No story? There's not a lot to trust.|||
-Dialogue|Trulian|Weren't you just saying we need more farmers this season? That we needed more help? It seems the goddesses have granted us that.|||
-Dialogue|Vintius|The goddesses don't just create people when we need them! There is something sinister going on here. Think of what Derrick would say.|||
-Dialogue|Trulian|Derrick is a stubborn old man, he'll get over it.|||
-Dialogue|Vintius|Derrick is old? Aren't you? Ah... nevermind.|||
-Emote|Vintius|1|DotDotDot||
-Dialogue|Vintius|I guess there isn't really a choice, is there? We can't just send him away.|||
-Dialogue|Trulian|Perfect! We even have a farm house ready for you. There are plenty of unused buildings around here. Best not to dwell on why.|||
-Dialogue|Trulian|Vintius, would you be so kind to show him the way?|||
-Dialogue|Vintius|Ah, yes, of course father.|||
-Dialogue|Trulian|Three blessing to you stranger. I know you will fit in perfectly.|||
-Scene|Player Farm||||
-Set|Camera||9|22|
-Spawn|Player||-3|22|
-Spawn|Vintius||-1|22|
-Move|Vintius|0|8|22|2.5
-Move|Player|1|6|22|2.5
-Dialogue|Vintius|Well, here it is. Your own farm house and farm that we are just giving away.|||
-Dialogue|Vintius|It's not like anyone else is using it, and we need the help. So I guess it's fine.|||
-Dialogue|Vintius|You are incredibly lucky that Father Trulian is so kind.|||
-Dialogue|Vintius|Aren't I the one in charge? Why does he get to decide?|||
-Emote|Vintius|1|Exclamation||
-Dialogue|Vintius|Sorry! Excuse me. You didn't hear that.|||
-Dialogue|Vintius|Gods, you're so eerie, barely saying anything.|||
-Dialogue|Vintius|Anyways, here are some tools and some seeds. I guess you can just get to work then.|||
-Dialogue|Vintius|You can go and meet everyone in town once your done I guess. You can also buy more seeds or upgrade your tools in the market square.|||
-Dialogue|Vintius|Your house has a bed to sleep in, and a storage chest for anything you can't hold.|||
-Dialogue|Vintius|Rememebr to go to sleep before it gets too late, or you'll pass out.|||
-Dialogue|Vintius|Probably shouldn't have to tell you that. I think.|||
-Emote|Vintius|1|DotDotDot||
-Dialogue|Vintius|Well, I'm going to go. This village won't run itself.|||
-Dialogue|Vintius|Oh yeah! Put anything you want to sell in that box behind you. I'll come and collect it every morning and send you any gold it's worth.|||
-Dialogue|Vintius|Now that should be everything. I guess I'll see you around.|||
-Move|Vintius|1|-1|22|2.5
-Spawn|Unknown||0|0|
-Dialogue|Unknown|Go, child. Do not spurn their kindness. Make the most of your time here. There is work to be done.|||
+Start|Player House|||||||
+Meet|William|||||||
+Meet|Vintius|||||||
+Meet|Father Trulian|||||||
+Set|Camera||50|50||||
+Spawn|Unknown||0|0||||
+Dialogue|Unknown|Long ago, the Ventrillian empire was the strongest empire the world had ever seen.||||||
+Dialogue|Unknown|It covered all of the known world, and it's capital city, Ventrillia, had over a million people.||||||
+Dialogue|Unknown|But over time, the empire spread too far, controlled too much, and collapsed under its own weight.||||||
+Dialogue|Unknown|Today, the capital city of Ventrillia is all that is left of the great empire. The city clings to its legacy, claiming to still control the land it once did, but it's a fraction of the size it once was, and simply can't govern those far off lands.||||||
+Dialogue|Unknown|Those far off lands are where I'm sending you. The remote village of Sembria, located far from the capital, was considered on outskirt of Ventrillia even it its prime, sees almost no contact from the empire today.||||||
+Dialogue|Unknown|The village is small, and will need more help than it realizes.||||||
+Dialogue|Unknown|The villagers of Sembria will be tested over the next few years, and since I cannot help them myself, I send you.||||||
+Dialogue|Unknown|Find out what they need, help them grow, and help them survive. Do not interfere in their choices, but allow them to make them to the best of their ability.||||||
+Dialogue|Unknown|I have faith in you, do not let them down.||||||
+Scene|Forest Path|||||||
+Spawn|Player||-2|5||||
+Set|Camera||9|5||||
+Move|Player|1|5|5|2|||
+Emote|Player|1|DotDotDot|||||
+Emote|Player|1|Question|||||
+Spawn|William||19|5||||
+Move|William|1|12|5|2|||
+Emote|William|0|DotDotDot|||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|William|Um, what are you doing here.||||||
+Dialogue|William|How did you even get here? The nearest town is days away and you don't have anything on you!||||||
+Dialogue|William|Yeah this is beyond me, mind if I bring you to our priest? I'm sure he'll figure something out.||||||
+Dialogue|William|Think he'll be in the tavern meeting with Vintius...||||||
+Dialogue|William|Here, follow me.||||||
+Move|William|0|19|5|2.5|||
+Move|Player|1|19|5|2.5|||
+Scene|Inn|||||||
+Set|Camera||9|5||||
+Spawn|Trulian||6.25|4||||
+Spawn|Vintius||3.75|4||||
+Spawn|William||5|-1.5||||
+Spawn|Player||5|-3|2|||
+Move|Player|0|5|1.5|2|||
+Move|William|1|5|1.5|2|||
+Move|William|1|7|1.5|2|||
+Dialogue|William|Morning Father Trulian... Uh Vintius... I found this guy in the forest. Says he doesn't remember anything.||||||
+Dialogue|William|I gotta go get to work, good luck, may the three bless you.||||||
+Move|William|1|5|1.5|2|||
+Move|William|1|5|-1.5|2|||
+Emote|Trulian|0|DotDotDot|||||
+Emote|Vintius|0|DotDotDot|||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|Vintius|There's no way we can trust him.||||||
+Dialogue|Trulian|We can't be sure of that.||||||
+Dialogue|Vintius|A random person? Stumbling into our village with no food? No story? There's not a lot to trust.||||||
+Dialogue|Trulian|Weren't you just saying we need more farmers this season? That we needed more help? It seems the goddesses have granted us that.||||||
+Dialogue|Vintius|The goddesses don't just create people when we need them! There is something sinister going on here. Think of what Derrick would say.||||||
+Dialogue|Trulian|Derrick is a stubborn old man, he'll get over it.||||||
+Dialogue|Vintius|Derrick is old? Aren't you? Ah... nevermind.||||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|I guess there isn't really a choice, is there? We can't just send him away.||||||
+Dialogue|Trulian|Perfect! We even have a farm house ready for you. There are plenty of unused buildings around here. Best not to dwell on why.||||||
+Dialogue|Trulian|Vintius, would you be so kind to show him the way?||||||
+Dialogue|Vintius|Ah, yes, of course father.||||||
+Dialogue|Trulian|Three blessing to you stranger. I know you will fit in perfectly.||||||
+Scene|Player Farm|||||||
+Set|Camera||9|22||||
+Spawn|Player||-3|22||||
+Spawn|Vintius||-1|22||||
+Move|Vintius|0|8|22|2.5|||
+Move|Player|1|6|22|2.5|||
+Dialogue|Vintius|Well, here it is. Your own farm house and farm that we are just giving away.||||||
+Dialogue|Vintius|It's not like anyone else is using it, and we need the help. So I guess it's fine.||||||
+Dialogue|Vintius|You are incredibly lucky that Father Trulian is so kind.||||||
+Dialogue|Vintius|Aren't I the one in charge? Why does he get to decide?||||||
+Emote|Vintius|1|Exclamation|||||
+Dialogue|Vintius|Sorry! Excuse me. You didn't hear that.||||||
+Dialogue|Vintius|Gods, you're so eerie, barely saying anything.||||||
+Dialogue|Vintius|Anyways, here are some tools and some seeds. I guess you can just get to work then.||||||
+Dialogue|Vintius|You can go and meet everyone in town once your done I guess. You can also buy more seeds or upgrade your tools in the market square.||||||
+Dialogue|Vintius|Your house has a bed to sleep in, and a storage chest for anything you can't hold.||||||
+Dialogue|Vintius|Rememebr to go to sleep before it gets too late, or you'll pass out.||||||
+Dialogue|Vintius|Probably shouldn't have to tell you that. I think.||||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|Well, I'm going to go. This village won't run itself.||||||
+Dialogue|Vintius|Oh yeah! Put anything you want to sell in that box behind you. I'll come and collect it every morning and send you any gold it's worth.||||||
+Dialogue|Vintius|Now that should be everything. I guess I'll see you around.||||||
+Move|Vintius|1|-1|22|2.5|||
+Spawn|Unknown||0|0||||
+Dialogue|Unknown|Go, child. Do not spurn their kindness. Make the most of your time here. There is work to be done.||||||

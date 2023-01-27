@@ -3634,6 +3634,9 @@ MonoBehaviour:
   - Trulian1
   - Din1
   - Start
+  - FishingIntro
+  - ForestIntro
+  - MinesIntro
   cutsceneIsRunning: 0
   cutsceneStart: 0
   cutsceneContinue: 0
@@ -15148,14 +15151,20 @@ MonoBehaviour:
   hotbarSlots: []
   toSell: []
   startInventory:
-  - {fileID: 11400000, guid: 61da03be2aed7c644a61a396ffb60f04, type: 2}
+  - {fileID: 11400000, guid: e00ca69cb5bb90b40a520a0ce55cdd36, type: 2}
   - {fileID: 11400000, guid: f56aef4b7a4a2b342be38df6cbef68e9, type: 2}
-  - {fileID: 11400000, guid: 992e31339a08e984c9b9a4c4cedd21c2, type: 2}
-  - {fileID: 11400000, guid: d6b99026fec730f4a9dadb1eb941c75b, type: 2}
   - {fileID: 11400000, guid: 5d1aaa14e5429d44d9ad22b5f54f940d, type: 2}
-  - {fileID: 11400000, guid: 5abb97e2f324a384284863f62c7056ea, type: 2}
-  - {fileID: 11400000, guid: d8e9d840f4273034b907407631c8c71a, type: 2}
-  - {fileID: 11400000, guid: d6293925b7d6035428754a7ca9500e18, type: 2}
+  - {fileID: 11400000, guid: d1665f5acbdf72f459f6c0e542331f63, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
   energy: 0
   maxEnergy: 250
   gold: 500

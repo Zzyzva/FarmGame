@@ -52,10 +52,13 @@ public class Mines_Manager : MonoBehaviour
     }
 
     public void EnterMines(){
-        inMines = true;
-        mineUI.alpha = 1;
-        lightSlider.maxValue = maxLight;
-        lightSlider.value = currentLight;
+        
+        if(!Cutscene_Manager.instance.cutsceneIsRunning){
+            inMines = true;
+            mineUI.alpha = 1;
+            lightSlider.maxValue = maxLight;
+            lightSlider.value = currentLight;
+        }
     }
 
     public void MoveDeeper(){

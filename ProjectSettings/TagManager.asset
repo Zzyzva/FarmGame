@@ -60,6 +60,9 @@ TagManager:
   - name: Top
     uniqueID: 637833123
     locked: 0
+  - name: Emote
+    uniqueID: 2907293615
+    locked: 0
   - name: Minigame
     uniqueID: 1124568329
     locked: 0
