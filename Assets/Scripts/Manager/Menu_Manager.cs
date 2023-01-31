@@ -38,10 +38,17 @@ public class Menu_Manager : MonoBehaviour
 
     public CanvasGroup storageMenu;
 
+    //Bulletin
+    public CanvasGroup bulletinMenu;
+    public GameObject bulletinUIPrefab;
+    public GameObject bulletinMenuContent;
+    public bool bulletinMenuOpen = false;
+
     //Forest
     public CanvasGroup forestMenu;
     public GameObject innerForestButton;
 
+    //Mines
     public CanvasGroup minesMenu;
     public Transform minesButtons;
 
@@ -56,6 +63,7 @@ public class Menu_Manager : MonoBehaviour
     public CanvasGroup loadMenu;
     public GameObject loadMenuContent;
     public GameObject loadUIPrefab;
+    public bool loadMenuOpen = false;
 
     //New Day
     public CanvasGroup newDay;
@@ -104,7 +112,14 @@ public class Menu_Manager : MonoBehaviour
             if(vendorMenuOpen){
                 CloseVendorMenu();
                 Time_Manager.instance.Unpause();
-            }     
+            }
+            if(bulletinMenuOpen){
+                CloseBulletinMenu();
+                Time_Manager.instance.Unpause();
+            }
+            if(loadMenuOpen){
+                CloseLoadMenu();
+            }   
         }
         
     }
@@ -118,7 +133,7 @@ public class Menu_Manager : MonoBehaviour
         foreach(Script npc in NPC_Manager.instance.npcs){
             GameObject UI = Instantiate(relationshipUIPrefab);
             UI.transform.transform.SetParent(relationshipMenuContent.transform, false);
-            Text text = UI.transform.GetChild(1).GetComponent<Text>();
+            TextMeshProUGUI text = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             
             if(npc.metPlayer == true){
                 text.text = npc.npcName;
@@ -151,30 +166,30 @@ public class Menu_Manager : MonoBehaviour
             GameObject UI = Instantiate(fishingUIPrefab);
             UI.transform.transform.SetParent(fishingMenuContent.transform, false);
             if(fish.numCaught > 0){
-                UI.transform.GetChild(1).GetComponent<Text>().text = fish.name;
+                UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = fish.name;
                 UI.transform.GetChild(2).GetComponent<Image>().sprite = fish.icon;
 
                 if(fish.waterTypes.Contains(Water.Type.river)){
-                    UI.transform.GetChild(3).GetComponent<Text>().text = "River";
+                    UI.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "River";
                 }
                 if(fish.waterTypes.Contains(Water.Type.mountain_lake)){
-                    UI.transform.GetChild(3).GetComponent<Text>().text = "Mountain Lake";
+                    UI.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "Mountain Lake";
                 }
                 if(fish.waterTypes.Contains(Water.Type.forest_lake)){
-                    UI.transform.GetChild(3).GetComponent<Text>().text = "Forest Lake";
+                    UI.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "Forest Lake";
                 }
 
                 if(fish.time == Fish.CatchTime.any){
-                    UI.transform.GetChild(4).GetComponent<Text>().text = "Any Time";
+                    UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Any Time";
                 }
                 if(fish.time == Fish.CatchTime.day){
-                    UI.transform.GetChild(4).GetComponent<Text>().text = "Day";
+                    UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Day";
                 }
                 if(fish.time == Fish.CatchTime.night){
-                    UI.transform.GetChild(4).GetComponent<Text>().text = "Night";
+                    UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Night";
                 }
 
-                UI.transform.GetChild(5).GetComponent<Text>().text = "Caught: " + fish.numCaught;
+                UI.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Caught: " + fish.numCaught;
 
             } 
         }
@@ -189,8 +204,23 @@ public class Menu_Manager : MonoBehaviour
             if(quest.active == true){
                 GameObject UI = Instantiate(questUIPrefab);
                 UI.transform.transform.SetParent(questMenuContent.transform, false);
-                Text text = UI.transform.GetChild(1).GetComponent<Text>();
-                text.text = "Bring " + quest.quantity + " " + quest.itemName + " to " + quest.npc;
+                TextMeshProUGUI nameText = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+                nameText.text = quest.questName;
+                Script npc = NPC_Manager.instance.GetNPCByName(quest.npc);
+                UI.transform.GetChild(2).GetComponent<Image>().sprite = npc.icon;
+
+                for(int i = 0; i < quest.items.Count; i++){
+                    UI.transform.GetChild(3).GetChild(i).gameObject.SetActive(true);
+                    Image reqIcon = UI.transform.GetChild(3).GetChild(i).GetChild(0).GetComponent<Image>();
+                    reqIcon.sprite = Inventory_Manager.instance.GetItemByName(quest.items[i].name).icon;
+                    TextMeshProUGUI reqName = UI.transform.GetChild(3).GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();
+                    reqName.text = quest.items[i].count.ToString();
+                }
+                TextMeshProUGUI timeText = UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+                timeText.text = "Deadline: " + quest.deadline.month + " " + quest.deadline.date + " Year " + quest.deadline.year;
+                if(quest.mainQuest){
+                     UI.transform.GetChild(5).gameObject.SetActive(true);
+                }
             } 
         }
     }
@@ -221,14 +251,54 @@ public class Menu_Manager : MonoBehaviour
         foreach(Skill skill in skills){
             GameObject UI = Instantiate(skillsUIPrefab);
             UI.transform.transform.SetParent(skillsMenuContent.transform, false);
-            UI.transform.GetChild(1).GetComponent<Text>().text = skill.name;
-            UI.transform.GetChild(2).GetComponent<Text>().text = skill.level.ToString();
+            UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = skill.name;
+            UI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = skill.level.ToString();
             Slider xpSlider = UI.transform.GetChild(3).GetComponent<Slider>();
             int maxValue = Skills_Manager.GetLevelsMaxXP(skill.level);
             xpSlider.maxValue = maxValue;
             xpSlider.value = maxValue - Skills_Manager.GetXPToLevel(skill.xp);
         }
+    }
 
+    public void OpenBulletinMenu(){
+        bulletinMenuOpen = true;
+        //Destroys old quests on the board
+        for(int i = 0; i < bulletinMenuContent.transform.childCount; i++){
+            Destroy(bulletinMenuContent.transform.GetChild(i).gameObject);
+        }
+        //Loads new quests
+        foreach(Quest quest in Quest_Manager.instance.quests){
+            if(quest.active == false){
+                GameObject UI = Instantiate(bulletinUIPrefab);
+                UI.transform.transform.SetParent(bulletinMenuContent.transform, false);
+                UI.transform.GetChild(2).GetComponent<AcceptQuestButton>().quest = quest;
+                TextMeshProUGUI nameText = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+                nameText.text = quest.questName;
+                Script npc = NPC_Manager.instance.GetNPCByName(quest.npc);
+                UI.transform.GetChild(3).GetComponent<Image>().sprite = npc.icon;
+
+                for(int i = 0; i < quest.items.Count; i++){
+                    UI.transform.GetChild(4).GetChild(i).gameObject.SetActive(true);
+                    Image reqIcon = UI.transform.GetChild(4).GetChild(i).GetChild(0).GetComponent<Image>();
+                    reqIcon.sprite = Inventory_Manager.instance.GetItemByName(quest.items[i].name).icon;
+                    TextMeshProUGUI reqName = UI.transform.GetChild(4).GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();
+                    reqName.text = quest.items[i].count.ToString();
+                }
+                TextMeshProUGUI timeText = UI.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
+                timeText.text = quest.timeToComplete + " Days";
+
+            } 
+        }
+        bulletinMenu.alpha = 1;
+        bulletinMenu.interactable = true;
+        bulletinMenu.blocksRaycasts = true;
+    }
+
+    public void CloseBulletinMenu(){
+        bulletinMenuOpen = false;
+        bulletinMenu.alpha = 0;
+        bulletinMenu.interactable = false;
+        bulletinMenu.blocksRaycasts = false;
     }
 
 
@@ -317,6 +387,7 @@ public class Menu_Manager : MonoBehaviour
     }
 
     public void OpenLoadMenu(){
+        loadMenuOpen = true;
         UpdateLoadMenu();
         loadMenu.alpha = 1;
         loadMenu.interactable = true;
@@ -324,6 +395,7 @@ public class Menu_Manager : MonoBehaviour
     }
 
     public void CloseLoadMenu(){
+        loadMenuOpen = false;
         loadMenu.alpha = 0;
         loadMenu.interactable = false;
         loadMenu.blocksRaycasts = false;
@@ -351,7 +423,7 @@ public class Menu_Manager : MonoBehaviour
             TextMeshProUGUI nameText = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             nameText.text = data.playerName;
             TextMeshProUGUI dateText = UI.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-            dateText.text = data.day + " " + data.date;
+            dateText.text = data.day + " " + data.date.date;
             UI.GetComponent<LoadSaveButtons>().data = data;
             UI.GetComponent<LoadSaveButtons>().path = f.FullName;
             stream.Close();
@@ -386,6 +458,7 @@ public class Menu_Manager : MonoBehaviour
                 UI.transform.GetChild(2).GetComponent<BuyItemButton>().item = item;          
                 TextMeshProUGUI priceText = UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
                 priceText.text = item.price + "g";
+                //req items
                 for(int i = 0; i < item.reqItems.Count; i++){
                     UI.transform.GetChild(5).GetChild(i).gameObject.SetActive(true);
                     Image reqIcon = UI.transform.GetChild(5).GetChild(i).GetChild(0).GetComponent<Image>();

@@ -37,10 +37,7 @@ public class SaveData
     public List<int> npcRelationship = new List<int>();
 
     //Quest
-    public List<string> questItemName = new List<string>();
-    public List<int> questQuantity = new List<int>();
-    public List<string> questNPC = new List<string>();
-    public List<bool> questActive = new List<bool>();
+    public List<Quest> quests = new List<Quest>();
 
     //Save
     public string saveName;
@@ -53,7 +50,7 @@ public class SaveData
 
     //Time
     public string day;
-    public int date;
+    public Date date;
         
 
     public void Save(){
@@ -134,13 +131,8 @@ public class SaveData
         }
     }
 
-    void SaveQuest(){
-        foreach(Quest quest in Quest_Manager.instance.quests){
-            questItemName.Add(quest.itemName);
-            questQuantity.Add(quest.quantity);
-            questNPC.Add(quest.npc);
-            questActive.Add(quest.active);
-        }
+    void SaveQuest(){    
+        quests = Quest_Manager.instance.quests;
     }
 
     void SaveSave(){
@@ -274,9 +266,7 @@ public class SaveData
 
     void LoadQuest(){
         Quest_Manager.instance.quests.Clear();
-        for(int i = 0; i < questActive.Count; i++){
-            Quest_Manager.instance.quests.Add(new Quest(questItemName[i], questQuantity[i], questNPC[i], questActive[i]));
-        }
+        Quest_Manager.instance.quests = quests;
 
     }
 

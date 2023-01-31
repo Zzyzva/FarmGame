@@ -40,6 +40,7 @@ public class ExitButtons : MonoBehaviour
         exitTitleWarning.interactable = false;
         exitTitleWarning.blocksRaycasts = false;
         Menu_Manager.instance.ClosePauseMenu();
+        Dialogue_Manager.instance.EndDialogue();
         Time_Manager.instance.Pause();
         Time_Manager.instance.HUD.alpha = 0f;
         LevelLoader.instance.LoadLevel("Title", new Vector2(-100,-100));

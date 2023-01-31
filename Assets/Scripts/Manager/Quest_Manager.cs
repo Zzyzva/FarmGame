@@ -29,43 +29,56 @@ public class Quest_Manager : MonoBehaviour
 
     public void StartGame(){
         quests = new List<Quest>();
-        quests.Add(new Quest("Wood", 2, "Sophia", false));
+        Quest startQuest = new Quest("Bring supplies to Sophia", "Sophia", 3);
+        startQuest.SetActive();
+        startQuest.mainQuest = true;
+        startQuest.items.Add(new QuestItem("Wood", 2));
+        quests.Add(startQuest);
+
     }
 
     //If an npc has two completable quests it will only show one
     public Quest CheckQuests(string npc){
         foreach(Quest quest in quests){
             if(quest.npc == npc && quest.active){
-                int total = Inventory_Manager.instance.GetTotalItemAmount(quest.itemName);
-                if(total >= quest.quantity){
+                if(CanCompleteQuest(quest)){
                     return quest;
-                }      
+                }
             }
         }
         return null;
     }
 
+    public bool CanCompleteQuest(Quest quest){
+        foreach(QuestItem item in quest.items){
+            int total = Inventory_Manager.instance.GetTotalItemAmount(item.name);
+            if(total < item.count){
+                return false;
+            } 
+        }
+        return true;
+    }
+
 
     //If the quest can't actually be completed this is buggy
     public void CompleteQuest(Quest quest){
-        Inventory_Manager.instance.RemoveItem(quest.itemName, quest.quantity);
-        quests.Remove(quest);
-    }   
-
-    public void loadBulletinQuests(){
-        //Destroys old quests on the board
-        for(int i = 0; i < bulletinMenuContent.transform.childCount; i++){
-            Destroy(bulletinMenuContent.transform.GetChild(i).gameObject);
+        if(CanCompleteQuest(quest)){
+            foreach(QuestItem item in quest.items){
+                Inventory_Manager.instance.RemoveItem(item.name, item.count);
+            }
+            quests.Remove(quest);
         }
-        //Loads new quests
+    }
+
+    public void NewDay(){
+        List<Quest> toRemove = new List<Quest>();
         foreach(Quest quest in quests){
-            if(quest.active == false){
-                GameObject UI = Instantiate(bulletinUIPrefab);
-                UI.transform.transform.SetParent(bulletinMenuContent.transform, false);
-                UI.transform.GetChild(2).GetComponent<AcceptQuestButton>().quest = quest;
-                Text text = UI.transform.GetChild(1).GetComponent<Text>();
-                text.text = "Bring " + quest.quantity + " " + quest.itemName + " to " + quest.npc;
-            } 
+            if(quest.deadline.CompareDate(Time_Manager.instance.date) < 0){
+                toRemove.Add(quest);
+            }
+        }
+        foreach(Quest quest in toRemove){
+            quests.Remove(quest);
         }
     }
 }

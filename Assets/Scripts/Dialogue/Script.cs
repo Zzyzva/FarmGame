@@ -82,10 +82,10 @@ public class Script : Interactable
 
             //Standard dialogue
             if(relationship < relationshipPerHeart * 2){
-                int rand = Random.Range(1, zeroHeartsDialogue.Length); //Starts at 1 to skip label
+                int rand = Random.Range(1, zeroHeartsDialogue.Length - 1); //Starts at 1 to skip label
                 ret = new Dialogue(npcName, zeroHeartsDialogue[rand], icon);
             } else{
-                int rand = Random.Range(1, twoHeartsDialogue.Length); //Starts at 1 to skip label
+                int rand = Random.Range(1, twoHeartsDialogue.Length - 1); //Starts at 1 to skip label
                 ret = new Dialogue(npcName, twoHeartsDialogue[rand], icon);
             }
             currentDialogue = ret;

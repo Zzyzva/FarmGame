@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 6922033591299480673}
   - component: {fileID: 7918669691905695217}
   m_Layer: 0
-  m_Name: Date
+  m_Name: Date (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 8590985769820388007}
   - component: {fileID: 1249232065140595281}
   m_Layer: 0
-  m_Name: Name
+  m_Name: Name (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

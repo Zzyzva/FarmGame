@@ -14,10 +14,7 @@ public class Bulletin : Interactable
 
     public override void Interact() {
         if(Time_Manager.instance.Pause()){
-            Quest_Manager.instance.loadBulletinQuests();
-            bulletinMenu.alpha = 1f;
-            bulletinMenu.interactable = true;
-            bulletinMenu.blocksRaycasts = true;
+            Menu_Manager.instance.OpenBulletinMenu();
         }
     }
 }

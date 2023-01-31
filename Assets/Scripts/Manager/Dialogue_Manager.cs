@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 
 public class Dialogue_Manager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
     public CanvasGroup textBox;
     public CanvasGroup giftMenu;
     public Button questButton;
@@ -74,10 +75,7 @@ public class Dialogue_Manager : MonoBehaviour
             dialogueActive = true;
             activeScript = script;
 
-            completableQuest = Quest_Manager.instance.CheckQuests(dialogue.name);
-            if(completableQuest != null){
-                questButton.gameObject.SetActive(true);
-            }
+            CheckQuests();
             
             StartDialogueBox(dialogue);
         }
@@ -89,13 +87,22 @@ public class Dialogue_Manager : MonoBehaviour
             return;
         }
         if(sentences.Count == 1 && !Cutscene_Manager.instance.cutsceneIsRunning){
-            nextButton.GetComponentInChildren<Text>().text = "Exit";
+            nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Exit";
         } else{
-            nextButton.GetComponentInChildren<Text>().text = "Next";
+            nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next";
         }
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
 
+    }
+
+    public void CheckQuests(){
+        completableQuest = Quest_Manager.instance.CheckQuests(activeScript.npcName);
+            if(completableQuest != null){
+                questButton.gameObject.SetActive(true);
+            } else{
+                questButton.gameObject.SetActive(false);
+            }
     }
 
     public void CompleteQuest(){
@@ -143,6 +150,7 @@ public class Dialogue_Manager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        CheckQuests();
 
         giftMenu.alpha = 0;
         giftMenu.interactable = false;
@@ -156,8 +164,8 @@ public class Dialogue_Manager : MonoBehaviour
 
         nextButton.gameObject.SetActive(false);
 
-        response1.GetComponentInChildren<Text>().text = option1;
-        response2.GetComponentInChildren<Text>().text = option2;
+        response1.GetComponentInChildren<TextMeshProUGUI>().text = option1;
+        response2.GetComponentInChildren<TextMeshProUGUI>().text = option2;
     }
 
     public void DialogueChoiceEnd(){

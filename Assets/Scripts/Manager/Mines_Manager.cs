@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Mines_Manager : MonoBehaviour
 {
     public static Mines_Manager instance;
 
     public CanvasGroup mineUI;
-    public Text floorText;
+    public TextMeshProUGUI floorText;
     public Slider lightSlider;
     public Light ambientLight;
 

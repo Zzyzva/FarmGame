@@ -2,12 +2,74 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
+public enum Month {Spring, Summer, Fall, Winter}
+
+[System.Serializable]
+public class Date{
+    public int date;
+    public Month month = Month.Spring;
+    public int year = 1;
+
+    public Date(int date, Month month, int year){
+        this.date = date;
+        this.month = month;
+        this.year = year;
+    }
+
+    public void NextDay(){
+        date++;
+        if(date == 29){
+            date = 1;
+            if(month == Month.Spring){
+                month = Month.Summer;
+            } else if(month == Month.Summer){
+                month = Month.Fall;
+            } else if(month == Month.Fall){
+                month = Month.Winter;
+            } else if(month == Month.Winter){
+                month = Month.Spring;
+                year++;
+            }
+        }
+    }
+
+    //1 if this date comes after given date
+    //0 if same
+    //-1 if this date comes before given one
+    public int CompareDate(Date otherDate){
+        //Compare year
+        if(this.year < otherDate.year){
+            return -1;
+        }
+        if(this.year > otherDate.year){
+            return 1;
+        }
+        //Compare month
+        if(this.month < otherDate.month){
+            return -1;
+        }
+        if(this.month > otherDate.month){
+            return 1;
+        }
+        //Compare date
+        if(this.date < otherDate.date){
+            return -1;
+        }
+        if(this.date > otherDate.date){
+            return 1;
+        }
+        return 0;
+    }
+}
 
 public class Time_Manager : MonoBehaviour
 {
     
-    public Text timeText;
-    public Text dateText;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI dateText;
+    public TextMeshProUGUI yearText;
     public Light sun;
     public List<Schedule> schedules;
     public List<Script> scripts;
@@ -18,8 +80,8 @@ public class Time_Manager : MonoBehaviour
     private int hours;
     private string meridiem;
     public string day;
-    public int date;
-    //private string month;
+    public Date date;
+
 
 
 
@@ -41,6 +103,7 @@ public class Time_Manager : MonoBehaviour
             instance = this;
             schedules = new List<Schedule>();
             scripts = new List<Script>();
+            date = new Date(1, Month.Spring, 1);
         } else{
             Destroy(gameObject);
         }
@@ -52,8 +115,7 @@ public class Time_Manager : MonoBehaviour
         hours = 7;
         meridiem = "am";
         day = "Mon";
-        date = 1;
-        //month = "Spring";
+        date = new Date(1, Month.Spring, 1);
         lastTick = Time.time;
         pause = true;
     }
@@ -77,7 +139,7 @@ public class Time_Manager : MonoBehaviour
                             meridiem = "pm";
                         } else {
                             meridiem = "am";
-                            date++;
+                            date.NextDay();
                             ChangeDay();
                         }
                     }
@@ -122,7 +184,8 @@ public class Time_Manager : MonoBehaviour
             timeText.text = hours + ":0" + minutes + " " + meridiem;
         }
 
-        dateText.text = day + " " + date;
+        yearText.text = date.month + " Year " + date.year;
+        dateText.text = day + " " + date.date;
     }
 
     //returns the time as one in in military format
@@ -259,7 +322,7 @@ public class Time_Manager : MonoBehaviour
         //Change time
         if(!(hours < 3 && meridiem == "am")){
             ChangeDay();
-            date++;
+            date.NextDay();
         }
 
         hours = 7;
@@ -271,7 +334,8 @@ public class Time_Manager : MonoBehaviour
                 } else {
                     timeText.text = hours + ":0" + minutes + " " + meridiem;
                 }
-                dateText.text = day + " " + date;
+                yearText.text = date.month + " Year " + date.year;
+                dateText.text = day + " " + date.date;
 
         
 
@@ -288,6 +352,9 @@ public class Time_Manager : MonoBehaviour
 
         //Update Forest
         Forest_Manager.instance.NewDay();
+
+        //Update quests
+        Quest_Manager.instance.NewDay();
 
         //Get gold
         foreach(Item item in Inventory_Manager.instance.toSell){

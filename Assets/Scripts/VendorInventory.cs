@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 
-[Serializable]
+[System.Serializable]
 public struct ReqItem{
     public Item item;
     public int count;
@@ -18,7 +17,7 @@ public enum ReqRank {
     noviceMining, intermediateMining, advancedMining, expertMining, masterMining, legendaryMining,
 };
 
-[Serializable]
+[System.Serializable]
     public struct VendorItem {
         public Item item;
         public int price;
@@ -31,5 +30,5 @@ public enum ReqRank {
 public class VendorInventory : ScriptableObject
 {
     public VendorItem[] inventory;
-    public String standName;
+    public string standName;
 }

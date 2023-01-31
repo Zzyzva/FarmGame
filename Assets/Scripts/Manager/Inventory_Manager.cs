@@ -10,7 +10,7 @@ public class Inventory_Manager : MonoBehaviour
     public Transform chestParent;
     public Transform hotbarParent;
     public Slider slider;
-    public Text goldText;
+    public TextMeshProUGUI goldText;
     public GameObject ItemDrop;
 
     public InventorySlot[] inventorySlots;
@@ -370,11 +370,11 @@ public class Inventory_Manager : MonoBehaviour
             //In gift select mode
             if(selectingGift){
                 if(slot.item.canSell){
-                    Dialogue_Manager.instance.AcceptGift(slot.item);
                     slot.item.count--;
                     if(slot.item.count == 0){
                         slot.ClearSlot();
                     }
+                    Dialogue_Manager.instance.AcceptGift(slot.item);
                 }
                 Menu_Manager.instance.ClosePauseMenu();
                 selectingGift = false;

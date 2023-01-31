@@ -117,9 +117,13 @@ public class Cutscene_Manager : MonoBehaviour
                     continue;
                 }
             }
-            if(cutscene.date != "" && Time_Manager.instance.date < int.Parse(cutscene.date)){
-                continue;
+            if(cutscene.date != ""){
+                Date cutsceneDate = new Date(int.Parse(cutscene.date), Month.Spring, 1);
+                if(cutsceneDate.CompareDate(Time_Manager.instance.date) > 0){
+                    continue;
+                }
             }
+            
 
             gameScene = scene;
             playerPosition = position;

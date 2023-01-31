@@ -6,7 +6,7 @@ public class AcceptQuestButton : MonoBehaviour
 {
     public Quest quest;
     public void ButtonPress(){
-        quest.active = true;
-        Quest_Manager.instance.loadBulletinQuests();
+        quest.SetActive();
+        Menu_Manager.instance.OpenBulletinMenu();
     }
 }
