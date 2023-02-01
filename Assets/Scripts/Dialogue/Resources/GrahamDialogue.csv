@@ -1,9 +1,10 @@
-INTRO|Yo! Name's Graham, I help the blacksmith. Good to meet ya.|
-HATE GIFT|Yo, how could you possibly think this is a good gift. What is your deal?|
-DISLIKE GIFT|Eh, this really isn't my thing.|
-NEUTRAL GIFT|Oh, okay?|
-LIKE GIFT|Oh thanks mate! This is pretty good.|
-LOVE GIFT|OH YEAH! This great! You're the best champ.|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|Yo! Name's Graham, I help the blacksmith. Good to meet ya.||
+HATE GIFT|Yo, how could you possibly think this is a good gift. What is your deal?||
+DISLIKE GIFT|Eh, this really isn't my thing.||
+NEUTRAL GIFT|Oh, okay?||
+LIKE GIFT|Oh thanks mate! This is pretty good.||
+LOVE GIFT|OH YEAH! This great! You're the best champ.||
+QUEST|You completed the quest||
+GREETING|Yo! What's up!||
+0 STARS|My father is best smith around, he's taught me everything I know.|OH YEAH! Nothing like good days work.|You should try out the forge sometime! Put some muscle on those bones!$I'm just kidding though, we're all beautiful in our own way.
+2 STARS|Hello||

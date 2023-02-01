@@ -76,9 +76,9 @@ public class Time_Manager : MonoBehaviour
     public CanvasGroup HUD;
 
 
-    private int minutes;
-    private int hours;
-    private string meridiem;
+    public int minutes;
+    public int hours;
+    public string meridiem;
     public string day;
     public Date date;
 

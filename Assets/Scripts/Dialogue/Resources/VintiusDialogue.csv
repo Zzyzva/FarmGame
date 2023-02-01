@@ -1,9 +1,10 @@
-INTRO|I'd like to officially welcome you to our village! Please come to me if you have any questions.|
-HATE GIFT|You know I have the power to banish you from this village? It wouldn't be hard.|
-DISLIKE GIFT|This is no good. Keep it away.|
-NEUTRAL GIFT|Please don't waste my time.|
-LIKE GIFT|I appreciate this.|
-LOVE GIFT|Thank you for the gift! I'll be sure to keep care of it.|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|I'd like to officially welcome you to our village! Please come to me if you have any questions.||
+HATE GIFT|You know I have the power to banish you from this village? It wouldn't be hard.||
+DISLIKE GIFT|This is no good. Keep it away.||
+NEUTRAL GIFT|Please don't waste my time.||
+LIKE GIFT|I appreciate this.||
+LOVE GIFT|Thank you for the gift! I'll be sure to keep care of it.||
+QUEST|You completed the quest||
+GREETING|Hello, farmer.||
+0 STARS|I'm quite busy at the moment, but thanks for dropping by.|I will hand it to Father Trulian, he is a smart man, even if he is a bit overbearing.|I used to live in the capital, you know. I... don't miss it.
+2 STARS|Hello||

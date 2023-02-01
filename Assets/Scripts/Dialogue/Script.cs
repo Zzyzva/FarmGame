@@ -16,8 +16,9 @@ public class Script : Interactable
     protected string loveGiftDialogue;
     protected string questDialogue;
 
-    protected string[] zeroHeartsDialogue;
-    protected string[] twoHeartsDialogue;
+    protected List<string> greetingDialogue = new List<string>();
+    protected List<string> zeroHeartsDialogue = new List<string>();
+    protected List<string> twoHeartsDialogue = new List<string>();
     public string npcName;
     public Sprite icon;
 
@@ -49,14 +50,30 @@ public class Script : Interactable
             loveGiftDialogue = data[5].Split(new char[] { '|'})[1];
             questDialogue = data[6].Split(new char[] { '|'})[1];
 
-            zeroHeartsDialogue = data[7].Split(new char[] { '|'});
-            twoHeartsDialogue = data[8].Split(new char[] { '|'});
+            greetingDialogue.AddRange(data[7].Split(new char[] { '|'}));
+            zeroHeartsDialogue.AddRange(data[8].Split(new char[] { '|'}));
+            twoHeartsDialogue.AddRange(data[9].Split(new char[] { '|'}));
 
+            greetingDialogue = TrimList(greetingDialogue);
+            zeroHeartsDialogue = TrimList(zeroHeartsDialogue);
+            twoHeartsDialogue = TrimList(twoHeartsDialogue);
         }
 
         //Add to list of npcs
         NPC_Manager.instance.npcs.Add(this);
         Time_Manager.instance.scripts.Add(this);
+    }
+
+    //This method cleans up some of the funky stuff that the csv files do
+    //There is a hidden character in the string of the last value on each line that I can't figure out, so just cleat those and the empty strings all at once
+    public List<string> TrimList(List<string> lines){
+        List<string> ret = new List<string>();
+        foreach(string line in lines){
+            if(line.Length >= 2){
+                ret.Add(line);
+            }
+        }
+        return ret;
     }
 
 
@@ -67,32 +84,53 @@ public class Script : Interactable
     }
 
     public Dialogue GetDialogue(){
+        //Get greeting
+        string greeting;
+        if(greetingDialogue.Count > 2){
+            int hours = Time_Manager.instance.hours;
+            string meridiem = Time_Manager.instance.meridiem;
+            if(hours > 6 && meridiem =="am"){
+                greeting = greetingDialogue[1];
+            } else if((hours < 5 || hours == 12) && meridiem =="pm"){
+                greeting = greetingDialogue[2];
+            } else{
+                greeting = greetingDialogue[3];
+            }
+            
+        } else{
+            greeting = greetingDialogue[1];
+        }
         if(!talkedToday){
             talkedToday = true;
             relationship++;
-            Dialogue ret;
 
             //Check unique dialogue
             if(!metPlayer){
                 metPlayer = true;
-                ret = new Dialogue(npcName, introDialogue, icon);
-                currentDialogue = ret;
-                return ret;
+                currentDialogue = new Dialogue(npcName, introDialogue, icon);
+                return currentDialogue;
             }
 
+            
+
             //Standard dialogue
+            string lines;
             if(relationship < relationshipPerHeart * 2){
-                int rand = Random.Range(1, zeroHeartsDialogue.Length - 1); //Starts at 1 to skip label
-                ret = new Dialogue(npcName, zeroHeartsDialogue[rand], icon);
+                int rand = Random.Range(1, zeroHeartsDialogue.Count); //Starts at 1 to skip label
+                lines = zeroHeartsDialogue[rand]; 
             } else{
-                int rand = Random.Range(1, twoHeartsDialogue.Length - 1); //Starts at 1 to skip label
-                ret = new Dialogue(npcName, twoHeartsDialogue[rand], icon);
+                int rand = Random.Range(1, twoHeartsDialogue.Count); //Starts at 1 to skip label
+                lines = twoHeartsDialogue[rand];
             }
-            currentDialogue = ret;
-            return ret;
-        } else{
-            return currentDialogue;
+
+            currentDialogue = new Dialogue(npcName, lines, icon);
+
+            
+
         }
+        
+        return currentDialogue.AddGreeting(greeting);
+
     }
 
     public virtual Dialogue GetQuestCompleteDialogue(Quest quest){

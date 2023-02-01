@@ -99,7 +99,7 @@ public class Save_Manager : MonoBehaviour
         Inventory_Manager.instance.UpdateChestSlots();
         Time_Manager.instance.UpdateTimeText();
         Player_Manager.player.SetActive(true);
-        LevelLoader.instance.LoadLevel("Player House", new Vector2(3,3));
+        LevelLoader.instance.LoadLevel("Tenant Hut", new Vector2(3,3));
         
     }
 

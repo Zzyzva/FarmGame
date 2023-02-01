@@ -1,9 +1,10 @@
-INTRO||
-HATE GIFT|I hate this|
-DISLIKE GIFT|I dislike this|
-NEUTRAL GIFT|I'm neutral towards this|
-LIKE GIFT|I like this|
-LOVE GIFT|I love this|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|||
+HATE GIFT|I hate this||
+DISLIKE GIFT|I dislike this||
+NEUTRAL GIFT|I'm neutral towards this||
+LIKE GIFT|I like this||
+LOVE GIFT|I love this||
+QUEST|You completed the quest||
+GREETING|Morning|Afternoon|Evening
+0 STARS|Hello||
+2 STARS|Hello||

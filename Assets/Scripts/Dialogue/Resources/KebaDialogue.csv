@@ -1,9 +1,10 @@
-INTRO|You look weird. Who are you?|
-HATE GIFT|This is ugly, just like you.|
-DISLIKE GIFT|Don't give me this stuff you're so weird.|
-NEUTRAL GIFT|Um, ok? Not sure why you gave me this.|
-LIKE GIFT|You're not so bad, you know that?|
-LOVE GIFT|OH! This is great! I guess you are good on the inside.|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|You look weird. Who are you?||
+HATE GIFT|This is ugly, just like you.||
+DISLIKE GIFT|Don't give me this stuff you're so weird.||
+NEUTRAL GIFT|Um, ok? Not sure why you gave me this.||
+LIKE GIFT|You're not so bad, you know that?||
+LOVE GIFT|OH! This is great! I guess you are good on the inside.||
+QUEST|You completed the quest||
+GREETING|Oh, it's you.||
+0 STARS|My mom says not to talk to strangers.$You're strange.|You know, out of all the kids, I'm the oldest. That makes me the best!|Avery is SO weird. He's always asking the strangest questions.$His siblings are okay, though.
+2 STARS|Hello||

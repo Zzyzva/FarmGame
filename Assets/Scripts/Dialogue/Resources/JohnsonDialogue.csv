@@ -1,9 +1,10 @@
-INTRO|Huh. Name's Johnson. I watch the sheep.|
-HATE GIFT|Stop wasting my time, leave.|
-DISLIKE GIFT|Don't like this one bit.|
-NEUTRAL GIFT|Eh? Maybe the sheep'll eat it. Thanks.|
-LIKE GIFT|Thanks.|
-LOVE GIFT|You did good, kid. Thanks.|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|Huh. Name's Johnson. I watch the sheep.||
+HATE GIFT|Stop wasting my time, leave.||
+DISLIKE GIFT|Don't like this one bit.||
+NEUTRAL GIFT|Eh? Maybe the sheep'll eat it. Thanks.||
+LIKE GIFT|Thanks.||
+LOVE GIFT|You did good, kid. Thanks.||
+QUEST|You completed the quest||
+GREETING|Hmph.||
+0 STARS|You like sheep?$I do.$I like sheep.|Gotta watch the sheep, never know what might happen.|Going to the tavern at night is nice.$Wish I could see my sheep from there though.
+2 STARS|Hello||

@@ -32,7 +32,7 @@ Dialogue|Derrick|It's my job to protect these people. They're good people.||||||
 Dialogue|Derrick|And with times how they are...||||||
 Emote|Derrick|1|DotDotDot|||||
 Dialogue|Derrick|You know, what you can go, I've had too much of your time.||||||
-Dialogue|Derrick|Just know I'm wathcing you.||||||
+Dialogue|Derrick|Just know I'm watching you.||||||
 Move|Player|1|5|-1|3|||
 Despawn|Player|||||||
 Emote|Derrick|1|DotDotDot|||||

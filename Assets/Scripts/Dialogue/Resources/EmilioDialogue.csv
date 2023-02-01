@@ -1,9 +1,10 @@
-INTRO|Oh you're new. I farm here with my sister. You should talk to her.|
-HATE GIFT|...Control yourself, Emilio. Do NOT give this to me again.|
-DISLIKE GIFT|.. Please don't give me this.|
-NEUTRAL GIFT|...|
-LIKE GIFT|Oh... uh... thanks. I'm glad you got me this.|
-LOVE GIFT|Hey, thanks for this. I mean it, people don't give me gifts often and this is really nice.|
-QUEST|You completed the quest|
-0 STARS|Hello|
-2 STARS|Hello|
+INTRO|Oh you're new. I farm here with my sister. You should talk to her.||
+HATE GIFT|...Control yourself, Emilio. Do NOT give this to me again.||
+DISLIKE GIFT|.. Please don't give me this.||
+NEUTRAL GIFT|...||
+LIKE GIFT|Oh... uh... thanks. I'm glad you got me this.||
+LOVE GIFT|Hey, thanks for this. I mean it, people don't give me gifts often and this is really nice.||
+QUEST|You completed the quest||
+Greeting|Hey.||
+0 STARS|Another day toiling in the fields. It'd be nice if Vintius helped out for once.|Just gotta get through this week.|You should talk to my sister. She enjoys talking to people.$I don't.
+2 STARS|Hello||
