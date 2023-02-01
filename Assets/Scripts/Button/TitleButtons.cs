@@ -10,6 +10,6 @@ public class TitleButtons : MonoBehaviour
     }
 
     public void OnLoadClick(){
-        Menu_Manager.instance.OpenLoadMenu();
+        Menu_Manager.instance.OpenLoadMenu(Application.persistentDataPath);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.RegularExpressions;
 
 public class Save_Manager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Save_Manager : MonoBehaviour
     public static Save_Manager instance;
 
     public string saveFile;
+    public string directoryPath;
 
     public LoadSaveButtons currentSave;
     public CanvasGroup deleteWarning;
@@ -26,15 +28,22 @@ public class Save_Manager : MonoBehaviour
 
     public void SaveGame(){
         string path;
+        string backupDirectory;
         //Create a new save name
         if(saveFile == ""){
             do{
-                saveFile = Inventory_Manager.instance.playerName + "_";
+                Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+                string safePlayerName = rgx.Replace(Inventory_Manager.instance.playerName, "");
+                saveFile = safePlayerName + "_";
                 int saveExtension = Random.Range(0, 99999999);
+                directoryPath = saveFile + saveExtension;
                 saveFile = saveFile + saveExtension + ".mike";
                 path = Path.Combine(Application.persistentDataPath, saveFile);
                 
-            } while(File.Exists(path));        
+                backupDirectory = Path.Combine(Application.persistentDataPath, directoryPath);
+                
+            } while(File.Exists(path) || Directory.Exists(backupDirectory));
+            Directory.CreateDirectory(backupDirectory);
         }
         path = Path.Combine(Application.persistentDataPath, saveFile);
 
@@ -47,7 +56,27 @@ public class Save_Manager : MonoBehaviour
         formatter.Serialize(stream, data);
 
         stream.Close();
+    }
 
+    public void SaveBackup(){
+        string path;
+        //Create a new save name
+        if(saveFile == ""){
+            return;       
+        }
+        path = Path.Combine(Application.persistentDataPath, directoryPath);
+        string backupFile = Time_Manager.instance.date.year.ToString() + Time_Manager.instance.date.month + Time_Manager.instance.date.date.ToString() + saveFile;
+        path = Path.Combine(path, backupFile);
+
+        SaveData data = new SaveData();
+        data.Save();
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, data);
+
+        stream.Close();
     }
 
     public void LoadGame(SaveData data){
@@ -56,11 +85,22 @@ public class Save_Manager : MonoBehaviour
         StartGame();
     }
 
+    public void LoadRecentSave(){
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Path.Combine(Application.persistentDataPath, saveFile);
+        FileStream stream = new FileStream(path, FileMode.Open);
+        SaveData data = formatter.Deserialize(stream) as SaveData;
+        stream.Close();
+        LoadGame(data);
+    }
+
     public void StartGame(){
         Inventory_Manager.instance.UpdateSlots();
         Inventory_Manager.instance.UpdateChestSlots();
         Time_Manager.instance.UpdateTimeText();
+        Player_Manager.player.SetActive(true);
         LevelLoader.instance.LoadLevel("Player House", new Vector2(3,3));
+        
     }
 
     public void StartNewGame(){

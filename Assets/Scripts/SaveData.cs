@@ -41,6 +41,7 @@ public class SaveData
 
     //Save
     public string saveName;
+    public string directoryName;
 
     //Skills
     public int farmingXP;
@@ -137,6 +138,7 @@ public class SaveData
 
     void SaveSave(){
         saveName = Save_Manager.instance.saveFile;
+        directoryName = Save_Manager.instance.directoryPath;
     }
 
     void SaveSkills(){
@@ -272,6 +274,7 @@ public class SaveData
 
     void LoadSave(){
         Save_Manager.instance.saveFile = saveName;
+        Save_Manager.instance.directoryPath = directoryName;
     }
 
     void LoadSkills(){

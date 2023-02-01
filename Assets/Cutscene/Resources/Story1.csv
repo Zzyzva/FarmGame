@@ -1,0 +1,93 @@
+Story1|Player House|||||8||
+Set|Camera||-50|-50||||
+Scene|North Farm Hut|||||||
+Spawn|Vintius||3.25|6||||
+Set|Camera||9|5||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|With this amount from Mathew and Nek we should have enough wheat for the next month or so... And that's not even considering our new farmer...||||||
+Spawn|Mark||5|-1||||
+Emote|Vintius|0|Exclamation|||||
+Move|Mark|1|5|3|2.5|||
+Dialogue|Mark|I'm sorry to interrupt, sir. A rider just came through, said he had word form the capital. He gave me this letter.||||||
+Dialogue|Vintius|Word from Laventia? What? All the way out here? Let me see.||||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|I see...||||||
+Dialogue|Vintius|This is... certainly surprising. Thank you for bringing this to me.||||||
+Dialogue|Vintius|We'll need to hold a meeting about this. Mark, can you send word around the village that we are to meet tomorrow morning in the town square?||||||
+Dialogue|Mark|Yes sir.||||||
+Move|Mark|1|5|-1|2.5|||
+Dialogue|Vintius|This is ridiculous, showing up here with barely any warning? What do those fools in the capital even want?||||||
+Dialogue|Vintius|This is why I left that cursed city, yet their politics follow me here.||||||
+Dialogue|Vintius|It seems like we have no choice, not like we ever do with nobility.||||||
+Emote|Vintius|1|DotDotDot|||||
+Scene|Town|||||||
+Set|Camera||60|29||||
+Spawn|Vintius||60|33||||
+Spawn|Derrick||62|30||||
+Spawn|Din||58|30||||
+Spawn|Mark||64|32||||
+Spawn|Olivia||56|29||||
+Spawn|Player||66|27||||
+Spawn|Trulian||58|33.5||||
+Spawn|William||54.5|29||||
+Spawn|Emilio||63|28||||
+Spawn|Emily||64.5|28||||
+Spawn|Graham||58|26||||
+Spawn|Hazel||66|30||||
+Spawn|Isabel||59|28||||
+Spawn|Johnson||60|24||||
+Spawn|Mathew||60.5|28||||
+Spawn|Susan||61.5|26||||
+Spawn|Todd||59.5|26||||
+Spawn|Charlie||64.5|30||||
+Spawn|Mika||53|30||||
+Spawn|Lana||55|28||||
+Spawn|Rowan||58.5|24||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|Vintius|Thank you all for meeting here so early in the morning.||||||
+Dialogue|Vintius|Last night, a rider came with news from Laventia. The imperial princess, Anneliesia, is going on tour across the continent. She is visiting various villages along the way, and will be stopping here in two weeks.||||||
+Emote|Olivia|0|Exclamation|||||
+Emote|Todd|0|Exclamation|||||
+Emote|Din|0|Exclamation|||||
+Emote|Emily|0|Exclamation|||||
+Emote|Rowan|0|Exclamation|||||
+Emote|Hazel|1|Exclamation|||||
+Dialogue|Vintius|Quiet down please, I know this is quite a shock. No one from the imperial family has left the capital in over a hundred years, and they've certainly never come this far out before.||||||
+Dialogue|Vintius|We will need to be prepared to host her with all the hospitality we can muster.||||||
+Dialogue|Vintius|The group has several dozen people in it, but most of them are guards and other various retainers, and they'll stay outside the village for the most part. Charlie, we will only need to host the princess and a few of her closest companions in the inn.||||||
+Dialogue|Charlie|Understood.||||||
+Dialogue|Vintius|Todd, this will be the first village the reach with a forge after several weeks, they will certainly need repairs on horseshoes and other various gear, you'll probably be quite busy.||||||
+Dialogue|Todd|Nothing me and Graham can't handle.||||||
+Dialogue|Vintius|Susan, they claim that they will bring their own food, but we should have some extra rations stockpiled just in case.||||||
+Dialogue|Susan|Absolutely! It would be my pleasure to feed the princess.||||||
+Dialogue|Vintius|Trulian has already agreed to hold a special service once they arrive. Laventia is also the seat of the church, so I'm certain they will appreciate the gesture.||||||
+Dialogue|Vintius|We've got a lot of work to do over the next couple weeks, but I'm sure we will manage. Thank you all for gathering here, you can go back to your work now.||||||
+Scene|Town|||||||
+Set|Camera||90|30||||
+Spawn|Player||84|30||||
+Spawn|Vintius||78|30||||
+Move|Player|1|90|30|2.5|||
+Dialogue|Vintius|PLAYER, a moment of your time please.||||||
+Move|Vintius|1|86|30|2.5|||
+Dialogue|Vintius|You wouldn't happen to know anything about this, do you? It's quite the coincidence, you showing up right before the princess announces she's heading here.||||||
+Emote|Player|1|Question|||||
+Dialogue|Vintius|I didn't really think so. It's honestly great timing. I didn't tell the whole village, but we actually need more help getting the various resources than I let on.||||||
+Dialogue|Vintius|I'll need your help collecting things, think of it as payment for the house we gave you.||||||
+Emote|Player|1|DotDotDot|||||
+Dialogue|Vintius|First, Todd will need more coal to handle all the repairs, we have some stocked up, but i think we'll need 10 more just to be safe.||||||
+Dialogue|Vintius|Then, Charlie and Susan are going to work on a signature feast for when the princess arrives. I know they said that they would feed themselves, but I know the nobility from when I lived in the capital. They'll be expecting a feast.||||||
+Dialogue|Vintius|For that, we'll need 15 turnips, 5 carp, and 5 rabbit meat. A nice collection of our local cuisine should be good.||||||
+Dialogue|Vintius|Though I doubt such common food will please her royal highness... she's all used to her fancy meals back at the capital.||||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|PLAYER, this is very strange that she's coming out here. The capital has always claimed to rule over the outskirt villages, but we barley hear a word from them. The fact that a member of the imperial family is coming all this way?||||||
+Dialogue|Vintius|Between you and me, there has been talk of a new king being crowned somewhere in land that Laventia claims to rule over. The say this king wants to challenge Laventia's rule.||||||
+Dialogue|Vintius|That's about all I heard, I assumed it was a rumor, people talk of new kings to replace the imperial family all the time, but we're all too busy surviving to even try.||||||
+Dialogue|Vintius|Doesn't really matter what king pretends to rule over us though. It's not like they actually do anything...||||||
+Emote|Vintius|1|DotDotDot|||||
+Dialogue|Vintius|Wait why am I even telling you this? None of this matters. Forget I said anything.||||||
+Dialogue|Vintius|Bring me the supplies I need before the princess arrives in two weeks, understand? This imperial visit is going to drain us of all of our stockpiles, we'll be relying on you even more once it's over.||||||
+Move|Vintius|1|78|30|2.5|||
+Spawn|Empty||0|0||||
+Dialogue|Empty|You have been assigned a main quest, you can check it in the pause menu.||||||
+Dialogue|Empty|You MUST complete the quest by the deadline, or the game will end.||||||
+Dialogue|Empty|Good luck! Sembira needs your help.||||||

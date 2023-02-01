@@ -29,8 +29,7 @@ public class Quest_Manager : MonoBehaviour
 
     public void StartGame(){
         quests = new List<Quest>();
-        Quest startQuest = new Quest("Bring supplies to Sophia", "Sophia", 3);
-        startQuest.SetActive();
+        Quest startQuest = new Quest("Bring supplies to Sophia", "Sophia", 1);
         startQuest.mainQuest = true;
         startQuest.items.Add(new QuestItem("Wood", 2));
         quests.Add(startQuest);
@@ -73,12 +72,30 @@ public class Quest_Manager : MonoBehaviour
     public void NewDay(){
         List<Quest> toRemove = new List<Quest>();
         foreach(Quest quest in quests){
-            if(quest.deadline.CompareDate(Time_Manager.instance.date) < 0){
+            if(quest.active && quest.deadline.CompareDate(Time_Manager.instance.date) < 0){
                 toRemove.Add(quest);
             }
         }
         foreach(Quest quest in toRemove){
+            if(quest.mainQuest == true){
+                Menu_Manager.instance.DisplayGameOver();
+                return;
+            }
             quests.Remove(quest);
         }
+        //Check for story quests
+        Date story1Date = new Date(7, Month.Spring, 1);
+        if(Time_Manager.instance.date.CompareDate(story1Date) == 0){
+            Quest storyQuest = new Quest("Prepare for the princesses visit", "Vintius", 13);
+            storyQuest.SetActive();
+            storyQuest.mainQuest = true;
+            storyQuest.items.Add(new QuestItem("Carp", 5));
+            storyQuest.items.Add(new QuestItem("Rabbit Meat", 5));
+            storyQuest.items.Add(new QuestItem("Coal", 10));
+            storyQuest.items.Add(new QuestItem("Turnip", 15));
+            quests.Add(storyQuest);
+        }
     }
+
+    
 }

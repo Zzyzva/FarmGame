@@ -982,7 +982,7 @@ Transform:
   - {fileID: 120450740}
   - {fileID: 743350270}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &87682523
 GameObject:
@@ -2007,7 +2007,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &273055119
 Rigidbody2D:
@@ -2989,8 +2989,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3015,7 +3015,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
@@ -3031,7 +3031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58, y: 12, z: -10}
+  m_LocalPosition: {x: 90, y: 30, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7055,7 +7055,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dea832842822b6a47b5568fbbe8a739b, type: 2}
+  - {fileID: 2100000, guid: 89429016e63b8db49a35bb96bceef180, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60485,7 +60485,7 @@ PrefabInstance:
     - target: {fileID: 1326883638866997107, guid: b2f82643e35613a4f85cbcdca8d6c465,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1326883638866997107, guid: b2f82643e35613a4f85cbcdca8d6c465,
         type: 3}
@@ -62056,6 +62056,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 272646511442312256, guid: dbde04bc2228d934fb5f641f0c19607f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 272646511442312318, guid: dbde04bc2228d934fb5f641f0c19607f,
         type: 3}
       propertyPath: outside
@@ -62069,7 +62074,7 @@ PrefabInstance:
     - target: {fileID: 272646511442312319, guid: dbde04bc2228d934fb5f641f0c19607f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 272646511442312319, guid: dbde04bc2228d934fb5f641f0c19607f,
         type: 3}

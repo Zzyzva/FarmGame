@@ -314,6 +314,10 @@ public class Time_Manager : MonoBehaviour
         //Hide UI
         HUD.alpha = 0f;
         Player_Manager.player.gameObject.SetActive(false);
+
+        //Update quests, happens before wake up in case of game over
+        Quest_Manager.instance.NewDay();
+
     }
 
     //Updates the time and NPC locations for a new day
@@ -353,9 +357,7 @@ public class Time_Manager : MonoBehaviour
         //Update Forest
         Forest_Manager.instance.NewDay();
 
-        //Update quests
-        Quest_Manager.instance.NewDay();
-
+        
         //Get gold
         foreach(Item item in Inventory_Manager.instance.toSell){
             Inventory_Manager.instance.gold += item.count * item.value;
@@ -375,6 +377,7 @@ public class Time_Manager : MonoBehaviour
 
         //Save Game
         Save_Manager.instance.SaveGame();
+        Save_Manager.instance.SaveBackup();
 
         Time_Manager.instance.Unpause();
         canPause = true;

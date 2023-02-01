@@ -68,6 +68,8 @@ public class Menu_Manager : MonoBehaviour
     //New Day
     public CanvasGroup newDay;
     public CanvasGroup rankUpDisplay;
+    public CanvasGroup gameOverDisplay;
+    public GameObject continueButton;
     public TextMeshProUGUI rankUpTitle;
     public TextMeshProUGUI rankUpText;
 
@@ -386,9 +388,9 @@ public class Menu_Manager : MonoBehaviour
         minesMenu.blocksRaycasts = false;
     }
 
-    public void OpenLoadMenu(){
+    public void OpenLoadMenu(string saveDirectory){
         loadMenuOpen = true;
-        UpdateLoadMenu();
+        UpdateLoadMenu(saveDirectory);
         loadMenu.alpha = 1;
         loadMenu.interactable = true;
         loadMenu.blocksRaycasts = true;
@@ -406,8 +408,8 @@ public class Menu_Manager : MonoBehaviour
         loadMenu.blocksRaycasts = interact;
     }
 
-    public void UpdateLoadMenu(){
-        DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
+    public void UpdateLoadMenu(string saveDirectory){
+        DirectoryInfo dir = new DirectoryInfo(saveDirectory);
         FileInfo[] info = dir.GetFiles("*.*");
         BinaryFormatter formatter = new BinaryFormatter();
 
@@ -493,6 +495,7 @@ public class Menu_Manager : MonoBehaviour
         newDay.blocksRaycasts = false;
         newDay.interactable = false;
         CloseRankUp();
+        CloseGameOver();
     }
 
     public void DisplayRankUp(SkillRankUp skill){
@@ -507,5 +510,20 @@ public class Menu_Manager : MonoBehaviour
         rankUpDisplay.alpha = 0;
         rankUpDisplay.interactable = false;
         rankUpDisplay.blocksRaycasts = false;
+    }
+
+    public void DisplayGameOver(){
+        CloseRankUp();
+        gameOverDisplay.alpha = 1;
+        gameOverDisplay.interactable = true;
+        gameOverDisplay.blocksRaycasts = true;
+        continueButton.SetActive(false);
+    }
+
+    public void CloseGameOver(){
+        gameOverDisplay.alpha = 0;
+        gameOverDisplay.interactable = false;
+        gameOverDisplay.blocksRaycasts = false;
+        continueButton.SetActive(true);
     }
 }
