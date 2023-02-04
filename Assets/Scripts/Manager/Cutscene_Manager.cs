@@ -113,7 +113,7 @@ public class Cutscene_Manager : MonoBehaviour
             }
             if(cutscene.characterTrigger != ""){
                 Script npc = NPC_Manager.instance.GetNPCByName(cutscene.characterTrigger);
-                if(npc.relationship < int.Parse(cutscene.characterHeartsTrigger)){
+                if(npc.GetRelationshipHearts() < int.Parse(cutscene.characterHeartsTrigger)){
                     continue;
                 }
             }
@@ -293,6 +293,8 @@ public class Cutscene_Manager : MonoBehaviour
         currentSceneCommand = 1;
 
         currentScene.hasBeenSeen = true;
+
+        CheckForCutscene(gameScene, playerPosition);
 
     }
 

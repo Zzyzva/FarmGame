@@ -1,0 +1,17 @@
+BoulderRemoved|Player Farm|||||4||
+Meet|Todd|||||||
+Spawn|Player||12|23.5||||
+Spawn|Todd||12|21.5||||
+Set|Camera||13|24||||
+Emote|Player|1|Exclamation|||||
+Dialogue|Todd|Morning, PLAYER. Just wanted to tell you that Graham and I removed that boulder in the south of the town.||||||
+Dialogue|Todd|It was blocking the way to the mountain. There's an older lady by the name of Zes up there who you should meet, and there's also a mine.||||||
+Dialogue|Todd|The mine is pretty dangerous though, I wouldn't go in if I were you.||||||
+Emote|Todd|1|DotDotDot|||||
+Dialogue|Todd|But if you WERE to go in, I could use the coal and ore you find to upgrade your gear. Just a thought.||||||
+Dialogue|Todd|Well that's all I had to say, nice farm by the way.||||||
+Move|Todd|1|8|21.5|2.5|||
+Dialogue|Todd|Oh wait actually, Olivia wanted me to let you know there is also a lake up there with new fish.||||||
+Dialogue|Todd|She seemed, uh... very excited.||||||
+Dialogue|Todd|All right, enjoy your day!||||||
+Move|Todd|1|4|21.5|2.5|||

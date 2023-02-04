@@ -141,7 +141,7 @@ public class MinesPCG : MonoBehaviour
                 } else if(pos == "ladder rock"){
                     temp = Instantiate(rock);
                     temp.GetComponent<Rock>().dropLadder = true;
-                    temp.GetComponent<Rock>().dropXP = 12;
+                    temp.GetComponent<Rock>().dropXP = 6;
                 } else if(pos == "copper"){
                     temp = Instantiate(copperRock);
                 }

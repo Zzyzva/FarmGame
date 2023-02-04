@@ -27,7 +27,7 @@ public class Fishing_Manager : MonoBehaviour
     public float minigameGoal = 150;
     public float minigameDownTick;
     public float minigameDownTickHover;
-    float minigameScore = 20;
+    float minigameScore = 30;
     Transform fishingBar;
 
 

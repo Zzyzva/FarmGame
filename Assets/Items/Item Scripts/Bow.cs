@@ -10,6 +10,8 @@ public class Bow : Item
     public GameObject arrow;
     public float speed = 10f;
 
+    public float energyCost;
+
 
     float charge = 0;
     bool charging = false;
@@ -47,6 +49,7 @@ public class Bow : Item
             maxDistance = 16;
         }
         angleAdjust = Random.Range(-angleAdjust, angleAdjust);
+        Inventory_Manager.instance.energy -= energyCost;
 
 
 

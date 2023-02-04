@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fee46422d45a54e8740356394fc76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4

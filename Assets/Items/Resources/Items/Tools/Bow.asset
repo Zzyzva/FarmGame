@@ -21,7 +21,9 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   canSell: 0
+  description: 
   bowCharge: {fileID: 3917285922387660260, guid: a5106dc226467ef4d980fb929aff18eb,
     type: 3}
   arrow: {fileID: 6151555324182989574, guid: d84e8e604bdfe7945af8cd857e21db06, type: 3}
   speed: 35
+  energyCost: 4

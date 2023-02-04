@@ -106,8 +106,12 @@ MonoBehaviour:
   ready: 0
   tilledDirt: {fileID: 21300000, guid: 9f49eaa841a758540a4638ff9107ab4d, type: 3}
   wateredDirt: {fileID: 21300000, guid: 3ebb4aaee879c234f90e5fbe6a20f82c, type: 3}
+  normalDirt: {fileID: 21300000, guid: 391edd73922106e4f8baf9f05a058950, type: 3}
   readySprite: {fileID: 8275978284717655681}
   crop: {fileID: 0}
+  period:
+    sprite: {fileID: 0}
+    day: 0
   growthDays: 0
 --- !u!61 &431399285979656687
 BoxCollider2D:

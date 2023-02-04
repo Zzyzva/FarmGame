@@ -29,10 +29,10 @@ public class Quest_Manager : MonoBehaviour
 
     public void StartGame(){
         quests = new List<Quest>();
-        Quest startQuest = new Quest("Bring supplies to Sophia", "Sophia", 1);
-        startQuest.mainQuest = true;
-        startQuest.items.Add(new QuestItem("Wood", 2));
-        quests.Add(startQuest);
+        //Quest startQuest = new Quest("Bring supplies to Sophia", "Sophia", 1);
+        //startQuest.mainQuest = true;
+        //startQuest.items.Add(new QuestItem("Wood", 2));
+        //quests.Add(startQuest);
 
     }
 

@@ -14,12 +14,13 @@ public class Dirt : Interactable
 
     public Sprite tilledDirt;
     public Sprite wateredDirt;
+    public Sprite normalDirt;
 
     public GameObject readySprite;
 
 
     public Crop crop;
-    Crop.GrowthPeriod period;
+    public Crop.GrowthPeriod period;
     public int growthDays;
 
     void OnEnable()
@@ -96,6 +97,8 @@ public class Dirt : Interactable
             Inventory_Manager.instance.AddItem(crop.item, crop.numDrops);
             Skills_Manager.instance.AddFarmingXP(crop.xp);
             if(crop.repeatGrowthDays == 0){
+                growthDays = 0;
+                crop = null;
                 planted = false;
             } else{
                 growthDays -= crop.repeatGrowthDays;
@@ -107,14 +110,18 @@ public class Dirt : Interactable
         }
     }
 
-    void SetSprites(){
+    public void SetSprites(){
         if(tilled && !watered){
             gameObject.GetComponent<SpriteRenderer>().sprite = tilledDirt;
         } else if(tilled && watered){
             gameObject.GetComponent<SpriteRenderer>().sprite = wateredDirt;
+        } else if(!tilled){
+            gameObject.GetComponent<SpriteRenderer>().sprite = normalDirt;
         }
         if(ready){
             readySprite.SetActive(true);
+        } else{
+            readySprite.SetActive(false);
         }
         if(planted){
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = crop.seeds;

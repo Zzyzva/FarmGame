@@ -26,9 +26,18 @@ public class Save_Manager : MonoBehaviour
         }
     }
 
+    public void CheckSaveDirectory(){
+        //Check for the save directory
+        string saveDirectory = Path.Combine(Application.persistentDataPath, "Saves");
+        if(!Directory.Exists(saveDirectory)){
+            Directory.CreateDirectory(saveDirectory);
+        }
+    }
+
     public void SaveGame(){
         string path;
         string backupDirectory;
+        CheckSaveDirectory();
         //Create a new save name
         if(saveFile == ""){
             do{
@@ -38,19 +47,23 @@ public class Save_Manager : MonoBehaviour
                 int saveExtension = Random.Range(0, 99999999);
                 directoryPath = saveFile + saveExtension;
                 saveFile = saveFile + saveExtension + ".mike";
-                path = Path.Combine(Application.persistentDataPath, saveFile);
+                path = Path.Combine(Application.persistentDataPath, "Saves");
+                path = Path.Combine(path, saveFile);
                 
-                backupDirectory = Path.Combine(Application.persistentDataPath, directoryPath);
+                backupDirectory = Path.Combine(Application.persistentDataPath, "Saves");
+                backupDirectory = Path.Combine(backupDirectory, directoryPath);
                 
             } while(File.Exists(path) || Directory.Exists(backupDirectory));
             Directory.CreateDirectory(backupDirectory);
         }
-        path = Path.Combine(Application.persistentDataPath, saveFile);
+        path = Path.Combine(Application.persistentDataPath, "Saves");
+        path = Path.Combine(path, saveFile);
 
         SaveData data = new SaveData();
         data.Save();
 
         BinaryFormatter formatter = new BinaryFormatter();
+        
         FileStream stream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(stream, data);
@@ -60,11 +73,18 @@ public class Save_Manager : MonoBehaviour
 
     public void SaveBackup(){
         string path;
+        CheckSaveDirectory();
+
+        
         //Create a new save name
         if(saveFile == ""){
             return;       
         }
-        path = Path.Combine(Application.persistentDataPath, directoryPath);
+        path = Path.Combine(Application.persistentDataPath, "Saves");
+        path = Path.Combine(path, directoryPath);
+        if(!Directory.Exists(path)){
+            Directory.CreateDirectory(path);
+        }
         string backupFile = Time_Manager.instance.date.year.ToString() + Time_Manager.instance.date.month + Time_Manager.instance.date.date.ToString() + saveFile;
         path = Path.Combine(path, backupFile);
 
@@ -72,6 +92,7 @@ public class Save_Manager : MonoBehaviour
         data.Save();
 
         BinaryFormatter formatter = new BinaryFormatter();
+        
         FileStream stream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(stream, data);
@@ -86,8 +107,10 @@ public class Save_Manager : MonoBehaviour
     }
 
     public void LoadRecentSave(){
+        CheckSaveDirectory();
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Path.Combine(Application.persistentDataPath, saveFile);
+        string path = Path.Combine(Application.persistentDataPath, "Saves");
+        path = Path.Combine(path, saveFile);
         FileStream stream = new FileStream(path, FileMode.Open);
         SaveData data = formatter.Deserialize(stream) as SaveData;
         stream.Close();
@@ -99,7 +122,7 @@ public class Save_Manager : MonoBehaviour
         Inventory_Manager.instance.UpdateChestSlots();
         Time_Manager.instance.UpdateTimeText();
         Player_Manager.player.SetActive(true);
-        LevelLoader.instance.LoadLevel("Tenant Hut", new Vector2(3,3));
+        LevelLoader.instance.LoadLevel("Player House", new Vector2(5,5));
         
     }
 

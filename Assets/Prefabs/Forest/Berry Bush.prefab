@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -257671369
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a2fc4165b437d9d479f92b9cd209ad7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f2a872ca0b89459fb144f3bc2e00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
+  forestPosX: 0
+  forestPosY: 0
   pickedBush: {fileID: 21300000, guid: 734769de3474d8d44bd8ba8b301c3782, type: 3}
   berry: {fileID: 11400000, guid: ee2f4af0de58c34459ff105307e4fb9c, type: 2}
 --- !u!61 &8944122956233762578

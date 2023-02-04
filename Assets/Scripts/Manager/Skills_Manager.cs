@@ -50,8 +50,10 @@ public class Skills_Manager : MonoBehaviour
     {
         if(instance){
             Destroy(this);
+            
         } else{
             instance = this;
+            rankUps = new List<SkillRankUp>();
         }
     }
 
@@ -91,8 +93,6 @@ public class Skills_Manager : MonoBehaviour
         forestryExpert = false;
         forestryMaster = false;
         forestryLegendary = false;
-
-        rankUps = new List<SkillRankUp>();
     }
 
     public void AddFarmingXP(int xp){
@@ -174,6 +174,85 @@ public class Skills_Manager : MonoBehaviour
         return 30;
     }
 
+    public void SetSkillRanks(){
+         //Farming
+        if(farmingLevel >= 5 && !farmingNovice){
+            farmingNovice = true;
+        }
+        if(farmingLevel >= 10 && !farmingIntermediate){
+            farmingIntermediate = true;
+        }
+        if(farmingLevel >= 15 && !farmingAdvanced){
+            farmingAdvanced = true;
+        }
+        if(farmingLevel >= 20 && !farmingExpert){
+            farmingExpert = true;
+        }
+        if(farmingLevel >= 25 && !farmingMaster){
+            farmingMaster = true;
+        }
+        if(farmingLevel >= 30 && !farmingLegendary){
+            farmingLegendary = true;
+        }
+        //Fishing
+        if(fishingLevel >= 5 && !fishingNovice){
+            fishingNovice = true;
+        }
+        if(fishingLevel >= 10 && !fishingIntermediate){
+            fishingIntermediate = true;
+        }
+        if(fishingLevel >= 15 && !fishingAdvanced){
+            fishingAdvanced = true;
+        }
+        if(fishingLevel >= 20 && !fishingExpert){
+            fishingExpert = true;
+        }
+        if(fishingLevel >= 25 && !fishingMaster){
+            fishingMaster = true;
+        }
+        if(fishingLevel >= 30 && !fishingLegendary){
+            fishingLegendary = true;
+        }
+        //Forestry
+        if(forestryLevel >= 5 && !forestryNovice){
+            forestryNovice = true;
+        }
+        if(forestryLevel >= 10 && !forestryIntermediate){
+            forestryIntermediate = true;
+        }
+        if(forestryLevel >= 15 && !forestryAdvanced){
+            forestryAdvanced = true;
+        }
+        if(forestryLevel >= 20 && !forestryExpert){
+            forestryExpert = true;
+        }
+        if(forestryLevel >= 25 && !forestryMaster){
+            forestryMaster = true;
+        }
+        if(forestryLevel >= 30 && !forestryLegendary){
+            forestryLegendary = true;
+        }
+        //Mining
+        if(miningLevel >= 5 && !miningNovice){
+            miningNovice = true;
+        }
+        if(miningLevel >= 10 && !miningIntermediate){
+            miningIntermediate = true;
+        }
+        if(miningLevel >= 15 && !miningAdvanced){
+            miningAdvanced = true;
+        }
+        if(miningLevel >= 20 && !miningExpert){
+            miningExpert = true;
+        }
+        if(miningLevel >= 25 && !miningMaster){
+            miningMaster = true;
+        }
+        if(miningLevel >= 30 && !miningLegendary){
+            miningLegendary = true;
+        }
+    }
+
     public bool CheckSkillRanks(){
         bool ret = false;
         //Farming
@@ -211,7 +290,7 @@ public class Skills_Manager : MonoBehaviour
         if(fishingLevel >= 5 && !fishingNovice){
             fishingNovice = true;
             ret = true;
-            rankUps.Add(new SkillRankUp("Novice Fisher", "TBD"));
+            rankUps.Add(new SkillRankUp("Novice Fisher", "Bait available at Olivia's shop"));
         }
         if(fishingLevel >= 10 && !fishingIntermediate){
             fishingIntermediate = true;

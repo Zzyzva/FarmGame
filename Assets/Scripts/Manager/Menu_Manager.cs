@@ -409,6 +409,7 @@ public class Menu_Manager : MonoBehaviour
     }
 
     public void UpdateLoadMenu(string saveDirectory){
+        Save_Manager.instance.CheckSaveDirectory();
         DirectoryInfo dir = new DirectoryInfo(saveDirectory);
         FileInfo[] info = dir.GetFiles("*.*");
         BinaryFormatter formatter = new BinaryFormatter();
@@ -418,6 +419,7 @@ public class Menu_Manager : MonoBehaviour
         }
         
         foreach (FileInfo f in info){
+            
             FileStream stream = new FileStream(f.FullName, FileMode.Open);
             SaveData data = formatter.Deserialize(stream) as SaveData;
             GameObject UI = Instantiate(loadUIPrefab);

@@ -15,23 +15,37 @@ public class Farming_Manager : MonoBehaviour
 
     public float waterInCan;
 
-    public GameObject[] crops;
+    public Crop[] crops;
 
     private void Awake() {
         if(instance == null){
             instance = this;
+
+            dirt = new List<GameObject>();
+            crops = Resources.LoadAll<Crop>("Crops");
+            SpawnDirt();
             
         } else{
             Destroy(gameObject);
         }
     }
+    
 
     public void StartGame(){
-        foreach(GameObject dirt in dirt){
-            Destroy(dirt);
+        foreach(GameObject dirtObj in dirt){
+            Dirt dirtComp = dirtObj.GetComponent<Dirt>();
+            dirtComp.tilled = false;
+            dirtComp.watered = false;
+            dirtComp.planted = false;
+            dirtComp.ready = false;
+            dirtComp.crop = null;
+            dirtComp.growthDays = 0;
+            dirtComp.SetSprites();
         }
-        dirt = new List<GameObject>();
-        crops = Resources.LoadAll<GameObject>("Crops");
+        waterInCan = 10;
+    }
+
+    void SpawnDirt(){
         for(int i = 0; i < plotWidth; i++){
             for(int j = 0; j < plotHeight; j++){
                 GameObject temp = Instantiate(dirtObject, new Vector3(i + plotWidthOffset,j + plotHeightOffset,0), Quaternion.identity);
@@ -42,7 +56,6 @@ public class Farming_Manager : MonoBehaviour
                 temp.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             }
         }
-        waterInCan = 10;
     }
 
 

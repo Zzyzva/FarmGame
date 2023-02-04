@@ -12,7 +12,8 @@ public class GameOverButtons : MonoBehaviour
     }
 
     public void OnLoadPreviousClick(){
-        string path = Path.Combine(Application.persistentDataPath, Save_Manager.instance.directoryPath);
+        string path = Path.Combine(Application.persistentDataPath, "Saves");
+        path = Path.Combine(path, Save_Manager.instance.directoryPath);
         Menu_Manager.instance.OpenLoadMenu(path);
         Menu_Manager.instance.CloseNewDay();
     }

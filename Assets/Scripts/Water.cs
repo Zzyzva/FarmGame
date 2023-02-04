@@ -13,6 +13,6 @@ public class Water : MonoBehaviour
    
    public Type type;
    public void WaterHit(float maxWater){
-       Farming_Manager.instance.RefillCan(maxWater);
+       Farming_Manager.instance.RefillCan(maxWater + 1); //plus 1 since can pours one right after
    }
 }

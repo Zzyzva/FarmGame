@@ -40,7 +40,7 @@ public class Olivia_Schedule : Schedule
             }
 
             //Go to tavern
-            if(hour == 5 && minute == 30 && meridiem == "pm"){
+            if(hour == 5 && minute == 20 && meridiem == "pm"){
                 queue.Enqueue(Location.northFarmFishingSpotPath);
                 queue.Enqueue(Location.northFarmTownEnter);
                 queue.Enqueue(Location.northRoadEnter);

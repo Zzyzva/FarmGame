@@ -17,7 +17,7 @@ public class Hazel_Schedule : Schedule
         }
 
         //Check garden
-        if(hour == 1 && minute == 0 && meridiem == "pm"){
+        if(hour == 12 && minute == 55 && meridiem == "pm"){
             queue.Enqueue(Location.innHazelShelfPath);
             queue.Enqueue(Location.innHazelBedPath);
             queue.Enqueue(Location.innHallHigh);

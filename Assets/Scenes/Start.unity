@@ -1897,12 +1897,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: CharlieDialogue
   npcName: Charlie
   icon: {fileID: 21300000, guid: 7a231ee92d561d7429020cee074956ec, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -2298,7 +2299,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 31, y: 31}
-  m_SizeDelta: {x: 24, y: 24}
+  m_SizeDelta: {x: 30, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100087029
 MonoBehaviour:
@@ -2323,7 +2324,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 16138cc7b1e27a6469229fe0c9556cd9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2562,12 +2563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: JohnsonDialogue
   npcName: Johnson
   icon: {fileID: 21300000, guid: 5b511f5732dabaa4b97ff006b28cce5b, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -3909,6 +3911,8 @@ MonoBehaviour:
   - ForestIntro
   - MinesIntro
   - Story1
+  - BoulderRemoved
+  - ThankYou!
   cutsceneIsRunning: 0
   cutsceneStart: 0
   cutsceneContinue: 0
@@ -4354,12 +4358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: AveryDialogue
   npcName: Avery
   icon: {fileID: 21300000, guid: 154c537369ef1a94d93d529263afc6c9, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -4498,12 +4503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: ZesDialogue
   npcName: Zes
   icon: {fileID: 21300000, guid: cae6654134e9bfa42861d5a600d81829, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -5389,12 +5395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: HazelDialogue
   npcName: Hazel
   icon: {fileID: 21300000, guid: f190021a343142345a87d2d03117c9aa, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -5533,12 +5540,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: BenjiDialogue
   npcName: Benji
   icon: {fileID: 21300000, guid: 978869958cd647640a876718408e0101, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -7147,12 +7155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: JimmyDialogue
   npcName: Jimmy
   icon: {fileID: 21300000, guid: 9e4edffc470db3a499069066a94e2831, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -7731,8 +7740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af23b548cfd70c643b1fdbfb7b79b47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: Player House
-  startPos: {x: 2, y: 2, z: 0}
 --- !u!1 &481197627
 GameObject:
   m_ObjectHideFlags: 0
@@ -9282,12 +9289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: VintiusDialogue
   npcName: Vintius
   icon: {fileID: 21300000, guid: a4e6ff4592ecd54459e8c07b5bcb0fed, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -10374,12 +10382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: KaleyDialogue
   npcName: Kaley
   icon: {fileID: 21300000, guid: 01a42f2a917975742b625cfa5e071612, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -11804,12 +11813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: EmilioDialogue
   npcName: Emilio
   icon: {fileID: 21300000, guid: c41d7d58bda5b354da12a94031689b7f, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -12553,12 +12563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: ToddDialogue
   npcName: Todd
   icon: {fileID: 21300000, guid: 3665cd5afb7ae9d4c9c68c8d12f9610c, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -13387,7 +13398,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 87.49994, y: 42.916626}
-  m_SizeDelta: {x: 145.83333, y: 25.833332}
+  m_SizeDelta: {x: 113.94, y: 42.82}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &848913738
 MonoBehaviour:
@@ -13851,12 +13862,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: DinDialogue
   npcName: Din
   icon: {fileID: 21300000, guid: 2d4aa5b112f67f54dbcdedef12516430, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -14412,12 +14424,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: GrahamDialogue
   npcName: Graham
   icon: {fileID: 21300000, guid: c74e81581c05aa149b5b678e76de0aed, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -15365,12 +15378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: LanaDialogue
   npcName: Lana
   icon: {fileID: 21300000, guid: 7f159d14a2510f049b89e718faae7918, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -15802,12 +15816,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: EmilyDialogue
   npcName: Emily
   icon: {fileID: 21300000, guid: 1042bcf031a7c014b99783e3d9384f8a, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -16338,12 +16353,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
-  - {fileID: 11400000, guid: 861924e01e549b240972cb5ccb8fd672, type: 2}
-  - {fileID: 11400000, guid: 861924e01e549b240972cb5ccb8fd672, type: 2}
   energy: 0
   maxEnergy: 250
   gold: 500
-  playerName: Isaac
+  playerName: 
   canChangeSelected: 1
   cursorItem: {fileID: 0}
   cursor: {fileID: 1529478041}
@@ -16859,12 +16872,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: SusanDialogue
   npcName: Susan
   icon: {fileID: 21300000, guid: df09231914b189f49b4dc061017900c6, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -18947,6 +18961,7 @@ GameObject:
   - component: {fileID: 1247134642}
   - component: {fileID: 1247134641}
   - component: {fileID: 1247134644}
+  - component: {fileID: 1247134645}
   m_Layer: 10
   m_Name: Mathew
   m_TagString: Untagged
@@ -18980,12 +18995,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: MathewDialogue
   npcName: Mathew
   icon: {fileID: 21300000, guid: 6f5cc36a724066e48b6ee767648db4ad, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -19078,6 +19094,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b383ec3cfeb34d469c6758298283a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1247134645
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247134639}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1261029946
 GameObject:
   m_ObjectHideFlags: 0
@@ -20135,12 +20172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: IsabelDialogue
   npcName: Isabel
   icon: {fileID: 21300000, guid: 41b512b26d56b9e45b82755799167c1b, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -20464,10 +20502,10 @@ RectTransform:
   m_Father: {fileID: 848913737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 56.97, y: -21.41}
+  m_SizeDelta: {x: 97.94, y: 26.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1315749701
 MonoBehaviour:
@@ -20498,7 +20536,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -20511,7 +20549,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -20874,12 +20912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: TrulianDialogue
   npcName: Father Trulian
   icon: {fileID: 21300000, guid: 12d044aa2cc1a7244b9a8a03ff390e78, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -22119,12 +22158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: WilliamDialogue
   npcName: William
   icon: {fileID: 21300000, guid: 171f9aee9c08f47448f6afe39b19749b, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -22586,12 +22626,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: MarkDialogue
   npcName: Mark
   icon: {fileID: 21300000, guid: 53cbb9f86f8a02b4290ee595ab40442c, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -22982,12 +23023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: DerrickDialogue
   npcName: Derrick
   icon: {fileID: 21300000, guid: 32649c2be06d9644bbf5a8be3ac6b807, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -24851,12 +24893,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: OliviaDialogue
   npcName: Olivia
   icon: {fileID: 21300000, guid: 6e058108253e69945a112c0128a2718a, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -24983,12 +25026,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: KebaDialogue
   npcName: Keba
   icon: {fileID: 21300000, guid: 50687b9913b4c054492c4086b3c94c5d, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -25645,12 +25689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: MikaDialogue
   npcName: Mika
   icon: {fileID: 21300000, guid: 00a4465c48fd8fa42a84ae39e9f86e46, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -27033,7 +27078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -27180,12 +27225,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: SophiaDialogue
   npcName: Sophia
   icon: {fileID: 21300000, guid: 71caee7d892b73c4cb077e9c0deb97e3, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -28218,12 +28264,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: RowanDialogue
   npcName: Rowan
   icon: {fileID: 21300000, guid: cb6aa9a0d7e2d264293ae78fdad9adc1, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -28446,6 +28493,7 @@ GameObject:
   - component: {fileID: 1854311443}
   - component: {fileID: 1854311442}
   - component: {fileID: 1854311445}
+  - component: {fileID: 1854311446}
   m_Layer: 10
   m_Name: Nek
   m_TagString: Untagged
@@ -28479,12 +28527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb8c1332a94bf409c65928f27e1b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 4
   dialogueCSV: NekDialogue
   npcName: Nek
   icon: {fileID: 21300000, guid: 7b740a6e6dfc4a1489af05786ba551aa, type: 3}
   metPlayer: 0
   talkedToday: 0
+  noGreeting: 0
   canTalk: 0
   relationship: 0
   relationshipPerHeart: 10
@@ -28577,6 +28626,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd5fa19273b7d2459db3880705f3c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1854311446
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854311440}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1855850584
 GameObject:
   m_ObjectHideFlags: 0
@@ -31385,11 +31455,15 @@ MonoBehaviour:
   schedules: []
   scripts: []
   HUD: {fileID: 837209409}
+  minutes: 0
+  hours: 0
+  meridiem: 
   day: 
   date:
     date: 0
     month: 0
     year: 1
+  lastTick: 0
   pause: 0
   canPause: 1
 --- !u!224 &2022869480 stripped

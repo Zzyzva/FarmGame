@@ -30,7 +30,7 @@ public class Inventory_Manager : MonoBehaviour
 
     public int gold;
 
-    public string playerName = "Isaac";
+    public string playerName;
 
     public bool canChangeSelected =true;
 
@@ -61,6 +61,13 @@ public class Inventory_Manager : MonoBehaviour
             chestSlots = chestParent.GetComponentsInChildren<InventorySlot>();
             hotbarSlots = hotbarParent.GetComponentsInChildren<HotbarSlot>();
             energy = maxEnergy;
+            slider.maxValue = maxEnergy;
+            slider.value = energy;
+
+            foreach( HotbarSlot slot in hotbarSlots){
+                slot.Unselect();
+            }
+            hotbarSlots[0].Select();
         } else{
             Destroy(gameObject);
         }
@@ -68,10 +75,7 @@ public class Inventory_Manager : MonoBehaviour
     }
 
     public void StartGame(){
-        foreach( HotbarSlot slot in hotbarSlots){
-            slot.Unselect();
-        }
-        hotbarSlots[0].Select();
+        
 
         foreach(InventorySlot slot in inventorySlots){
             slot.ClearSlot();
@@ -85,9 +89,6 @@ public class Inventory_Manager : MonoBehaviour
             AddItem(item, 1);
         }
 
-        energy = maxEnergy;
-        slider.maxValue = maxEnergy;
-        slider.value = energy;
         gold = 500;
 
     }

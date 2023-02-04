@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropCount: 1
-  dropXP: 10
+  dropXP: 8
   drop: {fileID: 11400000, guid: dbf4ec0d3adcce44ab40cc04629a2ec0, type: 2}
   rockStrength: 5
   dropLadder: 0

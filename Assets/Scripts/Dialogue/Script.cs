@@ -24,6 +24,7 @@ public class Script : Interactable
 
     public bool metPlayer = false;
     public bool talkedToday = false;
+    public bool noGreeting = false;
     Dialogue currentDialogue;
 
     public bool canTalk = false;
@@ -108,6 +109,7 @@ public class Script : Interactable
             if(!metPlayer){
                 metPlayer = true;
                 currentDialogue = new Dialogue(npcName, introDialogue, icon);
+                noGreeting = true;
                 return currentDialogue;
             }
 
@@ -115,20 +117,22 @@ public class Script : Interactable
 
             //Standard dialogue
             string lines;
-            if(relationship < relationshipPerHeart * 2){
+            //if(relationship < relationshipPerHeart * 2){
                 int rand = Random.Range(1, zeroHeartsDialogue.Count); //Starts at 1 to skip label
                 lines = zeroHeartsDialogue[rand]; 
-            } else{
-                int rand = Random.Range(1, twoHeartsDialogue.Count); //Starts at 1 to skip label
-                lines = twoHeartsDialogue[rand];
-            }
+            //} else{
+            //    int rand = Random.Range(1, twoHeartsDialogue.Count); //Starts at 1 to skip label
+            //    lines = twoHeartsDialogue[rand];
+            //}
 
             currentDialogue = new Dialogue(npcName, lines, icon);
 
             
 
         }
-        
+        if(noGreeting){
+            return currentDialogue;
+        }
         return currentDialogue.AddGreeting(greeting);
 
     }
@@ -164,6 +168,11 @@ public class Script : Interactable
 
     public void NewDay(){
         talkedToday = false;
+        noGreeting = false;
+    }
+
+    public int GetRelationshipHearts(){
+        return relationship / relationshipPerHeart;
     }
 
 }

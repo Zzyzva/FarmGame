@@ -14,8 +14,7 @@ public class LevelLoader : MonoBehaviour
 
     private void Start() {
         string sceneName = SceneManager.GetActiveScene().name;
-
-        if(sceneName != "New Day" && !Cutscene_Manager.instance.cutsceneIsRunning && sceneName != "Title"){
+        if(sceneName != "New Day" && !Cutscene_Manager.instance.cutsceneIsRunning && sceneName != "Title" && sceneName != "Start"){
             Time_Manager.instance.Unpause();
         }
 

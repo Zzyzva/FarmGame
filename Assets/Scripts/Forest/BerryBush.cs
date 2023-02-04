@@ -11,7 +11,7 @@ public class BerryBush : ForestObject
     {  
         if(!picked){
             SetPicked();
-            int count = Random.Range(2,5);
+            int count = Random.Range(1,3);
             Inventory_Manager.instance.AddItem(berry, count);
             Skills_Manager.instance.AddForestryXP(3);
             Forest_Manager.instance.map[forestPosX,forestPosY] = "picked bush";

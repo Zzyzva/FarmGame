@@ -27,7 +27,7 @@ public class Sophia_Schedule : Schedule
 
 
         //Go to field
-        if(hour == 2 && minute == 55 && meridiem == "pm"){
+        if(hour == 2 && minute == 50 && meridiem == "pm"){
             queue.Enqueue(Location.churchAltarPath1);
             queue.Enqueue(Location.churchAltarPath2);
             queue.Enqueue(Location.churchAltarPath3);

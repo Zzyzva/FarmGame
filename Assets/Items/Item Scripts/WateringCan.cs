@@ -11,10 +11,8 @@ public class WateringCan : UseableItem
 
 
     public override void ItemUse(string facing, Vector3 origin){
-        Farming_Manager.instance.waterInCan--;
         base.ItemUse(facing, origin);
-        
-        
+        Farming_Manager.instance.waterInCan--;
         if(Farming_Manager.instance.waterInCan < 0){
             Farming_Manager.instance.waterInCan = 0;
             Emote_Manager.instance.SpawnEmoteOnPlayer("NoWater");

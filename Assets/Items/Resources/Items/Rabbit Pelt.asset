@@ -19,5 +19,6 @@ MonoBehaviour:
   stackSize: 99
   count: 0
   slot: {fileID: 0}
-  value: 100
+  value: 50
   canSell: 1
+  description: 

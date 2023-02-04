@@ -180,14 +180,14 @@ public class SaveData
     }
 
     void LoadFarming(){
+    
         Farming_Manager.instance.waterInCan = waterInCan;
         for(int i = 0; i < cropTilled.Count; i++){
             Dirt dirt = Farming_Manager.instance.dirt[i].GetComponent<Dirt>();
             dirt.tilled = cropTilled[i];
             dirt.growthDays = cropGrowthDays[i];
             if(cropName[i] != null){
-                foreach(GameObject obj in Farming_Manager.instance.crops){
-                    Crop crop = obj.GetComponent<Crop>();
+                foreach(Crop crop in Farming_Manager.instance.crops){
                     if(crop.name == cropName[i]){
                         dirt.crop = crop;
                         dirt.planted = true;
@@ -283,6 +283,7 @@ public class SaveData
         Skills_Manager.instance.fishingXP = fishingXP;
         Skills_Manager.instance.forestryXP = forestryXP;
         Skills_Manager.instance.CalculateAllLevels();
+        Skills_Manager.instance.SetSkillRanks();
     }
 
     void LoadTime(){

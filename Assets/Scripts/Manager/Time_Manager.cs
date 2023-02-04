@@ -85,7 +85,7 @@ public class Time_Manager : MonoBehaviour
 
 
 
-    private float lastTick;
+    public float lastTick;
 
     public bool pause;
     private float pauseTime;
@@ -104,6 +104,9 @@ public class Time_Manager : MonoBehaviour
             schedules = new List<Schedule>();
             scripts = new List<Script>();
             date = new Date(1, Month.Spring, 1);
+            minutes = 0;
+            hours = 7;
+            meridiem = "am";
         } else{
             Destroy(gameObject);
         }
@@ -111,12 +114,8 @@ public class Time_Manager : MonoBehaviour
     }
 
     public void StartGame(){
-        minutes = 0;
-        hours = 7;
-        meridiem = "am";
         day = "Mon";
         date = new Date(1, Month.Spring, 1);
-        lastTick = Time.time;
         pause = true;
     }
 
@@ -125,6 +124,8 @@ public class Time_Manager : MonoBehaviour
     void Update()
     {
         //Update Time
+
+
         if(!pause){
             if(Time.time - lastTick > 2.5f){
                 minutes += (int) (5 * (Time.time - lastTick) / 2.5f);
@@ -286,8 +287,6 @@ public class Time_Manager : MonoBehaviour
 
     //Pauses the game
     public bool Pause(){
-        //Time.timeScale = 0; I commented out this line because its bad practice, will that break everything? Find out soon 
-        //Should be avoided if I used proper if statements
         if(canPause && !pause){
             pause = true;
             pauseTime = Time.time;
@@ -300,10 +299,12 @@ public class Time_Manager : MonoBehaviour
 
     //Unpauses the game
     public void Unpause(){
-        Time.timeScale = 1;
-        pause = false;
-        unpauseTime = Time.time;
-        lastTick += (unpauseTime - pauseTime);
+        if(pause){
+            pause = false;
+            unpauseTime = Time.time;
+            lastTick += (unpauseTime - pauseTime);
+        }
+        
     }
 
     //Loads the new day scene and hides UI
@@ -381,7 +382,7 @@ public class Time_Manager : MonoBehaviour
 
         Time_Manager.instance.Unpause();
         canPause = true;
-        LevelLoader.instance.LoadLevel("Player House", new Vector2(3,3));
+        LevelLoader.instance.LoadLevel("Player House", new Vector2(5,5));
     }
 
 }
