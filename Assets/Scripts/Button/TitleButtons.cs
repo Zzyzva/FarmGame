@@ -32,6 +32,10 @@ public class TitleButtons : MonoBehaviour
         Menu_Manager.instance.OpenLoadMenu(Path.Combine(Application.persistentDataPath, "Saves"));
     }
 
+    public void OnExitClick(){
+        Application.Quit();
+    }
+
 
  void Update(){
         if (Input.GetKeyDown(KeyCode.Escape)){

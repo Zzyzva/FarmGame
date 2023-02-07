@@ -419,18 +419,21 @@ public class Menu_Manager : MonoBehaviour
         }
         
         foreach (FileInfo f in info){
-            
-            FileStream stream = new FileStream(f.FullName, FileMode.Open);
-            SaveData data = formatter.Deserialize(stream) as SaveData;
-            GameObject UI = Instantiate(loadUIPrefab);
-            UI.transform.transform.SetParent(loadMenuContent.transform, false);
-            TextMeshProUGUI nameText = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-            nameText.text = data.playerName;
-            TextMeshProUGUI dateText = UI.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-            dateText.text = data.day + " " + data.date.date;
-            UI.GetComponent<LoadSaveButtons>().data = data;
-            UI.GetComponent<LoadSaveButtons>().path = f.FullName;
-            stream.Close();
+            try{
+                FileStream stream = new FileStream(f.FullName, FileMode.Open);
+                SaveData data = formatter.Deserialize(stream) as SaveData;
+                GameObject UI = Instantiate(loadUIPrefab);
+                UI.transform.transform.SetParent(loadMenuContent.transform, false);
+                TextMeshProUGUI nameText = UI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+                nameText.text = data.playerName;
+                TextMeshProUGUI dateText = UI.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                dateText.text = data.day + " " + data.date.date;
+                UI.GetComponent<LoadSaveButtons>().data = data;
+                UI.GetComponent<LoadSaveButtons>().path = f.FullName;
+                stream.Close();
+            }catch{
+                continue;
+            }
         }
     }
 

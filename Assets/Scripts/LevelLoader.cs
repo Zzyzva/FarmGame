@@ -50,11 +50,13 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevel(string newScene, Vector2 newPosition){
         StartCoroutine(LoadLevelRoutine(newScene, newPosition));
+        
     }
 
 
 
     IEnumerator LoadLevelRoutine(string name, Vector2 newPosition){
+        Cutscene_Manager.instance.HideUI();
         Time_Manager.instance.Pause();
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
@@ -68,6 +70,7 @@ public class LevelLoader : MonoBehaviour
 
         //Cutscene
         if(Cutscene_Manager.instance.cutsceneIsRunning){
+            Cutscene_Manager.instance.ShowUI();
             Cutscene_Manager.instance.cutsceneContinue = true;
         }else{
             Cutscene_Manager.instance.CheckForCutscene(name, newPosition);

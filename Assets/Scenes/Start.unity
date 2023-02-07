@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -16353,6 +16353,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
   - {fileID: 11400000, guid: 53b337bb54a2b064096258a2921f103f, type: 2}
+  - {fileID: 11400000, guid: ee2f4af0de58c34459ff105307e4fb9c, type: 2}
+  - {fileID: 11400000, guid: ee2f4af0de58c34459ff105307e4fb9c, type: 2}
+  - {fileID: 11400000, guid: ee2f4af0de58c34459ff105307e4fb9c, type: 2}
+  - {fileID: 11400000, guid: ee2f4af0de58c34459ff105307e4fb9c, type: 2}
   energy: 0
   maxEnergy: 250
   gold: 500
@@ -32107,6 +32111,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1944742588}
     m_Modifications:
+    - target: {fileID: 4600323416987064870, guid: ebd435c6c3973e8498408e68de1511c9,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4600323416987064871, guid: ebd435c6c3973e8498408e68de1511c9,
         type: 3}
       propertyPath: m_Name

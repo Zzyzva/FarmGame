@@ -3,7 +3,7 @@ Meet|Olivia|||||||
 Item|Fishing Pole|||||||
 Spawn|Player||12|23.5||||
 Spawn|Olivia||12|21.5||||
-Set|Camera||13|24||||
+Set|Camera||11|24||||
 Emote|Player|1|Exclamation|||||
 Dialogue|Olivia|Gooooooooood morning!||||||
 Dialogue|Olivia|It is I, the legendary fisherwoman... OLIVIA!||||||
@@ -18,7 +18,7 @@ Dialogue|Olivia|Well aren't you talkative. Anyways, here, take this rod, and let
 Move|Olivia|1|19|21.5|2.5|||
 Dialogue|Olivia|Come on over to the river.||||||
 Move|Olivia|0|19|29|2.5|||
-Move|Camera|0|13|29|2.5|||
+Move|Camera|0|11|29|2.5|||
 Move|Player|0|17|23.5|2.5|||
 Move|Player|1|17|29|2.5|||
 Dialogue|Olivia|All right, listen close.||||||
@@ -29,7 +29,7 @@ Dialogue|Olivia|STEP 4! Keep waiting...||||||
 Emote|Olivia|1|Exclamation|||||
 Dialogue|Olivia|STEP 5! Reel it in (use the fishing rod item again) when you get a bite!||||||
 Dialogue|Olivia|STEP 6! Here is where your mettle will truly be tested. PAY ATTENTION! This part is important.||||||
-Dialogue|Olivia|You must first angle your rod in the perfect way (hover your mouse of the fish).||||||
+Dialogue|Olivia|You must first angle your rod in the perfect way (hover your mouse over the fish).||||||
 Dialogue|Olivia|Then, once your rod is angled, begin reeling in the fish as fast as you can (smash the spacebar repeatedly).||||||
 Dialogue|Olivia|The fish will try to escape, so continue to angle your rod and reel until the fish is yours!||||||
 Dialogue|Olivia|Some fish are stronger than others, and you might not be able to catch them all... yet... But do not give up! Keep practicing and one day you to may become a LEGENDARY FISHERWOMAN like myself!||||||

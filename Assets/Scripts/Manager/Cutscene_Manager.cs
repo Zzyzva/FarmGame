@@ -273,6 +273,18 @@ public class Cutscene_Manager : MonoBehaviour
         LevelLoader.instance.LoadLevel(gameScene,playerPosition);
     }
 
+    public void HideUI(){
+        cutsceneUI.alpha = 0;
+        cutsceneUI.interactable = false;
+        cutsceneUI.blocksRaycasts = false;
+    }
+
+    public void ShowUI(){
+        cutsceneUI.alpha = 1;
+        cutsceneUI.interactable = true;
+        cutsceneUI.blocksRaycasts = true;
+    }
+
     public void ClearCutscene(){
         cutsceneEnding = false;
         cutsceneIsRunning = false;

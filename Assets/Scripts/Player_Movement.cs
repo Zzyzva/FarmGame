@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
     public int speed;
     public bool canMove = true;
 
-    void Update()
+    void FixedUpdate()
     {
         if(!Time_Manager.instance.pause && canMove){
             float inputX = Input.GetAxisRaw("Horizontal");

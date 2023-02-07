@@ -1,27 +1,27 @@
 MinesIntro|Mountain Path|||||||
 Meet|Zes|||||||
 Respawn|||9.5|5||||
-Set|Camera||9|15||||
+Set|Camera||11|14||||
 Spawn|Player||4|20.5||||
 Move|Player|1|4|18|2.5|||
 Emote|Player|1|DotDotDot|||||
 Move|Player|0|10|18|2.5|||
-Move|Camera|1|9|5|2.5|||
-Set|Player||9.5|14||||
+Move|Camera|1|11|6|2.5|||
+Set|Player||2|12.5||||
+Move|Player|1|2|5|2.5|||
 Move|Player|1|9.5|5|2.5|||
 Emote|Player|1|Question|||||
 Set|Player||-50|-50||||
 Emote|Player|1|Question|||||
-Scene|Mines|||||||
-Spawn|Player||-50|-50||||
+Scene|Town|||||||
 Spawn|Empty||-50|-50||||
 Set|Camera||-50|-50||||
-Emote|Player|1|DotDotDot|||||
+Emote|Empty|1|DotDotDot|||||
 Dialogue|Empty|It's way too dark: you can't see anything. You should head back up.||||||
 Scene|Mountain Path|||||||
 Spawn|Player||9.5|5||||
 Spawn|Zes||18|6.5||||
-Set|Camera||12|5||||
+Set|Camera||11|6||||
 Emote|Player|1|DotDotDot|||||
 Dialogue|Zes|What's all that racket! Going up and down the mines like a lumbering buffoon.||||||
 Move|Zes|1|18|5|2.5|||

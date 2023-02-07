@@ -9,6 +9,7 @@ public class StartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 120;
         Time_Manager.instance.Pause();
         Time_Manager.instance.HUD.alpha = 0f;
         SceneManager.LoadScene("Title");

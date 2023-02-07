@@ -370,16 +370,16 @@ public class Inventory_Manager : MonoBehaviour
         if (left) {
             //In gift select mode
             if(selectingGift){
-                if(slot.item.canSell){
+                if(slot.item && slot.item.canSell){
                     slot.item.count--;
                     if(slot.item.count == 0){
                         slot.ClearSlot();
                     }
                     Dialogue_Manager.instance.AcceptGift(slot.item);
+                    Menu_Manager.instance.ClosePauseMenu();
+                    selectingGift = false;
+                    UpdateSlots();
                 }
-                Menu_Manager.instance.ClosePauseMenu();
-                selectingGift = false;
-                UpdateSlots();
                 return;
             }
             //If ctrl clicking to chest
@@ -403,7 +403,7 @@ public class Inventory_Manager : MonoBehaviour
 
             //If ctrl clicking to shipping
             if(shippingOpen && ctrl){
-                if(slot.item){
+                if(slot.item && slot.item.canSell){
                     Item overflow = null;
                     if(slot.slotType == InventorySlot.SlotType.inventory){
                         if(shippingSlot.item == null){

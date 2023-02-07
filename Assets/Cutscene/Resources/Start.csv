@@ -8,10 +8,10 @@ Dialogue|Unknown|Long ago, the Laventian empire was the strongest empire the wor
 Dialogue|Unknown|It covered all of the known world, and it's capital city, Laventia, had over a million people.||||||
 Dialogue|Unknown|But over time, the empire spread too far, controlled too much, and collapsed under its own weight.||||||
 Dialogue|Unknown|Today, the capital city of Laventia is all that is left of the great empire. The city clings to its legacy, claiming to still control the land it once did, but it's a fraction of the size it once was, and simply can't govern those far off lands.||||||
-Dialogue|Unknown|Those far off lands are where I'm sending you. The remote village of Sembria, located far from the capital, was considered an outskirt of Laventia even it the empire's prime. It sees almost no contact from the empire today.||||||
+Dialogue|Unknown|Those far off lands are where I'm sending you. Located far from the capital, the remote village of Sembria was considered an outskirt of Laventia even in the empire's prime. It sees almost no contact from the empire today.||||||
 Dialogue|Unknown|The village is small, and will need more help than it realizes.||||||
 Dialogue|Unknown|The villagers of Sembria will be tested over the next few years, and since I cannot help them myself, I send you.||||||
-Dialogue|Unknown|Find out what they need, help them grow, and help them survive. Do not interfere in their choices, but allow them to make them to the best of their ability.||||||
+Dialogue|Unknown|Find out what they need, help them grow, and help them survive. Do not interfere in their choices, but allow them to make those choices to the best of their ability.||||||
 Dialogue|Unknown|I have faith in you, do not let them down.||||||
 Scene|Forest Path|||||||
 Spawn|Player||-2|5||||
@@ -28,8 +28,8 @@ Dialogue|William|How did you even get here? The nearest town is days away and yo
 Dialogue|William|Yeah this is beyond me, mind if I bring you to our priest? I'm sure he'll figure something out.||||||
 Dialogue|William|Think he'll be in the tavern meeting with Vintius...||||||
 Dialogue|William|Here, follow me.||||||
-Move|William|0|19|5|2.5|||
-Move|Player|1|19|5|2.5|||
+Move|William|0|22|5|2.5|||
+Move|Player|1|22|5|2.5|||
 Scene|Inn|||||||
 Set|Camera||9|5||||
 Spawn|Trulian||6.25|4||||
@@ -60,7 +60,7 @@ Dialogue|Trulian|Vintius, would you be so kind to show him the way?||||||
 Dialogue|Vintius|Ah, yes, of course father.||||||
 Dialogue|Trulian|Three blessing to you stranger. I know you will fit in perfectly.||||||
 Scene|Player Farm|||||||
-Set|Camera||9|22||||
+Set|Camera||11|22||||
 Spawn|Player||-3|22||||
 Spawn|Vintius||-1|22||||
 Move|Vintius|0|8|22|2.5|||
