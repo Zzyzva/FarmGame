@@ -37,7 +37,16 @@ public class TitleButtons : MonoBehaviour
     }
 
 
- void Update(){
+    void Update(){
+        if(!Menu_Manager.instance.loadMenuOpen && !newGameOpen){
+            menuButtons.alpha = 1;
+            menuButtons.interactable = true;
+            menuButtons.blocksRaycasts = true;
+        } else{
+            menuButtons.alpha = 0;
+            menuButtons.interactable = false;
+            menuButtons.blocksRaycasts = false;
+        }
         if (Input.GetKeyDown(KeyCode.Escape)){
             menuButtons.alpha = 1;
             menuButtons.interactable = true;
@@ -46,6 +55,7 @@ public class TitleButtons : MonoBehaviour
             nameEnter.alpha = 0;
             nameEnter.interactable = false;
             nameEnter.blocksRaycasts = false;
+            newGameOpen = false;
         }
     }
 }

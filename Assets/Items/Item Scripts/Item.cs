@@ -32,27 +32,37 @@ public class Item : ScriptableObject
 
     public string description;
 
+
+
+
+
     public void OnUse(){ 
         //Get mouse position
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 origin = Player_Manager.player.transform.position;
 
-        Vector3 direction = (mousePos - origin);
+        Vector2 direction = (mousePos - origin);
         string facing;
         //Check direction of cast
-        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
-            if(direction.x > 0){
-                facing = "right";
-            } else{
-                facing = "left";
-            }
-        }else{
-            if(direction.y > 0){
-                facing = "up";
-            } else{
-                facing = "down";
-            }
+        float angle = Vector2.Angle(direction, new Vector2(1,0));
+        if(angle <= 22.5f){
+            facing = "right";
+        } else if( angle <= 67.5f && direction.y > 0){
+            facing = "up right";
+        } else if(angle <= 67.5f && direction.y < 0){
+            facing = "down right";
+        } else if(angle <= 112.5f && direction.y > 0){
+            facing = "up";
+        } else if( angle <= 112.5f && direction.y < 0){
+            facing = "down";
+        } else if(angle <= 157.5f && direction.y > 0){
+            facing = "up left";
+        } else if(angle <= 157.5f && direction.y < 0){
+            facing = "down left";
+        } else{
+            facing = "left";
         }
+
         ItemUse(facing, origin);
     }
 
@@ -108,6 +118,10 @@ public class Item : ScriptableObject
             return 7;
         }
         return -1;
+    }
+
+    public virtual string GetDescription(){
+        return description;
     }
 
 }

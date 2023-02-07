@@ -9,7 +9,6 @@ public class WateringCan : UseableItem
 
 
 
-
     public override void ItemUse(string facing, Vector3 origin){
         base.ItemUse(facing, origin);
         Farming_Manager.instance.waterInCan--;
@@ -18,8 +17,9 @@ public class WateringCan : UseableItem
             Emote_Manager.instance.SpawnEmoteOnPlayer("NoWater");
 
         }
-        
+    }
 
-
+    public override string GetDescription(){
+        return "Water: " + Farming_Manager.instance.waterInCan;
     }
 }

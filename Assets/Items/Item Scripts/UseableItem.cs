@@ -42,13 +42,25 @@ public class UseableItem : Item
 
             
             if(facing == "right"){
-                    origin.x += 1;
+                origin.x += 1;
             } else if( facing == "left"){
-                    origin.x -= 1;
+                origin.x -= 1;
             } else if( facing == "up"){
-                    origin.y += 1;
+                origin.y += 1;
             } else if( facing == "down"){
-                    origin.y -= 1;
+                origin.y -= 1;
+            } else if( facing == "up right"){
+                origin.x += 1;
+                origin.y += 1;
+            } else if( facing == "up left"){
+                origin.x -= 1;
+                origin.y += 1;
+            } else if( facing == "down right"){
+                origin.x += 1;
+                origin.y -= 1;
+            } else if( facing == "down left"){
+                origin.x -= 1;
+                origin.y -= 1;
             }
             
             swingInstance =  Instantiate(swing);

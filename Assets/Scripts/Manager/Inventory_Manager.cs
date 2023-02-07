@@ -653,10 +653,8 @@ public class Inventory_Manager : MonoBehaviour
     public void OnHoverEnter(Item item){
         if(item && !cursorHolding){
             hoverText.SetActive(true);
-            hoverText.GetComponentInChildren<TextMeshProUGUI>().text = item.name;
-            if(item.description != ""){
-                hoverText.GetComponentInChildren<TextMeshProUGUI>().text += "\n" + item.description;
-            }
+            hoverText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.name;
+            hoverText.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.GetDescription();
         }
         
     }

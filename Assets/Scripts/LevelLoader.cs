@@ -11,7 +11,7 @@ public class LevelLoader : MonoBehaviour
     public static LevelLoader instance;
     public bool outside;
 
-
+    //This object has a unique instance on every scene, so we use to to reset various things
     private void Start() {
         string sceneName = SceneManager.GetActiveScene().name;
         if(sceneName != "New Day" && !Cutscene_Manager.instance.cutsceneIsRunning && sceneName != "Title" && sceneName != "Start"){
