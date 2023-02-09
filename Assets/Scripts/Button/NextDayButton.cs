@@ -12,6 +12,7 @@ public class NextDayButton : MonoBehaviour
         } else{
             Time_Manager.instance.WakeUp();
         }
+        Menu_Manager.instance.CloseItemsSoldMenu();
         
     }
 

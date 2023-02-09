@@ -13,6 +13,7 @@ public class LevelLoader : MonoBehaviour
 
     //This object has a unique instance on every scene, so we use to to reset various things
     private void Start() {
+        Menu_Manager.instance.CloseLoadMenu();
         string sceneName = SceneManager.GetActiveScene().name;
         if(sceneName != "New Day" && !Cutscene_Manager.instance.cutsceneIsRunning && sceneName != "Title" && sceneName != "Start"){
             Time_Manager.instance.Unpause();
@@ -29,11 +30,6 @@ public class LevelLoader : MonoBehaviour
         }
 
         if(sceneName == "New Day"){
-            if(Skills_Manager.instance.CheckSkillRanks()){
-                SkillRankUp rankUp = Skills_Manager.instance.rankUps[0];
-                Skills_Manager.instance.rankUps.RemoveAt(0);
-                Menu_Manager.instance.DisplayRankUp(rankUp);
-            }
             Menu_Manager.instance.OpenNewDay();
         }
 

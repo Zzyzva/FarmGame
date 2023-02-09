@@ -56,7 +56,7 @@ public class Dialogue_Manager : MonoBehaviour
         textBox.interactable = true;
         textBox.blocksRaycasts = true;
 
-        if(Cutscene_Manager.instance.cutsceneIsRunning){
+        if(Cutscene_Manager.instance.cutsceneIsRunning || !activeScript.canGift){
             giftButton.gameObject.SetActive(false);
         } else{
             giftButton.gameObject.SetActive(true);
@@ -151,6 +151,8 @@ public class Dialogue_Manager : MonoBehaviour
         }
         DisplayNextSentence();
         CheckQuests();
+        activeScript.canGift = false;
+        giftButton.gameObject.SetActive(false);
 
         giftMenu.alpha = 0;
         giftMenu.interactable = false;

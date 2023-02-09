@@ -102,8 +102,8 @@ public class Save_Manager : MonoBehaviour
 
     public void LoadGame(SaveData data){
         data.Load();
-        Menu_Manager.instance.CloseLoadMenu();
         StartGame();
+        
     }
 
     public void LoadRecentSave(){

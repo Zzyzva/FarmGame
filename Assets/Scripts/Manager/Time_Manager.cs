@@ -318,6 +318,7 @@ public class Time_Manager : MonoBehaviour
 
         //Update quests, happens before wake up in case of game over
         Quest_Manager.instance.NewDay();
+        Skills_Manager.instance.CheckSkillRanks();
 
     }
 

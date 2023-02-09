@@ -62,7 +62,6 @@ public class Rabbit : ForestObject
     //If moving, stops and sets new time
     //If not moving, picks a random direction to move
     private void Update() {
-
         if(!Time_Manager.instance.pause){
             //Check if it needs to flee
             if(( Player_Manager.player.transform.position - gameObject.transform.position ).magnitude < fleeDistance){

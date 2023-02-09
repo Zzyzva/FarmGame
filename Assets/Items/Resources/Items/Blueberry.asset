@@ -15,9 +15,9 @@ MonoBehaviour:
   favor: 2
   category: 4
   name: Blueberry
-  icon: {fileID: 21300000, guid: 8a309cd3da1024c46812599f23142e98, type: 3}
+  icon: {fileID: 21300000, guid: 96cc4b9b2d1532f4b9df5340a73ee5ae, type: 3}
   stackSize: 99
-  count: 18
+  count: 6
   slot: {fileID: 0}
   value: 5
   canSell: 1

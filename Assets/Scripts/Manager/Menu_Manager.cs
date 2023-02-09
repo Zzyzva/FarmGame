@@ -73,6 +73,13 @@ public class Menu_Manager : MonoBehaviour
     public TextMeshProUGUI rankUpTitle;
     public TextMeshProUGUI rankUpText;
 
+    //Sleep warning
+    public CanvasGroup sleepWarning;
+
+    //Items sold Menu
+    public CanvasGroup itemsSoldMenu;
+    public GameObject itemsSoldUIPrefab;
+    public GameObject itemsSoldMenuContent;
 
 
 
@@ -493,6 +500,9 @@ public class Menu_Manager : MonoBehaviour
         newDay.alpha = 1;
         newDay.blocksRaycasts = true;
         newDay.interactable = true;
+        if(Inventory_Manager.instance.toSell.Count != 0){
+            OpenItemsSoldMenu();
+        }
     }
 
     public void CloseNewDay(){
@@ -501,6 +511,7 @@ public class Menu_Manager : MonoBehaviour
         newDay.interactable = false;
         CloseRankUp();
         CloseGameOver();
+        
     }
 
     public void DisplayRankUp(SkillRankUp skill){
@@ -530,5 +541,43 @@ public class Menu_Manager : MonoBehaviour
         gameOverDisplay.interactable = false;
         gameOverDisplay.blocksRaycasts = false;
         continueButton.SetActive(true);
+    }
+
+    public void OpenSleepWarning(){
+        sleepWarning.alpha = 1;
+        sleepWarning.interactable = true;
+        sleepWarning.blocksRaycasts = true;
+    }
+
+
+    public void OpenItemsSoldMenu(){
+
+        //Destroys old quests on the board
+        for(int i = 0; i < itemsSoldMenuContent.transform.childCount; i++){
+            Destroy(itemsSoldMenuContent.transform.GetChild(i).gameObject);
+        }
+        //Loads new quests
+        foreach(Item item in Inventory_Manager.instance.toSell){
+
+            GameObject UI = Instantiate(itemsSoldUIPrefab);
+            UI.transform.transform.SetParent(itemsSoldMenuContent.transform, false);
+            UI.transform.GetChild(1).GetComponent<Image>().sprite = item.icon;
+            UI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = item.name;
+            UI.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "x" + item.count.ToString();;
+            UI.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = item.count * item.value + "g";
+
+        }
+
+
+
+        itemsSoldMenu.alpha = 1;
+        itemsSoldMenu.interactable = true;
+        itemsSoldMenu.blocksRaycasts = true;
+    }
+
+    public void CloseItemsSoldMenu(){
+        itemsSoldMenu.alpha = 0;
+        itemsSoldMenu.interactable = false;
+        itemsSoldMenu.blocksRaycasts = false;
     }
 }

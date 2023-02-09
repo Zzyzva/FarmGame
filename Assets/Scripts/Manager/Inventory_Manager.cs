@@ -52,6 +52,8 @@ public class Inventory_Manager : MonoBehaviour
 
     public Object[] items;
 
+    public ItemNotification itemNotification;
+
 
     private void Awake() {
         if(instance == null){
@@ -203,6 +205,9 @@ public class Inventory_Manager : MonoBehaviour
         Item overflow = AddItemToSlots(item, count, inventorySlots);
         if(chestOpen){
             return overflow;
+        }
+        if(!overflow || overflow.count != count){
+            itemNotification.SetItem(item);
         }
         if(overflow){
             for( int i = 0; i < item.count; i++){

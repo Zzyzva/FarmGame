@@ -28,6 +28,7 @@ public class Script : Interactable
     Dialogue currentDialogue;
 
     public bool canTalk = false;
+    public bool canGift = true;
 
 
     public int relationship = 0;
@@ -169,6 +170,7 @@ public class Script : Interactable
     public void NewDay(){
         talkedToday = false;
         noGreeting = false;
+        canGift = true;
     }
 
     public int GetRelationshipHearts(){
