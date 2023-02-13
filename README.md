@@ -1,4 +1,4 @@
-# FarmGame
+#  The Echo of Laventia
 
 ## How to Install
 Download the .rar here: https://drive.google.com/file/d/18sNIxhK6GxeGohtF9aSooOWZAXQbqCNg/view?usp=sharing
