@@ -8,18 +8,19 @@ Run "The Echo of Laventia.exe"
 ## Features
 
 ### Explore the town
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif2.gif)
 ### Talk and give gifts to villagers
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif4.gif)
 ### Explore the mines
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif5.gif)
 ### Hunt in the woods
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif6.gif)
 ### Grow your crops
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif1.gif)
 ### Go fishing
-
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/gif3.gif)
 ### Help the village prepare for an unexpected visit
+![Alt Text](https://github.com/Zzyzva/FarmGame/blob/main/Gifs/Screenshot.png)
 
 This game was created over the course of several months using C# and unity. All of the programming, and most of the art was done by Isaac Sheridan.
 - Day night system, where lighting, available fish, dialogue, and npc locations change over time.
